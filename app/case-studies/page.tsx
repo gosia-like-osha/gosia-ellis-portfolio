@@ -145,11 +145,6 @@ export default function CaseStudiesPage() {
         <section className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[53px] pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[16px]">
             <CaseStudyCard
-              title="Barry energy"
-              subtitle="Designing a smarter energy experience"
-              illustrationSrc={barryDynamicPricing}
-            />
-            <CaseStudyCard
               title="Norlys"
               subtitle="Your monthly electricity bill, made easy"
               illustrationSrc={norlysIllustration}
@@ -159,11 +154,18 @@ export default function CaseStudiesPage() {
               href="/case-studies/norlys"
             />
             <CaseStudyCard
+              title="Barry energy"
+              subtitle="Designing a smarter energy experience"
+              illustrationSrc={barryDynamicPricing}
+              href="/case-studies/barry-energy"
+            />
+            <CaseStudyCard
               title="Relesys"
               subtitle="Designing a connected workforce platform"
               illustrationSrc={relesysIllustration}
               illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[336.494px] h-[187.526px]"
               illustrationImageClassName="object-contain"
+              href="/case-studies/relesys"
             />
             <CaseStudyCard
               title="AI explorations"
