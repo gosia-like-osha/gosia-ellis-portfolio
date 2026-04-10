@@ -130,7 +130,7 @@ function CaseStudyCard({
 
 export default function CaseStudiesPage() {
   return (
-    <div className="flex flex-col min-h-full bg-white text-[#15171c]">
+    <div className="flex min-h-screen flex-col bg-white text-[#15171c]">
       <StickyPillNav activeTab="case-studies" />
 
       <header className="w-full">

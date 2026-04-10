@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { StickyPillNav } from "../../components/StickyPillNav";
 import norlys1st from "../../../public/images/norlys/norlys-1st.png";
 import norlys2nd from "../../../public/images/norlys/norlys-2nd.png";
 import norlys3rd from "../../../public/images/norlys/norlys-3rd.png";
@@ -9,9 +10,11 @@ import norlys5th from "../../../public/images/norlys/norlys-5th.png";
 
 export default function NorlysCaseStudyPage() {
   return (
-    <div className="min-h-full bg-[#f2f2f2] text-[#15171c]">
+    <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
+      <StickyPillNav activeTab="case-studies" />
+
       {/* Sticky Back */}
-      <div className="sticky top-[35px] z-50">
+      <div className="sticky top-[35px] z-40">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px]">
           <Link
             href="/case-studies"
