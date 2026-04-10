@@ -27,6 +27,24 @@ const HIGHLIGHT_ROW2_RIGHT = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758094/monthly-mp_ubaial.mp4",
 } as const;
 
+/** Figma 4664:71141 — row 3 right (545×506), above Barry. */
+const HIGHLIGHT_ROW3_RIGHT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/widget-web_fmie0z.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758088/widget-mp_l76go4.mp4",
+} as const;
+
+/** Figma 4664:71150 — row 4 left (523×506), left of Barry. */
+const HIGHLIGHT_ROW4_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758086/Live-Activities-web_uol1fe.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758086/Live-Activities-mp_mxwbii.mp4",
+} as const;
+
+/** Figma 4664:71163 — bottom row, left tile (625×506). */
+const HIGHLIGHT_ROW5_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/feed-web_jj7wrx.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758087/feed-mp_nygr86.mp4",
+} as const;
+
 function HighlightVideoCard({
   webm,
   mp4,
@@ -36,14 +54,27 @@ function HighlightVideoCard({
   webm: string;
   mp4: string;
   heightClass: string;
-  /** `bottom` = horizontal center, video flush to bottom edge of card (no bottom padding). */
-  verticalAlign?: "center" | "bottom";
+  /** `bottom` / `top` = horizontal center, video flush to that edge of card (no padding on that edge). */
+  verticalAlign?: "center" | "bottom" | "top";
 }) {
   const alignClass =
-    verticalAlign === "bottom" ? "items-end justify-center" : "items-center justify-center";
-  const originClass = verticalAlign === "bottom" ? "origin-bottom" : "origin-center";
+    verticalAlign === "bottom"
+      ? "items-end justify-center"
+      : verticalAlign === "top"
+        ? "items-start justify-center"
+        : "items-center justify-center";
+  const originClass =
+    verticalAlign === "bottom"
+      ? "origin-bottom"
+      : verticalAlign === "top"
+        ? "origin-top"
+        : "origin-center";
   const paddingClass =
-    verticalAlign === "bottom" ? "px-10 pt-8 pb-0" : "px-10 py-8";
+    verticalAlign === "bottom"
+      ? "px-10 pt-8 pb-0"
+      : verticalAlign === "top"
+        ? "px-10 pb-8 pt-0"
+        : "px-10 py-8";
 
   return (
     <div
@@ -119,12 +150,21 @@ export default function Home() {
               <div className="h-[506px] w-full rounded-[40px] bg-[#f7f7f9] border border-[rgba(21,23,28,0.1)]" />
             </div>
             <div className="lg:col-span-5">
-              <div className="h-[506px] w-full rounded-[40px] bg-[#f7f7f9] border border-[rgba(21,23,28,0.1)]" />
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW3_RIGHT.webm}
+                mp4={HIGHLIGHT_ROW3_RIGHT.mp4}
+                heightClass="h-[506px]"
+              />
             </div>
 
             {/* Row 4 */}
             <div className="lg:col-span-6">
-              <div className="h-[506px] w-full rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9]" />
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW4_LEFT.webm}
+                mp4={HIGHLIGHT_ROW4_LEFT.mp4}
+                heightClass="h-[506px]"
+                verticalAlign="top"
+              />
             </div>
             <div className="lg:col-span-6">
               <HighlightVideoCard
@@ -134,9 +174,14 @@ export default function Home() {
               />
             </div>
 
-            {/* Row 5 */}
+            {/* Row 5 — Figma 4664:71163 (625×506) */}
             <div className="lg:col-span-6">
-              <div className="h-[506px] w-full rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9]" />
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW5_LEFT.webm}
+                mp4={HIGHLIGHT_ROW5_LEFT.mp4}
+                heightClass="h-[506px]"
+                verticalAlign="bottom"
+              />
             </div>
           </div>
         </section>
