@@ -15,7 +15,7 @@ export function StickyPillNav({ activeTab }: { activeTab: ActiveTab }) {
                 href: "/case-studies",
                 active: activeTab === "case-studies",
               },
-              { label: "About", disabled: true, active: activeTab === "about" },
+              { label: "About", href: "/about", active: activeTab === "about" },
             ]}
           />
         </div>

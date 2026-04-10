@@ -1,11 +1,13 @@
 import { StickyPillNav } from "../components/StickyPillNav";
 import Image from "next/image";
+import Link from "next/link";
 
 import cardOverlay from "../../public/images/case-study-card-overlay.png";
 import cardShadow from "../../public/images/case-study-card-shadow.png";
 import barryDynamicPricing from "../../public/images/barry-dynamic-pricing.png";
 import aiExplorationsIllustration from "../../public/images/ai-explorations-illustration.png";
 import norlysIllustration from "../../public/images/norlys-illustration.png";
+import relesysIllustration from "../../public/images/relesys-illustration.png";
 
 type CaseStudyCardProps = {
   title: string;
@@ -17,6 +19,7 @@ type CaseStudyCardProps = {
   comingSoon?: boolean;
   interactive?: boolean;
   hoverLiftPercent?: 5 | 10;
+  href?: string;
 };
 
 function CaseStudyCard({
@@ -29,13 +32,14 @@ function CaseStudyCard({
   comingSoon,
   interactive = true,
   hoverLiftPercent = 10,
+  href,
 }: CaseStudyCardProps) {
   const hoverLiftClass = interactive
     ? hoverLiftPercent === 5
       ? "group-hover:-translate-y-[5%]"
       : "group-hover:-translate-y-[10%]"
     : "";
-  return (
+  const card = (
     <article
       className={[
         "relative overflow-hidden rounded-[37.236px] border border-[rgba(21,23,28,0.1)] bg-gradient-to-b from-[#f7f7f9] to-white h-[338.843px]",
@@ -45,18 +49,24 @@ function CaseStudyCard({
       {illustrationSrc ? (
         <div
           className={[
-            "absolute z-10 left-1/2 top-[55.07px] -translate-x-1/2 w-[286.918px] h-[233.758px] transition-transform duration-300 ease-out",
-            hoverLiftClass,
+            "absolute z-10 left-1/2 top-[55.07px] -translate-x-1/2 w-[286.918px] h-[233.758px]",
             illustrationClassName ?? "",
           ].join(" ")}
           aria-hidden="true"
         >
-          <Image
-            alt=""
-            src={illustrationSrc}
-            className={["w-full h-full", illustrationImageClassName ?? "object-contain"].join(" ")}
-            priority={false}
-          />
+          <div
+            className={[
+              "w-full h-full transition-transform duration-300 ease-out",
+              hoverLiftClass,
+            ].join(" ")}
+          >
+            <Image
+              alt=""
+              src={illustrationSrc}
+              className={["w-full h-full", illustrationImageClassName ?? "object-contain"].join(" ")}
+              priority={false}
+            />
+          </div>
         </div>
       ) : (
         <div className="absolute z-10 left-0 top-[159.18px] w-full h-[224.344px]">
@@ -74,10 +84,11 @@ function CaseStudyCard({
       {/* Shadow overlay ABOVE the illustration (exported from Figma) */}
       <div
         className="absolute z-20 left-0 top-[159.18px] w-full h-[224.344px] pointer-events-none"
-        style={{ transform: "translateY(-84px) scale(1.18)" }}
         aria-hidden="true"
       >
-        <Image alt="" src={cardShadow} className="w-full h-full object-fill" priority={false} />
+        <div className="absolute inset-[-29.94%_-16.67%]">
+          <Image alt="" src={cardShadow} fill className="object-cover" priority={false} />
+        </div>
       </div>
 
       <div className="absolute z-30 inset-x-0 bottom-0 h-[139.943px]">
@@ -99,21 +110,25 @@ function CaseStudyCard({
       </div>
 
       {comingSoon ? (
-        <div className="absolute z-40 left-[259.18px] top-[22.9px] rounded-[209.861px] bg-[#aeaeb2] px-[12.906px] py-[5.957px] text-[15.885px] tracking-[-0.3177px] text-white font-medium">
+        <div className="absolute z-40 right-[22.9px] top-[23.07px] rounded-[209.861px] bg-[#aeaeb2] px-[12.906px] py-[5.957px] text-[15.885px] tracking-[-0.3177px] text-white font-medium flex items-center justify-center">
           Coming soon
         </div>
       ) : null}
     </article>
   );
+
+  if (href && interactive) {
+    return (
+      <Link href={href} className="block">
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 }
 
 export default function CaseStudiesPage() {
-  // Assets from Figma MCP (valid for ~7 days)
-  const imgBarry = "https://www.figma.com/api/mcp/asset/a922a92c-3739-4d7d-936c-67a7db889323";
-  const imgNorlys = "https://www.figma.com/api/mcp/asset/52c4496c-93b4-4d2e-8c6a-cdee2cb28eff";
-  const imgRelesys = "https://www.figma.com/api/mcp/asset/a922a92c-3739-4d7d-936c-67a7db889323";
-  const imgAi = "https://www.figma.com/api/mcp/asset/a922a92c-3739-4d7d-936c-67a7db889323";
-
   return (
     <div className="flex flex-col min-h-full bg-white text-[#15171c]">
       <StickyPillNav activeTab="case-studies" />
@@ -138,13 +153,17 @@ export default function CaseStudiesPage() {
               title="Norlys"
               subtitle="Your monthly electricity bill, made easy"
               illustrationSrc={norlysIllustration}
-              illustrationClassName="top-[51.07px] w-[345.492px] h-[352.556px]"
+              illustrationClassName="top-[53.07px] w-[345.856px] h-[264px]"
+              illustrationImageClassName="object-cover object-top"
               hoverLiftPercent={5}
+              href="/case-studies/norlys"
             />
             <CaseStudyCard
               title="Relesys"
               subtitle="Designing a connected workforce platform"
-              imageUrl={imgRelesys}
+              illustrationSrc={relesysIllustration}
+              illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[336.494px] h-[187.526px]"
+              illustrationImageClassName="object-contain"
             />
             <CaseStudyCard
               title="AI explorations"
