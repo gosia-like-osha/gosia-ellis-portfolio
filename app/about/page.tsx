@@ -11,7 +11,7 @@ export default function AboutPage() {
 
       <header className="w-full">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[28px] flex items-start justify-between gap-6">
-          <div className="pt-[6px] text-[31px] tracking-[-0.31px] font-semibold leading-[1.3] whitespace-nowrap">
+          <div className="pt-[6px] text-[28px] tracking-[-0.28px] font-semibold leading-[1.3] whitespace-nowrap sm:text-[31px] sm:tracking-[-0.31px]">
             Gosia Ellis
           </div>
         </div>

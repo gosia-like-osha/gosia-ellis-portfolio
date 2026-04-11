@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
+/* Light-only UI: avoid dark canvas behind mobile bottom padding / overscroll. */
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,11 +12,8 @@
   --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: #ffffff;
 }
 
 body {

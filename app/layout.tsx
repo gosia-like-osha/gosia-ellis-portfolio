@@ -29,8 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.className} min-h-screen antialiased`}>
-      <body className="min-h-screen flex flex-col">{children}</body>
+    <html lang="en" className={`${satoshi.className} min-h-screen bg-white antialiased`}>
+      <body className="min-h-screen flex flex-col bg-white pb-[calc(112px+env(safe-area-inset-bottom,0px))] sm:pb-0">
+        {children}
+      </body>
     </html>
   );
 }

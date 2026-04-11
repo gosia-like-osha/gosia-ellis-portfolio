@@ -42,14 +42,14 @@ export default function NorlysCaseStudyPage() {
 
               <div className="mt-[20px]">
                 <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Team</div>
-                <div className="mt-[4px] grid grid-cols-[156px_1fr] gap-x-[24px] gap-y-[12px] text-[26px] tracking-[-0.26px] font-medium">
-                  <div className="flex flex-col gap-[12px]">
+                <div className="mt-[4px] grid max-w-full grid-cols-[minmax(0,max-content)_minmax(0,1fr)] gap-x-2 gap-y-[12px] text-[26px] tracking-[-0.26px] font-medium lg:grid-cols-[156px_1fr] lg:gap-x-6">
+                  <div className="flex min-w-0 flex-col gap-[12px]">
                     <div>Design</div>
                     <div>iOS</div>
                     <div>Android</div>
-                    <div>Backed</div>
+                    <div>Backend</div>
                   </div>
-                  <div className="flex flex-col gap-[12px]">
+                  <div className="flex min-w-0 flex-col gap-[12px] break-words">
                     <div>QA</div>
                     <div>Commercial</div>
                   </div>

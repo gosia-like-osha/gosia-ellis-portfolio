@@ -9,7 +9,13 @@ const HIGHLIGHT_ROW4_RIGHT = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-mp_uhhnsz.mp4",
 } as const;
 
-/** Figma 4640:71113 — row 1 right (791×532). */
+/** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
+const HIGHLIGHT_ROW1_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775930943/ai-image_quelqp.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775930925/ai-image_zqymrw.mp4",
+} as const;
+
+/** Figma 4640:71113 — row 1 right (758×532). */
 const HIGHLIGHT_ROW1_RIGHT = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/transcript-web_kn43jp.webm",
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/transcript-mp_mlxbxa.mp4",
@@ -39,23 +45,52 @@ const HIGHLIGHT_ROW4_LEFT = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758086/Live-Activities-mp_mxwbii.mp4",
 } as const;
 
-/** Figma 4664:71163 — bottom row, left tile (625×506). */
+/** Figma 4664:71163 — bottom row left, feed clip. */
 const HIGHLIGHT_ROW5_LEFT = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/feed-web_jj7wrx.webm",
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758087/feed-mp_nygr86.mp4",
 } as const;
+
+/** Bottom row right — data graphs clip. */
+const HIGHLIGHT_ROW5_RIGHT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932100/data-graphs_yydbxr.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932116/data-graphs_fy8dcf.mp4",
+} as const;
+
+/** Larger video transform below `sm` (640px); from `sm` up matches existing desktop scale. */
+function responsiveVideoScale(desktopScaleClass: string): string {
+  switch (desktopScaleClass) {
+    case "scale-105":
+      return "scale-[1.26] sm:scale-105";
+    case "scale-[1.15]":
+      return "scale-[1.38] sm:scale-[1.15]";
+    case "scale-[1.21]":
+      return "scale-[1.45] sm:scale-[1.21]";
+    /** Barry row — 105% × 115%. */
+    case "scale-[1.2075]":
+      return "scale-[1.449] sm:scale-[1.2075]";
+    default:
+      return `scale-[1.26] sm:${desktopScaleClass}`;
+  }
+}
 
 function HighlightVideoCard({
   webm,
   mp4,
   heightClass,
   verticalAlign = "center",
+  videoClassName = "",
+  videoScaleClass = "scale-105",
 }: {
   webm: string;
   mp4: string;
   heightClass: string;
   /** `bottom` / `top` = horizontal center, video flush to that edge of card (no padding on that edge). */
   verticalAlign?: "center" | "bottom" | "top";
+  /** Extra classes on the `<video>` (e.g. positioning nudges). */
+  videoClassName?: string;
+  /** Tailwind scale on the `<video>` (default 105%). */
+  videoScaleClass?: string;
 }) {
   const alignClass =
     verticalAlign === "bottom"
@@ -83,7 +118,7 @@ function HighlightVideoCard({
       <video
         width={HIGHLIGHT_VIDEO_DIMS.width}
         height={HIGHLIGHT_VIDEO_DIMS.height}
-        className={`h-auto max-h-full w-auto max-w-full shrink-0 scale-105 object-contain ${originClass}`}
+        className={`h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim()}
         autoPlay
         loop
         muted
@@ -104,7 +139,7 @@ export default function Home() {
 
       <header className="w-full">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[28px] flex items-start justify-between gap-6">
-          <div className="pt-[6px] text-[31px] tracking-[-0.31px] font-semibold leading-[1.3] whitespace-nowrap">
+          <div className="pt-[6px] text-[28px] tracking-[-0.28px] font-semibold leading-[1.3] whitespace-nowrap sm:text-[31px] sm:tracking-[-0.31px]">
             Gosia Ellis
           </div>
         </div>
@@ -116,11 +151,14 @@ export default function Home() {
           className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[41px] pb-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {/* Row 1 */}
-            <div className="lg:col-span-4">
-              <div className="h-[532px] w-full rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9]" />
-            </div>
-            <div className="lg:col-span-8">
+            {/* Row 1 — Figma 4640:71099: 466×532 + 758×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,466fr)_minmax(0,758fr)]">
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW1_LEFT.webm}
+                mp4={HIGHLIGHT_ROW1_LEFT.mp4}
+                heightClass="h-[532px]"
+                videoScaleClass="scale-[1.15]"
+              />
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW1_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW1_RIGHT.mp4}
@@ -134,6 +172,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW2_LEFT.webm}
                 mp4={HIGHLIGHT_ROW2_LEFT.mp4}
                 heightClass="h-[643px]"
+                videoClassName="translate-y-[5%]"
               />
             </div>
             <div className="lg:col-span-4">
@@ -171,16 +210,25 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW4_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW4_RIGHT.mp4}
                 heightClass="h-[506px]"
+                videoScaleClass="scale-[1.2075]"
               />
             </div>
 
-            {/* Row 5 — Figma 4664:71163 (625×506) */}
+            {/* Row 5 — same column widths as row 4 (lg:col-span-6 + lg:col-span-6) */}
             <div className="lg:col-span-6">
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW5_LEFT.webm}
                 mp4={HIGHLIGHT_ROW5_LEFT.mp4}
                 heightClass="h-[506px]"
                 verticalAlign="bottom"
+              />
+            </div>
+            <div className="lg:col-span-6">
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW5_RIGHT.webm}
+                mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
+                heightClass="h-[506px]"
+                videoScaleClass="scale-[1.21]"
               />
             </div>
           </div>

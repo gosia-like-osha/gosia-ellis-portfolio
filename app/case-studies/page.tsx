@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
 
       <header className="w-full">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[28px] flex items-start justify-between gap-6">
-          <div className="pt-[6px] text-[31px] tracking-[-0.31px] font-semibold leading-[1.3] whitespace-nowrap">
+          <div className="pt-[6px] text-[28px] tracking-[-0.28px] font-semibold leading-[1.3] whitespace-nowrap sm:text-[31px] sm:tracking-[-0.31px]">
             Gosia Ellis
           </div>
         </div>
@@ -148,8 +148,8 @@ export default function CaseStudiesPage() {
               title="Norlys"
               subtitle="Your monthly electricity bill, made easy"
               illustrationSrc={norlysIllustration}
-              illustrationClassName="top-[53.07px] w-[345.856px] h-[264px]"
-              illustrationImageClassName="object-cover object-top"
+              illustrationClassName="top-[36px] w-[262px] h-[158px] md:top-[53.07px] md:w-[345.856px] md:h-[264px]"
+              illustrationImageClassName="object-contain object-top md:object-cover md:object-top"
               hoverLiftPercent={5}
               href="/case-studies/norlys"
             />
