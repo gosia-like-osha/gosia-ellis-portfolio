@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { StickyPillNav } from "../../components/StickyPillNav";
 import relesys1 from "../../../public/images/relesys/relesys-1.png";
 import relesys2 from "../../../public/images/relesys/relesys-2.png";
 import relesys3 from "../../../public/images/relesys/relesys-3.png";
@@ -10,8 +9,6 @@ import relesys4 from "../../../public/images/relesys/relesys-4.png";
 export default function RelesysCaseStudyPage() {
   return (
     <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
-      <StickyPillNav activeTab="case-studies" />
-
       {/* Sticky Back */}
       <div className="sticky top-[35px] z-40">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px]">

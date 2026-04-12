@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { StickyPillNav } from "../../components/StickyPillNav";
 import barry1 from "../../../public/images/barry/barry1.png";
 import barry2 from "../../../public/images/barry/barry2.png";
 import barry3 from "../../../public/images/barry/barry3.png";
@@ -12,8 +11,6 @@ import barry6 from "../../../public/images/barry/barry6.png";
 export default function BarryEnergyCaseStudyPage() {
   return (
     <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
-      <StickyPillNav activeTab="case-studies" />
-
       {/* Sticky Back */}
       <div className="sticky top-[35px] z-40">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px]">
