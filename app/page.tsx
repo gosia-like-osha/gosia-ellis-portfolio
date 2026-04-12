@@ -33,6 +33,12 @@ const HIGHLIGHT_ROW2_RIGHT = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758094/monthly-mp_ubaial.mp4",
 } as const;
 
+/** Row 3 left (lg:col-span-7) — AI invoice clip, full card height, centered. */
+const HIGHLIGHT_ROW3_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_lni3cr.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_kzcgz5.mp4",
+} as const;
+
 /** Figma 4664:71141 — row 3 right (545×506), above Barry. */
 const HIGHLIGHT_ROW3_RIGHT = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/widget-web_fmie0z.webm",
@@ -81,6 +87,8 @@ function HighlightVideoCard({
   verticalAlign = "center",
   videoClassName = "",
   videoScaleClass = "scale-105",
+  /** Video scales to full card height; horizontally centered (wide clips crop evenly). */
+  fillContainerHeight = false,
 }: {
   webm: string;
   mp4: string;
@@ -91,9 +99,11 @@ function HighlightVideoCard({
   videoClassName?: string;
   /** Tailwind scale on the `<video>` (default 105%). */
   videoScaleClass?: string;
+  fillContainerHeight?: boolean;
 }) {
-  const alignClass =
-    verticalAlign === "bottom"
+  const alignClass = fillContainerHeight
+    ? "items-center justify-center"
+    : verticalAlign === "bottom"
       ? "items-end justify-center"
       : verticalAlign === "top"
         ? "items-start justify-center"
@@ -104,12 +114,17 @@ function HighlightVideoCard({
       : verticalAlign === "top"
         ? "origin-top"
         : "origin-center";
-  const paddingClass =
-    verticalAlign === "bottom"
+  const paddingClass = fillContainerHeight
+    ? "p-0"
+    : verticalAlign === "bottom"
       ? "px-10 pt-8 pb-0"
       : verticalAlign === "top"
         ? "px-10 pb-8 pt-0"
         : "px-10 py-8";
+
+  const videoClass = fillContainerHeight
+    ? `h-full w-auto max-w-none shrink-0 object-contain origin-center ${videoClassName}`.trim()
+    : `h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim();
 
   return (
     <div
@@ -118,7 +133,7 @@ function HighlightVideoCard({
       <video
         width={HIGHLIGHT_VIDEO_DIMS.width}
         height={HIGHLIGHT_VIDEO_DIMS.height}
-        className={`h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim()}
+        className={videoClass}
         autoPlay
         loop
         muted
@@ -186,7 +201,12 @@ export default function Home() {
 
             {/* Row 3 */}
             <div className="lg:col-span-7">
-              <div className="h-[506px] w-full rounded-[40px] bg-[#f7f7f9] border border-[rgba(21,23,28,0.1)]" />
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW3_LEFT.webm}
+                mp4={HIGHLIGHT_ROW3_LEFT.mp4}
+                heightClass="h-[506px]"
+                fillContainerHeight
+              />
             </div>
             <div className="lg:col-span-5">
               <HighlightVideoCard
