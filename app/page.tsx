@@ -123,7 +123,7 @@ function HighlightVideoCard({
         : "px-10 py-8";
 
   const videoClass = fillContainerHeight
-    ? `h-full w-auto max-w-none shrink-0 object-contain origin-center ${videoClassName}`.trim()
+    ? `h-auto max-h-full w-auto max-w-full shrink-0 object-contain origin-center lg:h-full lg:w-auto lg:max-w-none ${videoClassName}`.trim()
     : `h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim();
 
   return (
