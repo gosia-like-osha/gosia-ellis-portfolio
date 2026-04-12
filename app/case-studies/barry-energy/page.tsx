@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
 import barry1 from "../../../public/images/barry/barry1.png";
 import barry2 from "../../../public/images/barry/barry2.png";
 import barry3 from "../../../public/images/barry/barry3.png";
@@ -11,22 +11,9 @@ import barry6 from "../../../public/images/barry/barry6.png";
 export default function BarryEnergyCaseStudyPage() {
   return (
     <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
-      {/* Sticky Back */}
-      <div className="sticky top-[35px] z-40">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-[100px]">
-          <Link
-            href="/case-studies"
-            className="relative inline-flex h-[54px] w-[116px] rounded-[100px] bg-white border border-[rgba(21,23,28,0.12)] shadow-[0px_22.696px_9px_0px_rgba(26,26,26,0.01),0px_12.913px_7.826px_0px_rgba(26,26,26,0.02),0px_5.87px_5.87px_0px_rgba(26,26,26,0.02),0px_1.565px_3.13px_0px_rgba(26,26,26,0.02)] overflow-hidden"
-          >
-            <span className="absolute left-[4px] top-[4px] box-border w-[106px] h-[44px] rounded-[100px] bg-[#15171c] inline-flex items-center justify-center gap-[10px] pt-[12px] pb-[11px] pl-[34px] pr-[35px] text-[16px] tracking-[-0.16px] text-white font-semibold">
-              <img alt="" src="/images/icons/back-arrow.svg" className="w-[15px] h-[12px]" aria-hidden="true" />
-              Back
-            </span>
-          </Link>
-        </div>
-      </div>
+      <CaseStudyBackNav />
 
-      <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24">
+      <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
         <section className="pt-[62px]">
           <div className="grid grid-cols-1 lg:grid-cols-[538px_1fr] gap-[48px] items-start">
             {/* Left info card — Figma 4721:73601 */}
