@@ -92,7 +92,7 @@ export default function AboutPage() {
                       href="mailto:itsgosiaa@gmail.com"
                       className="inline-flex items-center justify-center rounded-[211.384px] bg-[#15171c] px-[13px] py-[6px] text-[16px] tracking-[-0.32px] text-white font-medium"
                     >
-                      Email me
+                      email me
                     </a>
                   </div>
                 </div>
