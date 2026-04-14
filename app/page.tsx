@@ -5,8 +5,8 @@ const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
 
 /** Figma 4664:71153 — last tile on the right in the penultimate highlights row (701×506). */
 const HIGHLIGHT_ROW4_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-web_qjyuvu.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-mp_uhhnsz.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
 } as const;
 
 /** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
@@ -61,6 +61,12 @@ const HIGHLIGHT_ROW5_LEFT = {
 const HIGHLIGHT_ROW5_RIGHT = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932100/data-graphs_yydbxr.webm",
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932116/data-graphs_fy8dcf.mp4",
+} as const;
+
+/** Row 6 left — Barry clip (reused). */
+const HIGHLIGHT_ROW6_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-web_qjyuvu.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-mp_uhhnsz.mp4",
 } as const;
 
 /** Larger video transform below `sm` (640px); from `sm` up matches existing desktop scale. */
@@ -144,6 +150,14 @@ function HighlightVideoCard({
         <source src={mp4} type="video/mp4" />
       </video>
     </div>
+  );
+}
+
+function HighlightEmptyCard({ heightClass }: { heightClass: string }) {
+  return (
+    <div
+      className={`flex w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9] px-10 py-8 items-center justify-center ${heightClass}`}
+    />
   );
 }
 
@@ -249,6 +263,16 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
                 heightClass="h-[506px]"
                 videoScaleClass="scale-[1.21]"
+              />
+            </div>
+
+            {/* Row 6 — empty placeholder below feed (left aligned) */}
+            <div className="lg:col-span-6">
+              <HighlightVideoCard
+                webm={HIGHLIGHT_ROW6_LEFT.webm}
+                mp4={HIGHLIGHT_ROW6_LEFT.mp4}
+                heightClass="h-[506px]"
+                videoScaleClass="scale-[1.2075]"
               />
             </div>
           </div>
