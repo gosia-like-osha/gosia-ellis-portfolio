@@ -152,7 +152,7 @@ export default function NorlysCaseStudyPage() {
             {/* Desktop mockups (unchanged) */}
             <div className="hidden lg:block">
               <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
-                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={norlys1st}
@@ -162,7 +162,7 @@ export default function NorlysCaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={norlys2nd}
@@ -175,7 +175,7 @@ export default function NorlysCaseStudyPage() {
               </div>
 
               <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[588px_636px] gap-[16px]">
-                <div className="relative w-full aspect-[588/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
+                <div className="relative w-full aspect-[588/575] lg:aspect-auto lg:h-[575px]">
                   <Image
                     alt=""
                     src={norlys3rd}
@@ -185,7 +185,7 @@ export default function NorlysCaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <div className="relative w-full aspect-[636/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
+                <div className="relative w-full aspect-[636/575] lg:aspect-auto lg:h-[575px]">
                   <Image
                     alt=""
                     src={norlys4th}
