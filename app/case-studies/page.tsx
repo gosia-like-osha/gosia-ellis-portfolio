@@ -26,7 +26,7 @@ export default function CaseStudiesPage() {
               subtitle="Your monthly electricity bill, made easy"
               illustrationSrc={norlysIllustration}
               illustrationClassName="top-[36px] w-[262px] h-[158px] md:top-[53.07px] md:w-[345.856px] md:h-[264px]"
-              illustrationImageClassName="object-contain object-top md:object-cover md:object-top"
+              illustrationImageClassName="object-contain object-top scale-[0.9] -translate-y-[10%]"
               hoverLiftPercent={5}
               href="/case-studies/norlys"
             />

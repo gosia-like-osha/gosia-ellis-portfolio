@@ -5,8 +5,9 @@ import barry1 from "../../../public/images/barry/barry1.png";
 import barryAfter from "../../../public/images/barry/barry-after.png";
 import barry3 from "../../../public/images/barry/barry3.png";
 import barry4 from "../../../public/images/barry/barry4.png";
-import barry5 from "../../../public/images/barry/barry5.png";
+import widgetLarge from "../../../public/images/barry/widget-large.png";
 import barry6 from "../../../public/images/barry/barry6.png";
+import barryHeroNew from "../../../public/images/barry/barry-hero-new.png";
 
 export default function BarryEnergyCaseStudyPage() {
   return (
@@ -132,15 +133,14 @@ export default function BarryEnergyCaseStudyPage() {
         <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="relative w-full overflow-hidden rounded-[40px] aspect-[337/454] lg:aspect-[1240/510]">
-              <picture>
-                <source media="(min-width: 1024px)" srcSet="/images/barry/barry-before.png" />
-                <img
-                  alt=""
-                  src="/images/barry/barry-mobile1.png"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </picture>
+              <Image
+                alt=""
+                src={barryHeroNew}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 1240px, 100vw"
+                quality={100}
+              />
             </div>
 
             <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
@@ -193,7 +193,7 @@ export default function BarryEnergyCaseStudyPage() {
               <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
                 <Image
                   alt=""
-                  src={barry5}
+                  src={widgetLarge}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 618px, 100vw"
