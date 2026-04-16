@@ -8,6 +8,13 @@ import barry4 from "../../../public/images/barry/barry4.png";
 import widgetLarge from "../../../public/images/barry/widget-large.png";
 import barry6 from "../../../public/images/barry/barry6.png";
 import barryHeroNew from "../../../public/images/barry/barry-hero-new.png";
+import barryMobile1 from "../../../public/images/barry/mobile/barry-mobile-1.png";
+import barryMobile2 from "../../../public/images/barry/mobile/barry-mobile-2.png";
+import barryMobile3 from "../../../public/images/barry/mobile/barry-mobile-3.png";
+import barryMobile4 from "../../../public/images/barry/mobile/barry-mobile-4.png";
+import barryMobile5 from "../../../public/images/barry/mobile/barry-mobile-5.png";
+import barryMobile6 from "../../../public/images/barry/mobile/barry-mobile-6.png";
+import barryMobile7 from "../../../public/images/barry/mobile/barry-mobile-7.png";
 
 export default function BarryEnergyCaseStudyPage() {
   return (
@@ -132,83 +139,97 @@ export default function BarryEnergyCaseStudyPage() {
         {/* Mockups — Figma 4721:73601: rows 746+478, 746+478, 618+606 @ 510px; 16px gap; #f6f5f4 tray */}
         <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
-            <div className="relative w-full overflow-hidden rounded-[40px] aspect-[337/454] lg:aspect-[1240/510]">
-              <Image
-                alt=""
-                src={barryHeroNew}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 1240px, 100vw"
-                quality={100}
-              />
+            {/* Mobile-only mockups stack (exports already include styling) */}
+            <div className="flex flex-col gap-[16px] lg:hidden">
+              <Image alt="" src={barryMobile1} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile2} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile3} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile4} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile6} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={barryMobile7} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
-              <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+            {/* Desktop mockups (unchanged) */}
+            <div className="hidden lg:block">
+              <div className="relative w-full overflow-hidden rounded-[40px] aspect-[337/454] lg:aspect-[1240/510]">
                 <Image
                   alt=""
-                  src={barryAfter}
+                  src={barryHeroNew}
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 478px, 100vw"
+                  sizes="(min-width: 1024px) 1240px, 100vw"
                   quality={100}
                 />
               </div>
-              <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={barry1}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 746px, 100vw"
-                  quality={100}
-                />
-              </div>
-            </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
-              <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={barry3}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 746px, 100vw"
-                  quality={100}
-                />
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
+                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={barryAfter}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 478px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={barry1}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 746px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={barry4}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 478px, 100vw"
-                  quality={100}
-                />
-              </div>
-            </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[618px_606px] gap-[16px]">
-              <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={widgetLarge}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 618px, 100vw"
-                  quality={100}
-                />
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
+                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={barry3}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 746px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={barry4}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 478px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[606/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={barry6}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 606px, 100vw"
-                  quality={100}
-                />
+
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[618px_606px] gap-[16px]">
+                <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={widgetLarge}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 618px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[606/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                  <Image
+                    alt=""
+                    src={barry6}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 606px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
             </div>
           </div>

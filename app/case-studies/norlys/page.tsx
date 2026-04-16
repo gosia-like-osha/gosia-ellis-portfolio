@@ -7,6 +7,11 @@ import norlys2nd from "../../../public/images/norlys/norlys-2nd.png";
 import norlys3rd from "../../../public/images/norlys/norlys-3rd.png";
 import norlys4th from "../../../public/images/norlys/norlys-4th.png";
 import norlys5th from "../../../public/images/norlys/norlys-5th.png";
+import norlysMobile1 from "../../../public/images/norlys/mobile/norlys-mobile-1.png";
+import norlysMobile2 from "../../../public/images/norlys/mobile/norlys-mobile-2.png";
+import norlysMobile3 from "../../../public/images/norlys/mobile/norlys-mobile-3.png";
+import norlysMobile4 from "../../../public/images/norlys/mobile/norlys-mobile-4.png";
+import norlysMobile5 from "../../../public/images/norlys/mobile/norlys-mobile-5.png";
 
 export default function NorlysCaseStudyPage() {
   return (
@@ -135,61 +140,73 @@ export default function NorlysCaseStudyPage() {
         {/* Mockups (exported from Figma) */}
         <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={norlys1st}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 722px, 100vw"
-                  quality={100}
-                />
-              </div>
-              <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={norlys2nd}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 502px, 100vw"
-                  quality={100}
-                />
-              </div>
+            {/* Mobile-only mockups stack (Figma 4865:99441) */}
+            <div className="flex flex-col gap-[16px] lg:hidden">
+              <Image alt="" src={norlysMobile1} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={norlysMobile2} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={norlysMobile3} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={norlysMobile4} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={norlysMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[588px_636px] gap-[16px]">
-              <div className="relative w-full aspect-[588/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={norlys3rd}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 588px, 100vw"
-                  quality={100}
-                />
+            {/* Desktop mockups (unchanged) */}
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={norlys1st}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 722px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={norlys2nd}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 502px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[636/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={norlys4th}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 636px, 100vw"
-                  quality={100}
-                />
-              </div>
-            </div>
 
-            <div className="mt-[16px] relative w-full max-w-[1080px] mr-auto aspect-[3093/1437]">
-              <Image
-                alt=""
-                src={norlys5th}
-                fill
-                className="object-contain"
-                sizes="(min-width: 1024px) 1240px, 100vw"
-                quality={100}
-              />
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[588px_636px] gap-[16px]">
+                <div className="relative w-full aspect-[588/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={norlys3rd}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 588px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[636/575] lg:aspect-auto lg:h-[575px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={norlys4th}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 636px, 100vw"
+                    quality={100}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-[16px] relative w-full max-w-[1080px] mr-auto aspect-[3093/1437]">
+                <Image
+                  alt=""
+                  src={norlys5th}
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 1024px) 1240px, 100vw"
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
         </section>

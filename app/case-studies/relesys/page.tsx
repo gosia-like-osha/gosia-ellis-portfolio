@@ -9,6 +9,14 @@ import relesys5 from "../../../public/images/relesys/relesys-5.png";
 import relesys6 from "../../../public/images/relesys/relesys-6.png";
 import relesys7 from "../../../public/images/relesys/relesys-7.png";
 import relesys8 from "../../../public/images/relesys/relesys-8.png";
+import relesysMobile1 from "../../../public/images/relesys/mobile/relesys-mobile-1.png";
+import relesysMobile2 from "../../../public/images/relesys/mobile/relesys-mobile-2.png";
+import relesysMobile3 from "../../../public/images/relesys/mobile/relesys-mobile-3.png";
+import relesysMobile4 from "../../../public/images/relesys/mobile/relesys-mobile-4.png";
+import relesysMobile5 from "../../../public/images/relesys/mobile/relesys-mobile-5.png";
+import relesysMobile6 from "../../../public/images/relesys/mobile/relesys-mobile-6.png";
+import relesysMobile7 from "../../../public/images/relesys/mobile/relesys-mobile-7.png";
+import relesysMobile8 from "../../../public/images/relesys/mobile/relesys-mobile-8.png";
 
 export default function RelesysCaseStudyPage() {
   return (
@@ -131,95 +139,110 @@ export default function RelesysCaseStudyPage() {
         {/* Mockups — Figma 4721:72799: row1 502+722, row2 722+502 (exports include tray + stroke) */}
         <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[502px_722px] gap-[16px]">
-              <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys1}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 502px, 100vw"
-                  quality={100}
-                />
-              </div>
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys2}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 722px, 100vw"
-                  quality={100}
-                />
-              </div>
+            {/* Mobile-only mockups stack (exports already include styling) */}
+            <div className="flex flex-col gap-[16px] lg:hidden">
+              <Image alt="" src={relesysMobile1} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile2} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile3} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile4} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile6} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile7} className="h-auto w-full" sizes="100vw" quality={100} />
+              <Image alt="" src={relesysMobile8} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys3}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 722px, 100vw"
-                  quality={100}
-                />
+            {/* Desktop mockups (unchanged) */}
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-1 lg:grid-cols-[502px_722px] gap-[16px]">
+                <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys1}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 502px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys2}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 722px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys4}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 502px, 100vw"
-                  quality={100}
-                />
-              </div>
-            </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys5}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 612px, 100vw"
-                  quality={100}
-                />
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys3}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 722px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys4}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 502px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys6}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 612px, 100vw"
-                  quality={100}
-                />
-              </div>
-            </div>
 
-            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys7}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 612px, 100vw"
-                  quality={100}
-                />
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys5}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 612px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys6}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 612px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
-              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
-                <Image
-                  alt=""
-                  src={relesys8}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 612px, 100vw"
-                  quality={100}
-                />
+
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys7}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 612px, 100vw"
+                    quality={100}
+                  />
+                </div>
+                <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                  <Image
+                    alt=""
+                    src={relesys8}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 612px, 100vw"
+                    quality={100}
+                  />
+                </div>
               </div>
             </div>
           </div>
