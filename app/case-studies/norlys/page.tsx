@@ -28,7 +28,7 @@ export default function NorlysCaseStudyPage() {
           </div>
         </header>
 
-        <section className="mt-[48px]">
+        <section className="mt-[56px]">
           <div className="grid grid-cols-1 lg:grid-cols-[538px_1fr] gap-[48px] items-start">
             {/* Left info card */}
             <div className="relative rounded-[40px] bg-white border border-[rgba(21,23,28,0.1)] p-[35px]">
