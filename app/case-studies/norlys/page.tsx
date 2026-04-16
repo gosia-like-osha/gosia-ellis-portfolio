@@ -14,7 +14,16 @@ export default function NorlysCaseStudyPage() {
       <CaseStudyBackNav />
 
       <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
-        <section className="pt-[62px]">
+        <header className="pt-[62px]">
+          <div className="font-semibold lg:pl-[5px]">
+            <div className="text-[24px] opacity-50">Norlys</div>
+            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black">
+              From utility to usability - reimagining the electricity bill
+            </h1>
+          </div>
+        </header>
+
+        <section className="mt-[48px]">
           <div className="grid grid-cols-1 lg:grid-cols-[538px_1fr] gap-[48px] items-start">
             {/* Left info card */}
             <div className="relative rounded-[40px] bg-white border border-[rgba(21,23,28,0.1)] p-[35px]">
@@ -45,10 +54,15 @@ export default function NorlysCaseStudyPage() {
 
               <div className="mt-[20px]">
                 <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Scope</div>
-                <div className="mt-[12px] flex flex-col gap-[12px] text-[26px] tracking-[-0.26px] font-medium">
-                  <div>UI Design</div>
-                  <div>Prototyping</div>
-                  <div>User research</div>
+                <div className="mt-[4px] grid max-w-full grid-cols-[minmax(0,max-content)_minmax(0,1fr)] gap-x-2 gap-y-[12px] text-[26px] tracking-[-0.26px] font-medium lg:grid-cols-[156px_1fr] lg:gap-x-6">
+                  <div className="flex min-w-0 flex-col gap-[12px]">
+                    <div>UI Design</div>
+                    <div>Prototyping</div>
+                    <div>User research</div>
+                  </div>
+                  <div className="flex min-w-0 flex-col gap-[12px] break-words">
+                    <div>UX Design</div>
+                  </div>
                 </div>
               </div>
 
@@ -71,31 +85,47 @@ export default function NorlysCaseStudyPage() {
             </div>
 
             {/* Right narrative */}
-            <div className="flex flex-col gap-[44px]">
+            <div className="flex flex-col gap-[38px]">
               <div className="max-w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Problem</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  In collaboration with the agency Framna and the energy company Norlys, we explored ways
-                  to simplify how users understand their electricity consumption and bills. We challenged
-                  ourselves to present complex concepts in a more human and educational way.
+                  Helping Norlys customers understand their energy use wasn’t about accessing more data - it
+                  was about making the data meaningful. We created Monthly Reports, turning months of
+                  abstract consumption into something tangible, personal, and even delightful.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  Customers received bills full of numbers but little context, how this month compared, what
+                  drove usage, or where energy went. The data existed, but the presentation didn’t support
+                  real understanding.
                 </p>
               </div>
               <div className="max-w-[597px]">
-                <div className="text-[26px] tracking-[-0.26px] font-semibold">Solution</div>
+                <div className="text-[26px] tracking-[-0.26px] font-semibold">Approach</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Introducing “Monthly Reports” in the app allows users to see their monthly electricity
-                  consumption in a unique and user-friendly way. Each month, users receive a compilation
-                  of data and visuals corresponding to their previous month’s usage. By using animation and
-                  visual comparisons, we were able to translate complex numbers into a more tangible and
-                  easier-to-comprehend format.
+                  We found that customers are most attentive when their bill arrives, and often most
+                  frustrated. The Monthly Report was designed to meet them there, delivered in-app a couple
+                  of days after billing.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  Monthly Reports became an in-app feature that gives users a clear snapshot of their{" "}
+                  <span className="font-semibold text-[#15171c]">energy use</span>, with{" "}
+                  <span className="font-semibold text-[#15171c]">simple comparisons</span>,{" "}
+                  <span className="font-semibold text-[#15171c]">guided visuals</span>, and{" "}
+                  <span className="font-semibold text-[#15171c]">subtle nudges</span> to help them
+                  understand their consumption.
                 </p>
               </div>
               <div className="max-w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Result</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  A unique feature like “Monthly Reports” improved users’ understanding of their electricity
-                  consumption while also driving more traffic to the app. It led to a noticeable increase in
-                  time spent in the app, with users returning regularly to view their reports.
+                  The Monthly Report brought users back into the app regularly. App engagement rose by{" "}
+                  <span className="font-semibold text-[#15171c]">30%</span> as users returned to check
+                  their report, to better understand their energy use.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  What surprised us, was once users understood their patterns, they started asking better
+                  questions. Engagement with energy-saving tools and features increased by{" "}
+                  <span className="font-semibold text-[#15171c]">38%</span>.
                 </p>
               </div>
             </div>
@@ -103,7 +133,7 @@ export default function NorlysCaseStudyPage() {
         </section>
 
         {/* Mockups (exported from Figma) */}
-        <section className="mt-[48px]">
+        <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
               <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
