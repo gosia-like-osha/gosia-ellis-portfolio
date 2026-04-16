@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
 import relesys1 from "../../../public/images/relesys/relesys-1.png";
@@ -13,7 +12,16 @@ export default function RelesysCaseStudyPage() {
       <CaseStudyBackNav />
 
       <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
-        <section className="pt-[62px]">
+        <header className="pt-[62px]">
+          <div className="font-semibold lg:pl-[5px]">
+            <div className="text-[24px] opacity-50">Relesys</div>
+            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black">
+              Empowering frontline employees with a seamless digital experience
+            </h1>
+          </div>
+        </header>
+
+        <section className="mt-[48px]">
           <div className="grid grid-cols-1 lg:grid-cols-[538px_1fr] gap-[48px] items-start">
             {/* Left info card */}
             <div className="relative rounded-[40px] bg-white border border-[rgba(21,23,28,0.1)] p-[35px]">
@@ -75,7 +83,7 @@ export default function RelesysCaseStudyPage() {
             </div>
 
             {/* Right narrative */}
-            <div className="flex flex-col gap-[44px]">
+            <div className="flex flex-col gap-[32px]">
               <div className="max-w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Problem</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
@@ -88,17 +96,28 @@ export default function RelesysCaseStudyPage() {
               <div className="max-w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Solution</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Survey module designed for mobile scanning. Flows prioritized quick actions, and important
-                  insights at a glance. A companion desktop dashboard for managers helps visualising survey
-                  trends and employee sentiment in real-time.
+                  The Relesys platform was reimagined as a central hub for the entire employee experience,
+                  bringing communication and survey into one cohesive system.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  At the same time, the platform became more tailored to the needs of frontline workers with
+                  mobile-first approach. Communication tools were refined to better connect headquarters with
+                  front-line staff, and surveys were seamlessly integrated into daily workflows.
                 </p>
               </div>
               <div className="max-w-[597px]">
-                <div className="text-[26px] tracking-[-0.26px] font-semibold">Result</div>
+                <div className="text-[26px] tracking-[-0.26px] font-semibold">Impact</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  The design was A/B tested with actual store managers to validate before implementation.
-                  Adoption rates for the survey increased significantly, driving higher app engagement.
-                  Managers gained clearer insights into workplace issues and employee feedback.
+                  The introduction of the platform led to significant improvements in both user experience
+                  and business performance. Survey{" "}
+                  <span className="font-semibold text-[#15171c]">participation increased</span>, particularly
+                  among under 18 frontline workers who previously faced friction in navigating web-based
+                  tools.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  The platform <span className="font-semibold text-[#15171c]">strengthen the overall adoption</span>{" "}
+                  of the survey and communication modules and positioned Relesys as a more integral part of
+                  day-to-day operations supporting both headquarters and frontline employees.
                 </p>
               </div>
             </div>
@@ -106,7 +125,7 @@ export default function RelesysCaseStudyPage() {
         </section>
 
         {/* Mockups — Figma 4721:72799: row1 502+722, row2 722+502 (exports include tray + stroke) */}
-        <section className="mt-[48px]">
+        <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="grid grid-cols-1 lg:grid-cols-[502px_722px] gap-[16px]">
               <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
