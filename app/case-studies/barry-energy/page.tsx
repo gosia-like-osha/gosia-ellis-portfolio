@@ -14,7 +14,16 @@ export default function BarryEnergyCaseStudyPage() {
       <CaseStudyBackNav />
 
       <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
-        <section className="pt-[62px]">
+        <header className="pt-[62px]">
+          <div className="font-semibold">
+            <div className="text-[24px] opacity-50">Barry Energy</div>
+            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black">
+              From rebrand to better usability
+            </h1>
+          </div>
+        </header>
+
+        <section className="mt-[48px]">
           <div className="grid grid-cols-1 lg:grid-cols-[538px_1fr] gap-[48px] items-start">
             {/* Left info card — Figma 4721:73601 */}
             <div className="relative rounded-[40px] bg-white border border-[rgba(21,23,28,0.1)] p-[35px]">
@@ -45,7 +54,7 @@ export default function BarryEnergyCaseStudyPage() {
 
               <div className="mt-[20px]">
                 <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Scope</div>
-                <div className="mt-[12px] flex flex-col gap-[12px] text-[26px] tracking-[-0.26px] font-medium">
+                <div className="mt-[4px] flex flex-col gap-[12px] text-[26px] tracking-[-0.26px] font-medium">
                   <div>UI Design</div>
                   <div>Prototyping</div>
                   <div>User research</div>
@@ -63,28 +72,56 @@ export default function BarryEnergyCaseStudyPage() {
             </div>
 
             {/* Right narrative */}
-            <div className="flex flex-col gap-[44px]">
-              <div className="max-w-[597px]">
+            <div className="flex flex-col gap-[32px] max-w-[600px]">
+              <div className="w-full">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Problem</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  After the company rebrand, the home screen needed redesign. User feedback revealed the real
-                  problem: unclear price levels, confusing graphs, and unclear renewable energy messaging were
-                  preventing users from making informed decisions.
+                  A rebrand gave Barry Energy a fresh visual identity. But user testing quickly exposed the
+                  gap between aesthetics and usability. The interface had information, but it wasn&apos;t
+                  organized in a way that helped users understand it.
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  Graphs competed with each other, numbers lacked context, and there was no visual hierarchy
+                  to guide decision-making.
                 </p>
               </div>
-              <div className="max-w-[597px]">
-                <div className="text-[26px] tracking-[-0.26px] font-semibold">Solution</div>
+
+              <div className="w-full">
+                <div className="text-[26px] tracking-[-0.26px] font-semibold">Strategy: Color as meaning</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Redesigned the home screen around a simple color system, with clearer visual hierarchy and
-                  intuitive messaging, users could now make smart decisions about when to use appliances at a
-                  glance.
+                  Instead of redesigning everything, we asked: what if we used color strategically to create
+                  instant understanding? We developed a color system for quick recognition and decision-making
+                </p>
+                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  We mapped every interaction to this system. Price information used the{" "}
+                  <span className="font-semibold text-[#15171c]">green-to-red</span> gradient. Renewable
+                  energy was always <span className="font-semibold text-[#15171c]">green</span>. Usage graphs
+                  inherited these meanings. Suddenly, users could scan the screen and understand the current
+                  state at a single glance.
                 </p>
               </div>
-              <div className="max-w-[597px]">
+
+              <div className="w-full">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Result</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Validated design proved users now understand current electricity market and pricing strategy
-                  at a single glance. Color system became the key differentiator in the interface.
+                  User testing post-launch showed a clear shift. In comprehension tests,{" "}
+                  <span className="font-semibold text-[#15171c]">82%</span> of users could now accurately
+                  explain what they were seeing and why it mattered, compared to{" "}
+                  <span className="font-semibold text-[#15171c]">71%</span> before. We also saw a{" "}
+                  <span className="font-semibold text-[#15171c]">27%</span>{" "}
+                  increase in users actively using
+                  price-based controls to shift their consumption patterns, proving the design wasn&apos;t just
+                  clearer, but actionable.
+                </p>
+              </div>
+
+              <div className="w-full">
+                <div className="text-[26px] tracking-[-0.26px] font-semibold">Why it worked</div>
+                <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
+                  Through user interviews and testing, we learned that in a data-heavy interface users
+                  don&apos;t read, they scan. A robust color system gives them a quick way to familiarize
+                  themselves with the data. Green means &quot;good,&quot; red means &quot;expensive” simple,
+                  yet effective.
                 </p>
               </div>
             </div>
@@ -92,7 +129,7 @@ export default function BarryEnergyCaseStudyPage() {
         </section>
 
         {/* Mockups — Figma 4721:73601: rows 746+478, 746+478, 618+606 @ 510px; 16px gap; #f6f5f4 tray */}
-        <section className="mt-[48px]">
+        <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
               <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
