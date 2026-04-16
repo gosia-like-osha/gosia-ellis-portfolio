@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
 import barry1 from "../../../public/images/barry/barry1.png";
-import barry2 from "../../../public/images/barry/barry2.png";
+import barryAfter from "../../../public/images/barry/barry-after.png";
 import barry3 from "../../../public/images/barry/barry3.png";
 import barry4 from "../../../public/images/barry/barry4.png";
 import barry5 from "../../../public/images/barry/barry5.png";
@@ -131,7 +131,29 @@ export default function BarryEnergyCaseStudyPage() {
         {/* Mockups — Figma 4721:73601: rows 746+478, 746+478, 618+606 @ 510px; 16px gap; #f6f5f4 tray */}
         <section className="mt-[62px]">
           <div className="mx-auto w-full max-w-[1240px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
+            <div className="relative w-full overflow-hidden rounded-[40px] aspect-[337/454] lg:aspect-[1240/510]">
+              <picture>
+                <source media="(min-width: 1024px)" srcSet="/images/barry/barry-before.png" />
+                <img
+                  alt=""
+                  src="/images/barry/barry-mobile1.png"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
+              <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <Image
+                  alt=""
+                  src={barryAfter}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 478px, 100vw"
+                  quality={100}
+                />
+              </div>
               <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
                 <Image
                   alt=""
@@ -139,16 +161,6 @@ export default function BarryEnergyCaseStudyPage() {
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 746px, 100vw"
-                  quality={100}
-                />
-              </div>
-              <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
-                <Image
-                  alt=""
-                  src={barry2}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 478px, 100vw"
                   quality={100}
                 />
               </div>
