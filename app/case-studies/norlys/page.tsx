@@ -85,8 +85,8 @@ export default function NorlysCaseStudyPage() {
             </div>
 
             {/* Right narrative */}
-            <div className="flex flex-col gap-[38px]">
-              <div className="max-w-[597px]">
+            <div className="flex flex-col gap-[32px] lg:w-[597px]">
+              <div className="w-full lg:w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Problem</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
                   Helping Norlys customers understand their energy use wasn’t about accessing more data - it
@@ -99,7 +99,7 @@ export default function NorlysCaseStudyPage() {
                   real understanding.
                 </p>
               </div>
-              <div className="max-w-[597px]">
+              <div className="w-full lg:w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Approach</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
                   We found that customers are most attentive when their bill arrives, and often most
@@ -115,7 +115,7 @@ export default function NorlysCaseStudyPage() {
                   understand their consumption.
                 </p>
               </div>
-              <div className="max-w-[597px]">
+              <div className="w-full lg:w-[597px]">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Result</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
                   The Monthly Report brought users back into the app regularly. App engagement rose by{" "}

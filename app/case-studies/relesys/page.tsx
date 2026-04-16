@@ -5,6 +5,10 @@ import relesys1 from "../../../public/images/relesys/relesys-1.png";
 import relesys2 from "../../../public/images/relesys/relesys-2.png";
 import relesys3 from "../../../public/images/relesys/relesys-3.png";
 import relesys4 from "../../../public/images/relesys/relesys-4.png";
+import relesys5 from "../../../public/images/relesys/relesys-5.png";
+import relesys6 from "../../../public/images/relesys/relesys-6.png";
+import relesys7 from "../../../public/images/relesys/relesys-7.png";
+import relesys8 from "../../../public/images/relesys/relesys-8.png";
 
 export default function RelesysCaseStudyPage() {
   return (
@@ -168,6 +172,52 @@ export default function RelesysCaseStudyPage() {
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 502px, 100vw"
+                  quality={100}
+                />
+              </div>
+            </div>
+
+            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
+              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <Image
+                  alt=""
+                  src={relesys5}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 612px, 100vw"
+                  quality={100}
+                />
+              </div>
+              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <Image
+                  alt=""
+                  src={relesys6}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 612px, 100vw"
+                  quality={100}
+                />
+              </div>
+            </div>
+
+            <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-2 gap-[16px]">
+              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <Image
+                  alt=""
+                  src={relesys7}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 612px, 100vw"
+                  quality={100}
+                />
+              </div>
+              <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px]">
+                <Image
+                  alt=""
+                  src={relesys8}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 612px, 100vw"
                   quality={100}
                 />
               </div>
