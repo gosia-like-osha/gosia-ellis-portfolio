@@ -40,7 +40,7 @@ export default function CaseStudiesPage() {
               title="Relesys"
               subtitle="Designing a connected workforce platform"
               illustrationSrc={relesysIllustration}
-              illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[336.494px] h-[187.526px]"
+              illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[280px] h-[156px] md:w-[336.494px] md:h-[187.526px]"
               illustrationImageClassName="object-contain"
               href="/case-studies/relesys"
             />

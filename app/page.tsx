@@ -11,8 +11,8 @@ const HIGHLIGHT_ROW4_RIGHT = {
 
 /** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
 const HIGHLIGHT_ROW1_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775930943/ai-image_quelqp.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775930925/ai-image_zqymrw.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776427166/ai-image-change_zyxeqz.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776427166/ai-image-change_j9kcd5.mp4",
 } as const;
 
 /** Figma 4640:71113 — row 1 right (758×532). */
