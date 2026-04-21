@@ -81,6 +81,9 @@ function responsiveVideoScale(desktopScaleClass: string): string {
     /** Barry row — 105% × 115%. */
     case "scale-[1.2075]":
       return "scale-[1.449] sm:scale-[1.2075]";
+    /** Row 6 Barry — 90% of `scale-[1.2075]` (same breakpoints, smaller clip). */
+    case "scale-[1.08675]":
+      return "scale-[1.3041] sm:scale-[1.08675]";
     default:
       return `scale-[1.26] sm:${desktopScaleClass}`;
   }
@@ -201,7 +204,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW2_LEFT.webm}
                 mp4={HIGHLIGHT_ROW2_LEFT.mp4}
                 heightClass="h-[643px]"
-                videoClassName="translate-y-[5%]"
+                videoClassName="translate-y-[5%] lg:scale-[0.945]"
               />
             </div>
             <div className="lg:col-span-4">
@@ -266,14 +269,16 @@ export default function Home() {
               />
             </div>
 
-            {/* Row 6 — empty placeholder below feed (left aligned) */}
+            {/* Row 6 — empty placeholder below feed (left aligned); +96px container width on lg only */}
             <div className="lg:col-span-6">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW6_LEFT.webm}
-                mp4={HIGHLIGHT_ROW6_LEFT.mp4}
-                heightClass="h-[506px]"
-                videoScaleClass="scale-[1.2075]"
-              />
+              <div className="w-full lg:w-[calc(100%+96px)]">
+                <HighlightVideoCard
+                  webm={HIGHLIGHT_ROW6_LEFT.webm}
+                  mp4={HIGHLIGHT_ROW6_LEFT.mp4}
+                  heightClass="h-[506px]"
+                  videoScaleClass="scale-[1.08675]"
+                />
+              </div>
             </div>
           </div>
         </section>
