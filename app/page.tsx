@@ -63,12 +63,6 @@ const HIGHLIGHT_ROW5_RIGHT = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932116/data-graphs_fy8dcf.mp4",
 } as const;
 
-/** Row 6 left — Barry clip (reused). */
-const HIGHLIGHT_ROW6_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-web_qjyuvu.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/barry-mp_uhhnsz.mp4",
-} as const;
-
 /** Larger video transform below `sm` (640px); from `sm` up matches existing desktop scale. */
 function responsiveVideoScale(desktopScaleClass: string): string {
   switch (desktopScaleClass) {
@@ -81,9 +75,6 @@ function responsiveVideoScale(desktopScaleClass: string): string {
     /** Barry row — 105% × 115%. */
     case "scale-[1.2075]":
       return "scale-[1.449] sm:scale-[1.2075]";
-    /** Row 6 Barry — 90% of `scale-[1.2075]` (same breakpoints, smaller clip). */
-    case "scale-[1.08675]":
-      return "scale-[1.3041] sm:scale-[1.08675]";
     default:
       return `scale-[1.26] sm:${desktopScaleClass}`;
   }
@@ -153,14 +144,6 @@ function HighlightVideoCard({
         <source src={mp4} type="video/mp4" />
       </video>
     </div>
-  );
-}
-
-function HighlightEmptyCard({ heightClass }: { heightClass: string }) {
-  return (
-    <div
-      className={`flex w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9] px-10 py-8 items-center justify-center ${heightClass}`}
-    />
   );
 }
 
@@ -267,18 +250,6 @@ export default function Home() {
                 heightClass="h-[506px]"
                 videoScaleClass="scale-[1.21]"
               />
-            </div>
-
-            {/* Row 6 — empty placeholder below feed (left aligned); +96px container width on lg only */}
-            <div className="lg:col-span-6">
-              <div className="w-full lg:w-[calc(100%+96px)]">
-                <HighlightVideoCard
-                  webm={HIGHLIGHT_ROW6_LEFT.webm}
-                  mp4={HIGHLIGHT_ROW6_LEFT.mp4}
-                  heightClass="h-[506px]"
-                  videoScaleClass="scale-[1.08675]"
-                />
-              </div>
             </div>
           </div>
         </section>
