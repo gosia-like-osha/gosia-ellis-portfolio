@@ -5,8 +5,8 @@ const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
 
 /** Figma 4664:71153 — last tile on the right in the penultimate highlights row (701×506). */
 const HIGHLIGHT_ROW4_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777012423/barry-nr_qk79l2.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777012423/barry-nr_r9gfxw.mp4",
 } as const;
 
 /** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
