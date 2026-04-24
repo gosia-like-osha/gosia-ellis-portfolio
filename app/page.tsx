@@ -6,8 +6,8 @@ const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
 
 /** Figma 4664:71153 — last tile on the right in the penultimate highlights row (701×506). */
 const HIGHLIGHT_ROW4_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777012423/barry-nr_qk79l2.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777012423/barry-nr_r9gfxw.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
 } as const;
 
 /** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
@@ -42,8 +42,8 @@ const HIGHLIGHT_ROW3_LEFT = {
 
 /** Figma 4664:71141 — row 3 right (545×506), above Barry. */
 const HIGHLIGHT_ROW3_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777026826/barry-mobile_v2buzs.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777026819/barry-mobile_vxxx3g.mp4",
 } as const;
 
 /** Figma 4664:71150 — row 4 left (523×506), left of Barry. */
@@ -135,6 +135,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW3_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW3_RIGHT.mp4}
                 heightClass="h-[506px]"
+                verticalAlign="bottom"
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
