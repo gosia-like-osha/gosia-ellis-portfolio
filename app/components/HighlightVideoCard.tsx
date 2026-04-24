@@ -1,23 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-/** Larger video transform below `sm` (640px); from `sm` up matches existing desktop scale. */
-function responsiveVideoScale(desktopScaleClass: string): string {
-  switch (desktopScaleClass) {
-    case "scale-105":
-      return "scale-[1.26] sm:scale-105";
-    case "scale-[1.15]":
-      return "scale-[1.38] sm:scale-[1.15]";
-    case "scale-[1.21]":
-      return "scale-[1.45] sm:scale-[1.21]";
-    /** Barry row — 105% × 115%. */
-    case "scale-[1.2075]":
-      return "scale-[1.449] sm:scale-[1.2075]";
-    default:
-      return `scale-[1.26] sm:${desktopScaleClass}`;
-  }
-}
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export function HighlightVideoCard({
   webm,
@@ -25,7 +8,9 @@ export function HighlightVideoCard({
   heightClass,
   verticalAlign = "center",
   videoClassName = "",
-  videoScaleClass = "scale-105",
+  desktopScale = 1.05,
+  mobileScale,
+  translateYPercent = 0,
   /** Video scales to full card height; horizontally centered (wide clips crop evenly). */
   fillContainerHeight = false,
   dims = { width: 1080, height: 1080 },
@@ -37,12 +22,17 @@ export function HighlightVideoCard({
   verticalAlign?: "center" | "bottom" | "top";
   /** Extra classes on the `<video>` (e.g. positioning nudges). */
   videoClassName?: string;
-  /** Tailwind scale on the `<video>` (default 105%). */
-  videoScaleClass?: string;
+  /** Scale at `sm` and up (min-width 640px). */
+  desktopScale?: number;
+  /** Scale below `sm` (defaults to `desktopScale * 1.2`). */
+  mobileScale?: number;
+  /** Positive values move the video down (percent of its own height). */
+  translateYPercent?: number;
   fillContainerHeight?: boolean;
   dims?: { width: number; height: number };
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isSmUp, setIsSmUp] = useState(true);
 
   const alignClass = fillContainerHeight
     ? "items-center justify-center"
@@ -65,9 +55,27 @@ export function HighlightVideoCard({
         ? "px-10 pb-8 pt-0"
         : "px-10 py-8";
 
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 640px)");
+    const apply = () => setIsSmUp(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  const resolvedMobileScale = mobileScale ?? desktopScale * 1.2;
+  const scale = isSmUp ? desktopScale : resolvedMobileScale;
+
+  const videoStyle = useMemo<React.CSSProperties>(() => {
+    const ty = translateYPercent ? `${translateYPercent}%` : "0%";
+    return {
+      transform: `translateY(${ty}) scale(${scale})`,
+    };
+  }, [translateYPercent, scale]);
+
   const videoClass = fillContainerHeight
     ? `h-auto max-h-full w-auto max-w-full shrink-0 object-contain origin-center lg:h-full lg:w-auto lg:max-w-none ${videoClassName}`.trim()
-    : `h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim();
+    : `h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${originClass} ${videoClassName}`.trim();
 
   useEffect(() => {
     // Browsers can keep playing a previous source even if <source src> changes.
@@ -87,6 +95,7 @@ export function HighlightVideoCard({
         width={dims.width}
         height={dims.height}
         className={videoClass}
+        style={videoStyle}
         autoPlay
         loop
         muted

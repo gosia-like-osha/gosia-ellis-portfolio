@@ -24,8 +24,8 @@ const HIGHLIGHT_ROW1_RIGHT = {
 
 /** Figma 4664:71136 — row 2 left (803×643). */
 const HIGHLIGHT_ROW2_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/ai-create-web_cj393k.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/ai-create-mp_ht3llk.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_lni3cr.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_kzcgz5.mp4",
 } as const;
 
 /** Figma 4640:71124 — row 2 right (421×643). */
@@ -36,8 +36,8 @@ const HIGHLIGHT_ROW2_RIGHT = {
 
 /** Row 3 left (lg:col-span-7) — AI invoice clip, full card height, centered. */
 const HIGHLIGHT_ROW3_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_lni3cr.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_kzcgz5.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/ai-create-web_cj393k.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/ai-create-mp_ht3llk.mp4",
 } as const;
 
 /** Figma 4664:71141 — row 3 right (545×506), above Barry. */
@@ -88,14 +88,15 @@ export default function Home() {
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW1_LEFT.webm}
                 mp4={HIGHLIGHT_ROW1_LEFT.mp4}
-                heightClass="h-[532px]"
-                videoScaleClass="scale-[1.15]"
+                heightClass="h-[522px]"
+                desktopScale={1.242}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW1_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW1_RIGHT.mp4}
-                heightClass="h-[532px]"
+                heightClass="h-[522px]"
+                desktopScale={1.155}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
@@ -105,8 +106,8 @@ export default function Home() {
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW2_LEFT.webm}
                 mp4={HIGHLIGHT_ROW2_LEFT.mp4}
-                heightClass="h-[643px]"
-                videoClassName="translate-y-[5%] lg:scale-[0.945]"
+                heightClass="h-[603px]"
+                fillContainerHeight
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
@@ -114,7 +115,7 @@ export default function Home() {
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW2_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW2_RIGHT.mp4}
-                heightClass="h-[643px]"
+                heightClass="h-[603px]"
                 verticalAlign="bottom"
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
@@ -127,6 +128,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW3_LEFT.mp4}
                 heightClass="h-[506px]"
                 fillContainerHeight
+                translateYPercent={10}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
@@ -155,7 +157,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW4_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW4_RIGHT.mp4}
                 heightClass="h-[506px]"
-                videoScaleClass="scale-[1.2075]"
+                desktopScale={1.2075}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
@@ -175,7 +177,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW5_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
                 heightClass="h-[506px]"
-                videoScaleClass="scale-[1.21]"
+                desktopScale={1.21}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
