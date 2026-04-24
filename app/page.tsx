@@ -1,4 +1,5 @@
 import { StickyPillNav } from "./components/StickyPillNav";
+import { HighlightVideoCard } from "./components/HighlightVideoCard";
 
 /** Square highlight clips — intrinsic 1080×1080, scaled/centered in card (Figma). */
 const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
@@ -41,8 +42,8 @@ const HIGHLIGHT_ROW3_LEFT = {
 
 /** Figma 4664:71141 — row 3 right (545×506), above Barry. */
 const HIGHLIGHT_ROW3_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/widget-web_fmie0z.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758088/widget-mp_l76go4.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
 } as const;
 
 /** Figma 4664:71150 — row 4 left (523×506), left of Barry. */
@@ -62,90 +63,6 @@ const HIGHLIGHT_ROW5_RIGHT = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932100/data-graphs_yydbxr.webm",
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932116/data-graphs_fy8dcf.mp4",
 } as const;
-
-/** Larger video transform below `sm` (640px); from `sm` up matches existing desktop scale. */
-function responsiveVideoScale(desktopScaleClass: string): string {
-  switch (desktopScaleClass) {
-    case "scale-105":
-      return "scale-[1.26] sm:scale-105";
-    case "scale-[1.15]":
-      return "scale-[1.38] sm:scale-[1.15]";
-    case "scale-[1.21]":
-      return "scale-[1.45] sm:scale-[1.21]";
-    /** Barry row — 105% × 115%. */
-    case "scale-[1.2075]":
-      return "scale-[1.449] sm:scale-[1.2075]";
-    default:
-      return `scale-[1.26] sm:${desktopScaleClass}`;
-  }
-}
-
-function HighlightVideoCard({
-  webm,
-  mp4,
-  heightClass,
-  verticalAlign = "center",
-  videoClassName = "",
-  videoScaleClass = "scale-105",
-  /** Video scales to full card height; horizontally centered (wide clips crop evenly). */
-  fillContainerHeight = false,
-}: {
-  webm: string;
-  mp4: string;
-  heightClass: string;
-  /** `bottom` / `top` = horizontal center, video flush to that edge of card (no padding on that edge). */
-  verticalAlign?: "center" | "bottom" | "top";
-  /** Extra classes on the `<video>` (e.g. positioning nudges). */
-  videoClassName?: string;
-  /** Tailwind scale on the `<video>` (default 105%). */
-  videoScaleClass?: string;
-  fillContainerHeight?: boolean;
-}) {
-  const alignClass = fillContainerHeight
-    ? "items-center justify-center"
-    : verticalAlign === "bottom"
-      ? "items-end justify-center"
-      : verticalAlign === "top"
-        ? "items-start justify-center"
-        : "items-center justify-center";
-  const originClass =
-    verticalAlign === "bottom"
-      ? "origin-bottom"
-      : verticalAlign === "top"
-        ? "origin-top"
-        : "origin-center";
-  const paddingClass = fillContainerHeight
-    ? "p-0"
-    : verticalAlign === "bottom"
-      ? "px-10 pt-8 pb-0"
-      : verticalAlign === "top"
-        ? "px-10 pb-8 pt-0"
-        : "px-10 py-8";
-
-  const videoClass = fillContainerHeight
-    ? `h-auto max-h-full w-auto max-w-full shrink-0 object-contain origin-center lg:h-full lg:w-auto lg:max-w-none ${videoClassName}`.trim()
-    : `h-auto max-h-full w-auto max-w-full shrink-0 object-contain ${responsiveVideoScale(videoScaleClass)} ${originClass} ${videoClassName}`.trim();
-
-  return (
-    <div
-      className={`flex w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9] ${paddingClass} ${alignClass} ${heightClass}`}
-    >
-      <video
-        width={HIGHLIGHT_VIDEO_DIMS.width}
-        height={HIGHLIGHT_VIDEO_DIMS.height}
-        className={videoClass}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-      >
-        <source src={webm} type="video/webm" />
-        <source src={mp4} type="video/mp4" />
-      </video>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -173,11 +90,13 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW1_LEFT.mp4}
                 heightClass="h-[532px]"
                 videoScaleClass="scale-[1.15]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW1_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW1_RIGHT.mp4}
                 heightClass="h-[532px]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
 
@@ -188,6 +107,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW2_LEFT.mp4}
                 heightClass="h-[643px]"
                 videoClassName="translate-y-[5%] lg:scale-[0.945]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
             <div className="lg:col-span-4">
@@ -196,6 +116,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW2_RIGHT.mp4}
                 heightClass="h-[643px]"
                 verticalAlign="bottom"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
 
@@ -206,6 +127,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW3_LEFT.mp4}
                 heightClass="h-[506px]"
                 fillContainerHeight
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
             <div className="lg:col-span-5">
@@ -213,6 +135,7 @@ export default function Home() {
                 webm={HIGHLIGHT_ROW3_RIGHT.webm}
                 mp4={HIGHLIGHT_ROW3_RIGHT.mp4}
                 heightClass="h-[506px]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
 
@@ -223,6 +146,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW4_LEFT.mp4}
                 heightClass="h-[506px]"
                 verticalAlign="top"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
             <div className="lg:col-span-6">
@@ -231,6 +155,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW4_RIGHT.mp4}
                 heightClass="h-[506px]"
                 videoScaleClass="scale-[1.2075]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
 
@@ -241,6 +166,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW5_LEFT.mp4}
                 heightClass="h-[506px]"
                 verticalAlign="bottom"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
             <div className="lg:col-span-6">
@@ -249,6 +175,7 @@ export default function Home() {
                 mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
                 heightClass="h-[506px]"
                 videoScaleClass="scale-[1.21]"
+                dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
           </div>
