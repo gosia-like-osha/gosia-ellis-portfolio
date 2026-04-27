@@ -6,7 +6,10 @@ import norlys1st from "../../../public/images/norlys/norlys-1st.png";
 import norlys2nd from "../../../public/images/norlys/norlys-2nd.png";
 import norlys3rd from "../../../public/images/norlys/norlys-3rd.png";
 import norlys4th from "../../../public/images/norlys/norlys-4th.png";
-import norlys5th from "../../../public/images/norlys/norlys-5th.png";
+import norlysLastA from "../../../public/images/norlys/norlys-last-a.png";
+import norlysLastB from "../../../public/images/norlys/norlys-last-b.png";
+import norlysLastWide from "../../../public/images/norlys/norlys-last-wide.png";
+import norlysRow3Left from "../../../public/images/norlys/norlys-3rd-row-left.png";
 import norlysMobile1 from "../../../public/images/norlys/mobile/norlys-mobile-1.png";
 import norlysMobile2 from "../../../public/images/norlys/mobile/norlys-mobile-2.png";
 import norlysMobile3 from "../../../public/images/norlys/mobile/norlys-mobile-3.png";
@@ -63,7 +66,7 @@ export default function NorlysCaseStudyPage() {
                   <div className="flex min-w-0 flex-col gap-[12px]">
                     <div>UI Design</div>
                     <div>Prototyping</div>
-                    <div>User research</div>
+                    <div className="whitespace-nowrap">User research</div>
                   </div>
                   <div className="flex min-w-0 flex-col gap-[12px] break-words">
                     <div>UX Design</div>
@@ -149,7 +152,7 @@ export default function NorlysCaseStudyPage() {
               <Image alt="" src={norlysMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            {/* Desktop mockups (unchanged) */}
+            {/* Desktop mockups */}
             <div className="hidden lg:block">
               <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
                 <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px]">
@@ -197,16 +200,23 @@ export default function NorlysCaseStudyPage() {
                 </div>
               </div>
 
-              <div className="mt-[16px] relative w-full max-w-[1080px] mr-auto aspect-[3093/1437]">
-                <Image
-                  alt=""
-                  src={norlys5th}
-                  fill
-                  className="object-contain"
-                  sizes="(min-width: 1024px) 1240px, 100vw"
-                  quality={100}
-                />
+              {/* Additional desktop exports (Figma 4851:90785) */}
+              <div className="mt-[16px] grid grid-cols-1 gap-[16px] lg:grid-cols-[588px_636px]">
+                <div className="relative h-[588px] w-full">
+                  <Image alt="" src={norlysRow3Left} fill className="object-cover" sizes="(min-width: 1024px) 588px, 100vw" quality={100} />
+                </div>
+                <div className="relative h-[588px] w-full">
+                  <Image alt="" src={norlysLastB} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
+                </div>
               </div>
+
+              <Image
+                alt=""
+                src={norlysLastWide}
+                className="mt-[16px] h-auto w-full"
+                sizes="(min-width: 1024px) 1240px, 100vw"
+                quality={100}
+              />
             </div>
           </div>
         </section>
