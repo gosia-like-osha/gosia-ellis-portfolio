@@ -10,6 +10,7 @@ import norlysLastA from "../../../public/images/norlys/norlys-last-a.png";
 import norlysLastB from "../../../public/images/norlys/norlys-last-b.png";
 import norlysLastWide from "../../../public/images/norlys/norlys-last-wide.png";
 import norlysRow3Left from "../../../public/images/norlys/norlys-3rd-row-left.png";
+import norlysRow3Right from "../../../public/images/norlys/norlys-3rd-row-right.png";
 import norlysMobile1 from "../../../public/images/norlys/mobile/norlys-mobile-1.png";
 import norlysMobile2 from "../../../public/images/norlys/mobile/norlys-mobile-2.png";
 import norlysMobile3 from "../../../public/images/norlys/mobile/norlys-mobile-3.png";
@@ -206,7 +207,7 @@ export default function NorlysCaseStudyPage() {
                   <Image alt="" src={norlysRow3Left} fill className="object-cover" sizes="(min-width: 1024px) 588px, 100vw" quality={100} />
                 </div>
                 <div className="relative h-[588px] w-full">
-                  <Image alt="" src={norlysLastB} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
+                  <Image alt="" src={norlysRow3Right} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
                 </div>
               </div>
 

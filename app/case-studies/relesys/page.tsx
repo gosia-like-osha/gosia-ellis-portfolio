@@ -9,6 +9,8 @@ import relesys5 from "../../../public/images/relesys/relesys-5.png";
 import relesys6 from "../../../public/images/relesys/relesys-6.png";
 import relesys7 from "../../../public/images/relesys/relesys-7.png";
 import relesys8 from "../../../public/images/relesys/relesys-8.png";
+import relesysDesktop9 from "../../../public/images/relesys/relesys-desktop-9.png";
+import relesysDesktop10 from "../../../public/images/relesys/relesys-desktop-10.png";
 import relesysMobile1 from "../../../public/images/relesys/mobile/relesys-mobile-1.png";
 import relesysMobile2 from "../../../public/images/relesys/mobile/relesys-mobile-2.png";
 import relesysMobile3 from "../../../public/images/relesys/mobile/relesys-mobile-3.png";
@@ -68,7 +70,7 @@ export default function RelesysCaseStudyPage() {
                   <div className="flex min-w-0 flex-col gap-[12px]">
                     <div>UI Design</div>
                     <div>Prototyping</div>
-                    <div>User research</div>
+                    <div className="whitespace-nowrap">User research</div>
                   </div>
                   <div className="flex min-w-0 flex-col gap-[12px] break-words">
                     <div>UX Design</div>
@@ -243,6 +245,12 @@ export default function RelesysCaseStudyPage() {
                     quality={100}
                   />
                 </div>
+              </div>
+
+              {/* New desktop exports (REL.zip) */}
+              <div className="mt-[16px] grid grid-cols-2 gap-[16px]">
+                <Image alt="" src={relesysDesktop9} className="h-auto w-full" sizes="(min-width: 1024px) 612px, 100vw" quality={100} />
+                <Image alt="" src={relesysDesktop10} className="h-auto w-full" sizes="(min-width: 1024px) 612px, 100vw" quality={100} />
               </div>
             </div>
           </div>

@@ -5,6 +5,8 @@ import barry1 from "../../../public/images/barry/barry1.png";
 import barryAfter from "../../../public/images/barry/barry-after.png";
 import barry3 from "../../../public/images/barry/barry3.png";
 import barry4 from "../../../public/images/barry/barry4.png";
+import barryNewA from "../../../public/images/barry/barry-new-a.png";
+import barryNewB from "../../../public/images/barry/barry-new-b.png";
 import widgetLarge from "../../../public/images/barry/widget-large.png";
 import barry6 from "../../../public/images/barry/barry6.png";
 import barryHeroNew from "../../../public/images/barry/barry-hero-new.png";
@@ -150,9 +152,9 @@ export default function BarryEnergyCaseStudyPage() {
               <Image alt="" src={barryMobile7} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            {/* Desktop mockups (unchanged) */}
+            {/* Desktop mockups */}
             <div className="hidden lg:block">
-              <div className="relative w-full overflow-hidden rounded-[40px] aspect-[337/454] lg:aspect-[1240/510]">
+              <div className="relative w-full aspect-[337/454] lg:aspect-[1240/510]">
                 <Image
                   alt=""
                   src={barryHeroNew}
@@ -164,7 +166,7 @@ export default function BarryEnergyCaseStudyPage() {
               </div>
 
               <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
-                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={barryAfter}
@@ -174,10 +176,10 @@ export default function BarryEnergyCaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
-                    src={barry1}
+                    src={barryNewA}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 746px, 100vw"
@@ -187,7 +189,7 @@ export default function BarryEnergyCaseStudyPage() {
               </div>
 
               <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
-                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={barry3}
@@ -197,7 +199,7 @@ export default function BarryEnergyCaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={barry4}
@@ -210,7 +212,7 @@ export default function BarryEnergyCaseStudyPage() {
               </div>
 
               <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[618px_606px] gap-[16px]">
-                <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={widgetLarge}
@@ -220,7 +222,7 @@ export default function BarryEnergyCaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <div className="relative w-full aspect-[606/510] lg:aspect-auto lg:h-[510px] overflow-hidden rounded-[40px] bg-[#f6f5f4]">
+                <div className="relative w-full aspect-[606/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
                     src={barry6}
@@ -229,6 +231,16 @@ export default function BarryEnergyCaseStudyPage() {
                     sizes="(min-width: 1024px) 606px, 100vw"
                     quality={100}
                   />
+                </div>
+              </div>
+
+              {/* Last row (Figma move) */}
+              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
+                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
+                  <Image alt="" src={barry1} fill className="object-cover" sizes="(min-width: 1024px) 746px, 100vw" quality={100} />
+                </div>
+                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
+                  <Image alt="" src={barryNewB} fill className="object-cover" sizes="(min-width: 1024px) 478px, 100vw" quality={100} />
                 </div>
               </div>
             </div>
