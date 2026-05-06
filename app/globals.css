@@ -20,3 +20,20 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/**
+ * Homepage highlight videos:
+ * Use CSS media queries (not JS) to prevent initial render size flicker.
+ * Component sets per-card `--hv-scale-mobile` / `--hv-scale-desktop` / `--hv-ty`.
+ */
+.highlight-video {
+  --hv-scale: var(--hv-scale-mobile, 1);
+  --hv-ty: var(--hv-ty, 0%);
+  transform: translateY(var(--hv-ty)) scale(var(--hv-scale));
+}
+
+@media (min-width: 640px) {
+  .highlight-video {
+    --hv-scale: var(--hv-scale-desktop, var(--hv-scale));
+  }
+}

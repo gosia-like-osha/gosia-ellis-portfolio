@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 export function HighlightVideoCard({
   webm,
@@ -32,7 +32,6 @@ export function HighlightVideoCard({
   dims?: { width: number; height: number };
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isSmUp, setIsSmUp] = useState(true);
 
   const alignClass = fillContainerHeight
     ? "items-center justify-center"
@@ -55,23 +54,17 @@ export function HighlightVideoCard({
         ? "px-10 pb-8 pt-0"
         : "px-10 py-8";
 
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 640px)");
-    const apply = () => setIsSmUp(mq.matches);
-    apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
-  }, []);
-
   const resolvedMobileScale = mobileScale ?? desktopScale * 1.2;
-  const scale = isSmUp ? desktopScale : resolvedMobileScale;
 
   const videoStyle = useMemo<React.CSSProperties>(() => {
     const ty = translateYPercent ? `${translateYPercent}%` : "0%";
     return {
-      transform: `translateY(${ty}) scale(${scale})`,
+      // Use CSS media query (see `app/globals.css`) to avoid hydration/layout flicker.
+      ["--hv-scale-desktop" as never]: String(desktopScale),
+      ["--hv-scale-mobile" as never]: String(resolvedMobileScale),
+      ["--hv-ty" as never]: ty,
     };
-  }, [translateYPercent, scale]);
+  }, [desktopScale, resolvedMobileScale, translateYPercent]);
 
   const videoClass = fillContainerHeight
     ? `h-auto max-h-full w-auto max-w-full shrink-0 object-contain origin-center lg:h-full lg:w-auto lg:max-w-none ${videoClassName}`.trim()
@@ -94,7 +87,7 @@ export function HighlightVideoCard({
         ref={videoRef}
         width={dims.width}
         height={dims.height}
-        className={videoClass}
+        className={`${videoClass} highlight-video`.trim()}
         style={videoStyle}
         autoPlay
         loop
