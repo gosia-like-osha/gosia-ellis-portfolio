@@ -1,6 +1,5 @@
 import { StickyPillNav } from "../components/StickyPillNav";
 import barryDynamicPricing from "../../public/images/barry-dynamic-pricing.png";
-import aiExplorationsIllustration from "../../public/images/ai-explorations-illustration.png";
 import norlysIllustration from "../../public/images/norlys-illustration.png";
 import relesysIllustration from "../../public/images/relesys-illustration.png";
 import { CaseStudyCard } from "../components/CaseStudyCard";
@@ -43,14 +42,6 @@ export default function CaseStudiesPage() {
               illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[280px] h-[156px] md:w-[336.494px] md:h-[187.526px]"
               illustrationImageClassName="object-contain"
               href="/case-studies/relesys"
-            />
-            <CaseStudyCard
-              title="AI explorations"
-              subtitle="Case study coming soon"
-              illustrationSrc={aiExplorationsIllustration}
-              illustrationClassName="top-[40.57px] w-[285.503px] h-[310.55px]"
-              comingSoon
-              interactive={false}
             />
           </div>
         </section>

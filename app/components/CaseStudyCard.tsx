@@ -86,8 +86,11 @@ export function CaseStudyCard({
         </div>
       </div>
 
-      <div className="absolute z-30 inset-x-0 bottom-0 h-[139.943px]">
-        <Image alt="" src={cardOverlay} className="w-full h-full object-fill" priority={false} />
+      <div
+        className="absolute z-30 left-[-1px] right-[-1px] -bottom-[1px] aspect-[807/281] pointer-events-none"
+        aria-hidden="true"
+      >
+        <Image alt="" src={cardOverlay} fill className="object-cover object-bottom" priority={false} />
       </div>
 
       <div className="absolute z-40 left-[21.41px] top-[252.27px] flex flex-col gap-[4.964px] text-[#15171c]">
