@@ -27,7 +27,7 @@ export default function BarryEnergyCaseStudyPage() {
         <header className="pt-[62px]">
           <div className="font-semibold">
             <div className="text-[24px] opacity-50">Barry Energy</div>
-            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black">
+            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black lg:leading-[80px]">
               From rebrand to better usability
             </h1>
           </div>

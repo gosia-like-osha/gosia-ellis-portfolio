@@ -26,7 +26,7 @@ export default function NorlysCaseStudyPage() {
         <header className="pt-[62px]">
           <div className="font-semibold lg:pl-[5px]">
             <div className="text-[24px] opacity-50">Norlys</div>
-            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black">
+            <h1 className="mt-[4px] text-[40px] lg:text-[64px] tracking-[-0.3px] leading-[1.05] text-black lg:leading-[80px]">
               From utility to usability - reimagining the electricity bill
             </h1>
           </div>
