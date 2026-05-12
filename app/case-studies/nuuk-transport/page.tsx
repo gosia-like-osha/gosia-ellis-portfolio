@@ -80,12 +80,17 @@ export default function NuukTransportCaseStudyPage() {
 
               <div className="mt-[20px]">
                 <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Link</div>
-                <p className="mt-[4px] inline-flex items-center gap-[6px] text-[26px] tracking-[-0.26px] font-medium leading-[1.3]">
+                <a
+                  href="https://transport.gl/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-[4px] inline-flex items-center gap-[6px] text-[26px] tracking-[-0.26px] font-medium"
+                >
                   Website
                   <span className="text-[20px] leading-[1.3] font-medium translate-y-[1px] inline-block" aria-hidden="true">
                     ↗
                   </span>
-                </p>
+                </a>
               </div>
             </div>
 
