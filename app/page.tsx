@@ -1,72 +1,47 @@
+import { HighlightImageCard } from "./components/HighlightImageCard";
 import { StickyPillNav } from "./components/StickyPillNav";
 import { HighlightVideoCard } from "./components/HighlightVideoCard";
+
+import plentiPageImage from "../public/images/highlights/plenti-page.png";
+import mapImage from "../public/images/highlights/map.png";
+import savedImage from "../public/images/highlights/saved.png";
+import liveActivitiesImage from "../public/images/highlights/live-activities.png";
+import bikerideImage from "../public/images/highlights/bikeride.png";
+import colorPaletteImage from "../public/images/highlights/color-palette.png";
+import liveTranscribeImage from "../public/images/highlights/live-transcribe.png";
+import barryIconImage from "../public/images/highlights/barry-icon.png";
+import iconsImage from "../public/images/highlights/icons.png";
+import invoicesImage from "../public/images/highlights/invoices.png";
+import overviewImage from "../public/images/highlights/overview.png";
 
 /** Square highlight clips — intrinsic 1080×1080, scaled/centered in card (Figma). */
 const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
 
-/** Figma 4664:71153 — last tile on the right in the penultimate highlights row (701×506). */
-const HIGHLIGHT_ROW4_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157520/sport-widget_da2fw5.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776157515/sport-widget_vlp5bg.mp4",
-} as const;
-
-/** Figma 4640:71101 — row 1 left (466×532), AI image clip. */
+/** Row 1 left (758×532). */
 const HIGHLIGHT_ROW1_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776428392/imagechange_nsrmtb.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1776428392/imagechange_rmox78.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158305/1st-left_gbabkm.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158305/1st-left_kmayhz.mp4",
 } as const;
 
-/** Figma 4640:71113 — row 1 right (758×532). */
-const HIGHLIGHT_ROW1_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/transcript-web_kn43jp.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758089/transcript-mp_mlxbxa.mp4",
-} as const;
-
-/** Figma 4664:71136 — row 2 left (803×643). */
-const HIGHLIGHT_ROW2_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_lni3cr.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775991852/ai-invoice_kzcgz5.mp4",
-} as const;
-
-/** Figma 4640:71124 — row 2 right (421×643). */
-const HIGHLIGHT_ROW2_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758094/monthly-web_qobnwt.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758094/monthly-mp_ubaial.mp4",
-} as const;
-
-/** Row 3 left (lg:col-span-7) — AI invoice clip, full card height, centered. */
-const HIGHLIGHT_ROW3_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/ai-create-web_cj393k.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758084/ai-create-mp_ht3llk.mp4",
-} as const;
-
-/** Figma 4664:71141 — row 3 right (545×506), above Barry. */
-const HIGHLIGHT_ROW3_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777026826/barry-mobile_v2buzs.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1777026819/barry-mobile_vxxx3g.mp4",
-} as const;
-
-/** Figma 4664:71150 — row 4 left (523×506), left of Barry. */
+/** Row 4 left (466×532). */
 const HIGHLIGHT_ROW4_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758086/Live-Activities-web_uol1fe.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758086/Live-Activities-mp_mxwbii.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158881/image-ai-change_c2ysti.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158881/image-ai-change_gt1vxi.mp4",
 } as const;
-
-/** Figma 4664:71163 — bottom row left, feed clip. */
-const HIGHLIGHT_ROW5_LEFT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758085/feed-web_jj7wrx.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775758087/feed-mp_nygr86.mp4",
-} as const;
-
-/** Bottom row right — data graphs clip. */
+/** Row 5 right (612×532). */
 const HIGHLIGHT_ROW5_RIGHT = {
-  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932100/data-graphs_yydbxr.webm",
-  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1775932116/data-graphs_fy8dcf.mp4",
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158880/bike-widget_zljg1v.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780158880/bike-widget_zljg1v.mp4",
+} as const;
+/** Row 8 left (612×532). */
+const HIGHLIGHT_ROW8_LEFT = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780160306/cph-live_akgxgy.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1780160306/cph-live_lvkl8t.mp4",
 } as const;
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#15171c]">
+    <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
       <StickyPillNav activeTab="highlights" />
 
       <header className="w-full">
@@ -83,102 +58,161 @@ export default function Home() {
           className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[41px] pb-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {/* Row 1 — Figma 4640:71099: 466×532 + 758×532 (gap 16) */}
-            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,466fr)_minmax(0,758fr)]">
+            {/* Row 1 — Figma 4640:71099: 758×532 + 466×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,758fr)_minmax(0,466fr)]">
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW1_LEFT.webm}
                 mp4={HIGHLIGHT_ROW1_LEFT.mp4}
                 heightClass="h-[522px]"
-                desktopScale={1.242}
-                dims={HIGHLIGHT_VIDEO_DIMS}
-              />
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW1_RIGHT.webm}
-                mp4={HIGHLIGHT_ROW1_RIGHT.mp4}
-                heightClass="h-[522px]"
                 desktopScale={1.155}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
-            </div>
-
-            {/* Row 2 */}
-            <div className="lg:col-span-8">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW2_LEFT.webm}
-                mp4={HIGHLIGHT_ROW2_LEFT.mp4}
-                heightClass="h-[603px]"
-                fillContainerHeight
-                dims={HIGHLIGHT_VIDEO_DIMS}
-              />
-            </div>
-            <div className="lg:col-span-4">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW2_RIGHT.webm}
-                mp4={HIGHLIGHT_ROW2_RIGHT.mp4}
-                heightClass="h-[603px]"
-                verticalAlign="bottom"
-                dims={HIGHLIGHT_VIDEO_DIMS}
+              <HighlightImageCard
+                src={liveTranscribeImage}
+                alt="Live Transcribe highlight"
+                heightClass="h-[522px]"
+                width={1461}
+                height={960}
               />
             </div>
 
-            {/* Row 3 */}
-            <div className="lg:col-span-7">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW3_LEFT.webm}
-                mp4={HIGHLIGHT_ROW3_LEFT.mp4}
-                heightClass="h-[506px]"
-                fillContainerHeight
-                translateYPercent={10}
-                dims={HIGHLIGHT_VIDEO_DIMS}
+            {/* Row 2 — Figma 5285:83567: 612×532 + 612×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-2">
+              <HighlightImageCard
+                src={invoicesImage}
+                alt="Invoices highlight"
+                heightClass="h-[532px]"
+                width={1362}
+                height={675}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[454px]"
               />
-            </div>
-            <div className="lg:col-span-5">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW3_RIGHT.webm}
-                mp4={HIGHLIGHT_ROW3_RIGHT.mp4}
-                heightClass="h-[506px]"
-                verticalAlign="bottom"
-                dims={HIGHLIGHT_VIDEO_DIMS}
+              <HighlightImageCard
+                src={overviewImage}
+                alt="Overview highlight"
+                heightClass="h-[532px]"
+                width={1148}
+                height={1166}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[320px]"
               />
             </div>
 
-            {/* Row 4 */}
-            <div className="lg:col-span-6">
+            {/* Row 3 — Figma 5264:65646: 612×532 + 612×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-2">
+              <HighlightImageCard
+                src={iconsImage}
+                alt="App icons highlight"
+                heightClass="h-[532px]"
+                width={996}
+                height={648}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[332px]"
+              />
+              <HighlightImageCard
+                src={barryIconImage}
+                alt="Barry Energy app highlight"
+                heightClass="h-[532px]"
+                width={1500}
+                height={1356}
+                verticalAlign="top-edge"
+                imageClassName="sm:max-w-[500px]"
+              />
+            </div>
+
+            {/* Row 4 — Figma 5282:82009: 466×532 + 758×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,466fr)_minmax(0,758fr)]">
               <HighlightVideoCard
                 webm={HIGHLIGHT_ROW4_LEFT.webm}
                 mp4={HIGHLIGHT_ROW4_LEFT.mp4}
-                heightClass="h-[506px]"
-                verticalAlign="top"
+                heightClass="h-[532px]"
+                desktopScale={1.242}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
+              <HighlightImageCard
+                src={colorPaletteImage}
+                alt="AI color palette interface highlight"
+                heightClass="h-[532px]"
+                width={2244}
+                height={1497}
+                verticalAlign="top-edge"
+                imageClassName="sm:max-w-[748px]"
+              />
             </div>
-            <div className="lg:col-span-6">
+
+            {/* Row 5 — Figma 5285:83263: 612×532 + 612×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,612fr)_minmax(0,612fr)]">
+              <HighlightImageCard
+                src={bikerideImage}
+                alt="Morning bike ride highlight"
+                heightClass="h-[532px]"
+                width={955}
+                height={997}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[304px]"
+              />
               <HighlightVideoCard
-                webm={HIGHLIGHT_ROW4_RIGHT.webm}
-                mp4={HIGHLIGHT_ROW4_RIGHT.mp4}
-                heightClass="h-[506px]"
-                desktopScale={1.2075}
+                webm={HIGHLIGHT_ROW5_RIGHT.webm}
+                mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
+                heightClass="h-[532px]"
+                desktopScale={1.05}
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
             </div>
 
-            {/* Row 5 — same column widths as row 4 (lg:col-span-6 + lg:col-span-6) */}
-            <div className="lg:col-span-6">
-              <HighlightVideoCard
-                webm={HIGHLIGHT_ROW5_LEFT.webm}
-                mp4={HIGHLIGHT_ROW5_LEFT.mp4}
-                heightClass="h-[506px]"
-                verticalAlign="bottom"
-                dims={HIGHLIGHT_VIDEO_DIMS}
+            {/* Row 6 — Figma 5285:166310: 1240×636 full-width */}
+            <div className="col-span-full">
+              <HighlightImageCard
+                src={plentiPageImage}
+                alt="Plenti landing page highlight"
+                heightClass="h-[636px]"
+                width={2532}
+                height={1489}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[844px]"
               />
             </div>
-            <div className="lg:col-span-6">
+
+            {/* Row 7 — Figma 5298:182458: 612×532 + 612×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,612fr)_minmax(0,612fr)]">
+              <HighlightImageCard
+                src={mapImage}
+                alt="Ready for pickup map highlight"
+                heightClass="h-[532px]"
+                width={1299}
+                height={842}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[370px]"
+              />
+              <HighlightImageCard
+                src={savedImage}
+                alt="Saved folder highlight"
+                heightClass="h-[532px]"
+                width={855}
+                height={885}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[285px]"
+              />
+            </div>
+
+            {/* Row 8 — 612×532 + 612×532 (gap 16) */}
+            <div className="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,612fr)_minmax(0,612fr)]">
               <HighlightVideoCard
-                webm={HIGHLIGHT_ROW5_RIGHT.webm}
-                mp4={HIGHLIGHT_ROW5_RIGHT.mp4}
-                heightClass="h-[506px]"
-                desktopScale={1.21}
+                webm={HIGHLIGHT_ROW8_LEFT.webm}
+                mp4={HIGHLIGHT_ROW8_LEFT.mp4}
+                heightClass="h-[532px]"
+                verticalAlign="top"
+                desktopScale={1.05}
                 dims={HIGHLIGHT_VIDEO_DIMS}
+              />
+              <HighlightImageCard
+                src={liveActivitiesImage}
+                alt="Live Activities highlight"
+                heightClass="h-[532px]"
+                width={846}
+                height={1280}
+                verticalAlign="center"
+                imageClassName="sm:max-w-[282px]"
               />
             </div>
           </div>

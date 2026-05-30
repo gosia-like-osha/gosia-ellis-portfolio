@@ -3,7 +3,7 @@
 /* Light-only UI: avoid dark canvas behind mobile bottom padding / overscroll. */
 :root {
   color-scheme: light;
-  --background: #ffffff;
+  --background: #fcfcfc;
   --foreground: #171717;
 }
 
@@ -13,7 +13,7 @@
 }
 
 html {
-  background-color: #ffffff;
+  background-color: #fcfcfc;
 }
 
 body {

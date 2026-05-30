@@ -1,15 +1,17 @@
 import Image from "next/image";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
-import barry1 from "../../../public/images/barry/barry1.png";
-import barryAfter from "../../../public/images/barry/barry-after.png";
-import barry3 from "../../../public/images/barry/barry3.png";
-import barry4 from "../../../public/images/barry/barry4.png";
-import barryNewA from "../../../public/images/barry/barry-new-a.png";
-import barryNewB from "../../../public/images/barry/barry-new-b.png";
-import widgetLarge from "../../../public/images/barry/widget-large.png";
-import barry6 from "../../../public/images/barry/barry6.png";
-import barryHeroNew from "../../../public/images/barry/barry-hero-new.png";
+import b1 from "../../../public/images/barry/desktop/b1.png";
+import b2 from "../../../public/images/barry/desktop/b2.png";
+import b3 from "../../../public/images/barry/desktop/b3.png";
+import b4 from "../../../public/images/barry/desktop/b4.png";
+import b5 from "../../../public/images/barry/desktop/b5.png";
+import b6 from "../../../public/images/barry/desktop/b6.png";
+import b7 from "../../../public/images/barry/desktop/b7.png";
+import b8 from "../../../public/images/barry/desktop/b8.png";
+import b9 from "../../../public/images/barry/desktop/b9.png";
+import b10 from "../../../public/images/barry/desktop/b10.png";
+import b11 from "../../../public/images/barry/desktop/b11.png";
 import barryMobile1 from "../../../public/images/barry/mobile/barry-mobile-1.png";
 import barryMobile2 from "../../../public/images/barry/mobile/barry-mobile-2.png";
 import barryMobile3 from "../../../public/images/barry/mobile/barry-mobile-3.png";
@@ -20,7 +22,7 @@ import barryMobile7 from "../../../public/images/barry/mobile/barry-mobile-7.png
 
 export default function BarryEnergyCaseStudyPage() {
   return (
-    <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
+    <div className="min-h-screen bg-background text-[#15171c]">
       <CaseStudyBackNav />
 
       <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
@@ -69,15 +71,6 @@ export default function BarryEnergyCaseStudyPage() {
                   <div>Prototyping</div>
                   <div>User research</div>
                 </div>
-              </div>
-
-              <div className="mt-[20px] h-[2px] bg-[#15171c] opacity-10" />
-
-              <div className="mt-[20px]">
-                <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Link</div>
-                <p className="mt-[4px] text-[26px] tracking-[-0.26px] font-medium leading-[1.3]">
-                  The company closed down in 2021
-                </p>
               </div>
             </div>
 
@@ -152,96 +145,33 @@ export default function BarryEnergyCaseStudyPage() {
               <Image alt="" src={barryMobile7} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            {/* Desktop mockups */}
+            {/* Desktop mockups — Figma 4856:92401 */}
             <div className="hidden lg:block">
-              <div className="relative w-full aspect-[337/454] lg:aspect-[1240/510]">
-                <Image
-                  alt=""
-                  src={barryHeroNew}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 1240px, 100vw"
-                  quality={100}
-                />
+              <Image alt="" src={b1} className="h-auto w-full" sizes="1240px" quality={100} />
+
+              <div className="mt-[16px] grid grid-cols-[478px_746px] gap-[16px]">
+                <Image alt="" src={b2} className="h-auto w-full" sizes="478px" quality={100} />
+                <Image alt="" src={b3} className="h-auto w-full" sizes="746px" quality={100} />
               </div>
 
-              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[478px_746px] gap-[16px]">
-                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={barryAfter}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 478px, 100vw"
-                    quality={100}
-                  />
-                </div>
-                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={barryNewA}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 746px, 100vw"
-                    quality={100}
-                  />
-                </div>
+              <div className="mt-[16px] grid grid-cols-[746px_478px] gap-[16px]">
+                <Image alt="" src={b4} className="h-auto w-full" sizes="746px" quality={100} />
+                <Image alt="" src={b5} className="h-auto w-full" sizes="478px" quality={100} />
               </div>
 
-              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
-                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={barry3}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 746px, 100vw"
-                    quality={100}
-                  />
-                </div>
-                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={barry4}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 478px, 100vw"
-                    quality={100}
-                  />
-                </div>
+              <div className="mt-[16px] grid grid-cols-[618px_606px] gap-[16px]">
+                <Image alt="" src={b6} className="h-auto w-full" sizes="618px" quality={100} />
+                <Image alt="" src={b7} className="h-auto w-full" sizes="606px" quality={100} />
               </div>
 
-              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[618px_606px] gap-[16px]">
-                <div className="relative w-full aspect-[618/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={widgetLarge}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 618px, 100vw"
-                    quality={100}
-                  />
-                </div>
-                <div className="relative w-full aspect-[606/510] lg:aspect-auto lg:h-[510px]">
-                  <Image
-                    alt=""
-                    src={barry6}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 606px, 100vw"
-                    quality={100}
-                  />
-                </div>
+              <div className="mt-[16px] grid grid-cols-[746px_480px] gap-[16px]">
+                <Image alt="" src={b8} className="h-auto w-full" sizes="746px" quality={100} />
+                <Image alt="" src={b9} className="h-auto w-full" sizes="480px" quality={100} />
               </div>
 
-              {/* Last row (Figma move) */}
-              <div className="mt-[16px] grid grid-cols-1 lg:grid-cols-[746px_478px] gap-[16px]">
-                <div className="relative w-full aspect-[746/510] lg:aspect-auto lg:h-[510px]">
-                  <Image alt="" src={barry1} fill className="object-cover" sizes="(min-width: 1024px) 746px, 100vw" quality={100} />
-                </div>
-                <div className="relative w-full aspect-[478/510] lg:aspect-auto lg:h-[510px]">
-                  <Image alt="" src={barryNewB} fill className="object-cover" sizes="(min-width: 1024px) 478px, 100vw" quality={100} />
-                </div>
+              <div className="mt-[16px] grid grid-cols-[480px_746px] gap-[16px]">
+                <Image alt="" src={b10} className="h-auto w-full" sizes="480px" quality={100} />
+                <Image alt="" src={b11} className="h-auto w-full" sizes="746px" quality={100} />
               </div>
             </div>
           </div>

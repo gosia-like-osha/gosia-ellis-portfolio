@@ -1,16 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
-import norlys1st from "../../../public/images/norlys/norlys-1st.png";
-import norlys2nd from "../../../public/images/norlys/norlys-2nd.png";
-import norlys3rd from "../../../public/images/norlys/norlys-3rd.png";
-import norlys4th from "../../../public/images/norlys/norlys-4th.png";
-import norlysLastA from "../../../public/images/norlys/norlys-last-a.png";
-import norlysLastB from "../../../public/images/norlys/norlys-last-b.png";
-import norlysLastWide from "../../../public/images/norlys/norlys-last-wide.png";
-import norlysRow3Left from "../../../public/images/norlys/norlys-3rd-row-left.png";
-import norlysRow3Right from "../../../public/images/norlys/norlys-3rd-row-right.png";
+import norlysLys1 from "../../../public/images/norlys/norlys-lys1.png";
+import norlysLys2 from "../../../public/images/norlys/norlys-lys2.png";
+import norlysLys3 from "../../../public/images/norlys/norlys-lys3.png";
+import norlysLys4 from "../../../public/images/norlys/norlys-lys4.png";
+import norlysLys5 from "../../../public/images/norlys/norlys-lys5.png";
+import norlysLys6 from "../../../public/images/norlys/norlys-lys6.png";
+import norlysLys7 from "../../../public/images/norlys/norlys-lys7.png";
 import norlysMobile1 from "../../../public/images/norlys/mobile/norlys-mobile-1.png";
 import norlysMobile2 from "../../../public/images/norlys/mobile/norlys-mobile-2.png";
 import norlysMobile3 from "../../../public/images/norlys/mobile/norlys-mobile-3.png";
@@ -19,7 +16,7 @@ import norlysMobile5 from "../../../public/images/norlys/mobile/norlys-mobile-5.
 
 export default function NorlysCaseStudyPage() {
   return (
-    <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
+    <div className="min-h-screen bg-background text-[#15171c]">
       <CaseStudyBackNav />
 
       <main className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pb-24 max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
@@ -73,23 +70,6 @@ export default function NorlysCaseStudyPage() {
                     <div>UX Design</div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-[20px] h-[2px] bg-[#15171c] opacity-10" />
-
-              <div className="mt-[20px]">
-                <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Link</div>
-                <a
-                  href="https://norlys.dk/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-[4px] inline-flex items-center gap-[6px] text-[26px] tracking-[-0.26px] font-medium"
-                >
-                  Website
-                  <span className="text-[20px] leading-[1.3] font-medium translate-y-[1px] inline-block" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
               </div>
             </div>
 
@@ -153,13 +133,13 @@ export default function NorlysCaseStudyPage() {
               <Image alt="" src={norlysMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            {/* Desktop mockups */}
+            {/* Desktop mockups — Figma 5318:86075 */}
             <div className="hidden lg:block">
               <div className="grid grid-cols-1 lg:grid-cols-[722px_502px] gap-[16px]">
                 <div className="relative w-full aspect-[722/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
-                    src={norlys1st}
+                    src={norlysLys1}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 722px, 100vw"
@@ -169,7 +149,7 @@ export default function NorlysCaseStudyPage() {
                 <div className="relative w-full aspect-[502/510] lg:aspect-auto lg:h-[510px]">
                   <Image
                     alt=""
-                    src={norlys2nd}
+                    src={norlysLys2}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 502px, 100vw"
@@ -182,7 +162,7 @@ export default function NorlysCaseStudyPage() {
                 <div className="relative w-full aspect-[588/575] lg:aspect-auto lg:h-[575px]">
                   <Image
                     alt=""
-                    src={norlys3rd}
+                    src={norlysLys3}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 588px, 100vw"
@@ -192,7 +172,7 @@ export default function NorlysCaseStudyPage() {
                 <div className="relative w-full aspect-[636/575] lg:aspect-auto lg:h-[575px]">
                   <Image
                     alt=""
-                    src={norlys4th}
+                    src={norlysLys4}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 636px, 100vw"
@@ -201,23 +181,25 @@ export default function NorlysCaseStudyPage() {
                 </div>
               </div>
 
-              {/* Additional desktop exports (Figma 4851:90785) */}
               <div className="mt-[16px] grid grid-cols-1 gap-[16px] lg:grid-cols-[588px_636px]">
                 <div className="relative h-[588px] w-full">
-                  <Image alt="" src={norlysRow3Left} fill className="object-cover" sizes="(min-width: 1024px) 588px, 100vw" quality={100} />
+                  <Image alt="" src={norlysLys5} fill className="object-cover" sizes="(min-width: 1024px) 588px, 100vw" quality={100} />
                 </div>
                 <div className="relative h-[588px] w-full">
-                  <Image alt="" src={norlysRow3Right} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
+                  <Image alt="" src={norlysLys6} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
                 </div>
               </div>
 
-              <Image
-                alt=""
-                src={norlysLastWide}
-                className="mt-[16px] h-auto w-full"
-                sizes="(min-width: 1024px) 1240px, 100vw"
-                quality={100}
-              />
+              <div className="relative mt-[16px] h-[706px] w-full">
+                <Image
+                  alt=""
+                  src={norlysLys7}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 1240px, 100vw"
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -1,13 +1,12 @@
 import { StickyPillNav } from "../components/StickyPillNav";
 import barryDynamicPricing from "../../public/images/barry-dynamic-pricing.png";
 import norlysIllustration from "../../public/images/norlys-illustration.png";
-import nuukTransportIllustration from "../../public/images/nuuk-transport-illustration.png";
-import relesysIllustration from "../../public/images/relesys-illustration.png";
+import nuukFrontIllustration from "../../public/images/nuuk-front.png";
 import { CaseStudyCard } from "../components/CaseStudyCard";
 
 export default function CaseStudiesPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#15171c]">
+    <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
       <StickyPillNav activeTab="case-studies" />
 
       <header className="w-full">
@@ -31,26 +30,19 @@ export default function CaseStudiesPage() {
               href="/case-studies/norlys"
             />
             <CaseStudyCard
+              title="Nuuk Transport"
+              subtitle="Digitalising relocation logistics"
+              illustrationSrc={nuukFrontIllustration}
+              illustrationClassName="top-[36px] w-[262px] h-[172px] md:top-[53.07px] md:w-[337px] md:h-[221px]"
+              illustrationImageClassName="object-contain object-top"
+              hoverLiftPercent={5}
+              href="/case-studies/nuuk-transport"
+            />
+            <CaseStudyCard
               title="Barry energy"
               subtitle="Designing a smarter energy experience"
               illustrationSrc={barryDynamicPricing}
               href="/case-studies/barry-energy"
-            />
-            <CaseStudyCard
-              title="Relesys"
-              subtitle="Designing a connected workforce platform"
-              illustrationSrc={relesysIllustration}
-              illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[280px] h-[156px] md:w-[336.494px] md:h-[187.526px]"
-              illustrationImageClassName="object-contain"
-              href="/case-studies/relesys"
-            />
-            <CaseStudyCard
-              title="Nuuk Transport"
-              subtitle="Digitalising relocation logistics"
-              illustrationSrc={nuukTransportIllustration}
-              illustrationClassName="left-[calc(50%+0.46px)] top-[calc(50%-10.13px)] -translate-y-1/2 w-[280px] h-[156px] md:w-[336.494px] md:h-[187.526px]"
-              illustrationImageClassName="object-contain"
-              href="/case-studies/nuuk-transport"
             />
           </div>
         </section>

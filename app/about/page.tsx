@@ -6,7 +6,7 @@ import aboutPhoto from "../../public/images/about-photo.png";
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#15171c]">
+    <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
       <StickyPillNav activeTab="about" />
 
       <header className="w-full">

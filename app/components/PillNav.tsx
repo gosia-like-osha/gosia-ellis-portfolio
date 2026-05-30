@@ -49,7 +49,7 @@ export function PillNav({
             mobile
               ? "h-[46px] min-h-[46px] shrink-0 items-center pl-[17px] pr-[19px]"
               : "h-full px-[34px] pt-[12px] pb-[11px]",
-            isActive ? "bg-[#f2f2f2] text-[#15171c]" : "text-[#999] hover:text-[#15171c]",
+            isActive ? "bg-[#272727] text-white" : "text-[#999] hover:text-[#15171c]",
             isDisabled ? "opacity-50 cursor-not-allowed hover:text-[#999]" : "",
           ]
             .filter(Boolean)

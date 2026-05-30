@@ -80,7 +80,7 @@ export function HighlightVideoCard({
 
   return (
     <div
-      className={`flex w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-[#f7f7f9] ${paddingClass} ${alignClass} ${heightClass}`}
+      className={`flex w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-background ${paddingClass} ${alignClass} ${heightClass}`}
     >
       <video
         key={`${webm}|${mp4}`}

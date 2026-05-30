@@ -3,7 +3,7 @@ import { StickyPillNav } from "../components/StickyPillNav";
 /** First-pass workspace shell — image + chrome only; actions are non-functional. */
 export default function PreviewPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-[#15171c]">
+    <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
       <StickyPillNav activeTab="highlights" />
 
       <header className="w-full">

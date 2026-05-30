@@ -2,14 +2,11 @@ import Image from "next/image";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
 
-import nuuk1 from "../../../public/images/nuuk-transport/desktop/nuuk1.png";
-import nuuk2 from "../../../public/images/nuuk-transport/desktop/nuuk2.png";
-import nuuk3 from "../../../public/images/nuuk-transport/desktop/nuuk3.png";
-import nuuk4 from "../../../public/images/nuuk-transport/desktop/nuuk4.png";
-import nuuk5 from "../../../public/images/nuuk-transport/desktop/nuuk5.png";
-import nuuk6 from "../../../public/images/nuuk-transport/desktop/nuuk6.png";
-import nuuk7 from "../../../public/images/nuuk-transport/desktop/nuuk7.png";
-import nuuk8 from "../../../public/images/nuuk-transport/desktop/nuuk8.png";
+import n1 from "../../../public/images/nuuk-transport/desktop/n1.png";
+import n2 from "../../../public/images/nuuk-transport/desktop/n2.png";
+import n3 from "../../../public/images/nuuk-transport/desktop/n3.png";
+import n4 from "../../../public/images/nuuk-transport/desktop/n4.png";
+import n5 from "../../../public/images/nuuk-transport/desktop/n5.png";
 
 import nuuk1M from "../../../public/images/nuuk-transport/mobile/nuuk1M.png";
 import nuuk2M from "../../../public/images/nuuk-transport/mobile/nuuk2M.png";
@@ -21,7 +18,7 @@ import nuuk7M from "../../../public/images/nuuk-transport/mobile/nuuk7M.png";
 
 export default function NuukTransportCaseStudyPage() {
   return (
-    <div className="min-h-screen bg-[#f2f2f2] text-[#15171c]">
+    <div className="min-h-screen bg-background text-[#15171c]">
       <CaseStudyBackNav />
 
       <main className="mx-auto max-w-[1440px] px-6 pb-24 lg:px-[100px] max-sm:pb-[calc(6rem+110px+env(safe-area-inset-bottom,0px))]">
@@ -74,23 +71,6 @@ export default function NuukTransportCaseStudyPage() {
                     <div>UX Design</div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-[20px] h-[2px] bg-[#15171c] opacity-10" />
-
-              <div className="mt-[20px]">
-                <div className="text-[16px] tracking-[-0.16px] opacity-50 font-medium">Link</div>
-                <a
-                  href="https://transport.gl/en/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-[4px] inline-flex items-center gap-[6px] text-[26px] tracking-[-0.26px] font-medium"
-                >
-                  Website
-                  <span className="text-[20px] leading-[1.3] font-medium translate-y-[1px] inline-block" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
               </div>
             </div>
 
@@ -159,26 +139,18 @@ export default function NuukTransportCaseStudyPage() {
               <Image alt="" src={nuuk7M} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
-            {/* Desktop grid */}
+            {/* Desktop grid — Figma 5084:92222 */}
             <div className="hidden lg:block">
-              <div className="grid grid-cols-[722px_502px] gap-[16px]">
-                <Image alt="" src={nuuk1} className="h-auto w-full" sizes="722px" quality={100} />
-                <Image alt="" src={nuuk2} className="h-auto w-full" sizes="502px" quality={100} />
-              </div>
+              <Image alt="" src={n1} className="h-auto w-full" sizes="1240px" quality={100} />
 
-              <div className="mt-[16px] grid grid-cols-[722px_502px] gap-[16px]">
-                <Image alt="" src={nuuk3} className="h-auto w-full" sizes="722px" quality={100} />
-                <Image alt="" src={nuuk4} className="h-auto w-full" sizes="502px" quality={100} />
+              <div className="mt-[16px] grid grid-cols-[612px_612px] gap-[16px]">
+                <Image alt="" src={n2} className="h-auto w-full" sizes="612px" quality={100} />
+                <Image alt="" src={n3} className="h-auto w-full" sizes="612px" quality={100} />
               </div>
 
               <div className="mt-[16px] grid grid-cols-[612px_612px] gap-[16px]">
-                <Image alt="" src={nuuk5} className="h-auto w-full" sizes="612px" quality={100} />
-                <Image alt="" src={nuuk6} className="h-auto w-full" sizes="612px" quality={100} />
-              </div>
-
-              <div className="mt-[16px] grid grid-cols-[464px_760px] gap-[16px]">
-                <Image alt="" src={nuuk7} className="h-auto w-full" sizes="464px" quality={100} />
-                <Image alt="" src={nuuk8} className="h-auto w-full" sizes="760px" quality={100} />
+                <Image alt="" src={n4} className="h-auto w-full" sizes="612px" quality={100} />
+                <Image alt="" src={n5} className="h-auto w-full" sizes="612px" quality={100} />
               </div>
             </div>
           </div>
