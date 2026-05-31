@@ -2,7 +2,9 @@ import Image from "next/image";
 
 import { CaseStudyBackNav } from "../../components/CaseStudyBackNav";
 
-import n1 from "../../../public/images/nuuk-transport/desktop/n1.png";
+import nuuk1st from "../../../public/images/nuuk-transport/desktop/nuuk1st.png";
+import nuuk06 from "../../../public/images/nuuk-transport/desktop/nuuk06.png";
+import nuuklast from "../../../public/images/nuuk-transport/desktop/nuuklast.png";
 import n2 from "../../../public/images/nuuk-transport/desktop/n2.png";
 import n3 from "../../../public/images/nuuk-transport/desktop/n3.png";
 import n4 from "../../../public/images/nuuk-transport/desktop/n4.png";
@@ -141,7 +143,19 @@ export default function NuukTransportCaseStudyPage() {
 
             {/* Desktop grid — Figma 5084:92222 */}
             <div className="hidden lg:block">
-              <Image alt="" src={n1} className="h-auto w-full" sizes="1240px" quality={100} />
+              {/* N1 — Figma 5309:83898: 1240×636; inner page 844×554 @ (198, 41) */}
+              <div className="relative h-[636px] w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-background">
+                <div className="absolute left-[198px] top-[41px] h-[554px] w-[844px]">
+                  <Image
+                    alt=""
+                    src={nuuk1st}
+                    fill
+                    className="object-cover"
+                    sizes="844px"
+                    quality={100}
+                  />
+                </div>
+              </div>
 
               <div className="mt-[16px] grid grid-cols-[612px_612px] gap-[16px]">
                 <Image alt="" src={n2} className="h-auto w-full" sizes="612px" quality={100} />
@@ -151,6 +165,32 @@ export default function NuukTransportCaseStudyPage() {
               <div className="mt-[16px] grid grid-cols-[612px_612px] gap-[16px]">
                 <Image alt="" src={n4} className="h-auto w-full" sizes="612px" quality={100} />
                 <Image alt="" src={n5} className="h-auto w-full" sizes="612px" quality={100} />
+              </div>
+
+              <div className="relative mt-[16px] h-[636px] w-full overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-background">
+                <div className="absolute left-[198px] top-[41px] h-[554px] w-[844px]">
+                  <Image
+                    alt=""
+                    src={nuuk06}
+                    fill
+                    className="object-cover"
+                    sizes="844px"
+                    quality={100}
+                  />
+                </div>
+              </div>
+
+              {/* N5 — 612×510 container; nuuklast 488×448 @3x, bottom-centered (62px inset) */}
+              <div className="relative mt-[16px] flex h-[510px] w-[612px] items-end justify-center overflow-hidden rounded-[40px] border border-[rgba(21,23,28,0.1)] bg-background">
+                <Image
+                  alt=""
+                  src={nuuklast}
+                  width={1465}
+                  height={1344}
+                  className="h-auto w-[488px]"
+                  sizes="488px"
+                  quality={100}
+                />
               </div>
             </div>
           </div>
