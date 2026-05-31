@@ -8,11 +8,11 @@ import savedImage from "../public/images/highlights/saved.png";
 import liveActivitiesImage from "../public/images/highlights/live-activities.png";
 import bikerideImage from "../public/images/highlights/bikeride.png";
 import colorPaletteImage from "../public/images/highlights/color-palette.png";
-import liveTranscribeImage from "../public/images/highlights/live-transcribe.png";
 import barryIconImage from "../public/images/highlights/barry-icon.png";
 import iconsImage from "../public/images/highlights/icons.png";
 import invoicesImage from "../public/images/highlights/invoices.png";
 import overviewImage from "../public/images/highlights/overview.png";
+import row1RightImage from "../public/images/highlights/1strow-right.png";
 
 /** Square highlight clips — intrinsic 1080×1080, scaled/centered in card (Figma). */
 const HIGHLIGHT_VIDEO_DIMS = { width: 1080, height: 1080 } as const;
@@ -68,10 +68,10 @@ export default function Home() {
                 dims={HIGHLIGHT_VIDEO_DIMS}
               />
               <HighlightImageCard
-                src={liveTranscribeImage}
+                src={row1RightImage}
                 alt="Live Transcribe highlight"
                 heightClass="h-[522px]"
-                width={1461}
+                width={1263}
                 height={960}
               />
             </div>
