@@ -79,13 +79,11 @@ export default function BarryEnergyCaseStudyPage() {
               <div className="w-full">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Problem</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  A rebrand gave Barry Energy a fresh visual identity. But user testing quickly exposed the
-                  gap between aesthetics and usability. The interface had information, but it wasn&apos;t
-                  organized in a way that helped users understand it.
-                </p>
-                <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Graphs competed with each other, numbers lacked context, and there was no visual hierarchy
-                  to guide decision-making.
+                  A rebrand gave Barry Energy a fresh visual identity, but user testing quickly revealed
+                  the gap between aesthetics and usability. The interface contained information, but it
+                  wasn&apos;t organised in a way that helped users understand it. Graphs competed for
+                  attention, numbers lacked context, and there was no visual hierarchy to guide
+                  decision-making.
                 </p>
               </div>
 
@@ -93,14 +91,14 @@ export default function BarryEnergyCaseStudyPage() {
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Strategy: Color as meaning</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
                   Instead of redesigning everything, we asked: what if we used color strategically to create
-                  instant understanding? We developed a color system for quick recognition and decision-making
+                  instant understanding? We developed a color system for quick recognition and decision-making.
                 </p>
                 <p className="mt-[20px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  We mapped every interaction to this system. Price information used the{" "}
-                  <span className="font-semibold text-[#15171c]">green-to-red</span> gradient. Renewable
-                  energy was always <span className="font-semibold text-[#15171c]">green</span>. Usage graphs
-                  inherited these meanings. Suddenly, users could scan the screen and understand the current
-                  state at a single glance.
+                  We mapped every interaction to this system. Price information used a{" "}
+                  <span className="font-semibold text-[#15171c]">green-to-red</span> gradient, while
+                  renewable energy was always shown in{" "}
+                  <span className="font-semibold text-[#15171c]">green</span>. Usage graphs inherited these
+                  meanings. Suddenly, users could scan the screen and understand the current state at a glance.
                 </p>
               </div>
 
@@ -108,23 +106,21 @@ export default function BarryEnergyCaseStudyPage() {
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Result</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
                   User testing post-launch showed a clear shift. In comprehension tests,{" "}
-                  <span className="font-semibold text-[#15171c]">82%</span> of users could now accurately
-                  explain what they were seeing and why it mattered, compared to{" "}
+                  <span className="font-semibold text-[#15171c]">82%</span> of users could accurately
+                  explain what they were seeing and why it mattered, compared with{" "}
                   <span className="font-semibold text-[#15171c]">71%</span> before. We also saw a{" "}
-                  <span className="font-semibold text-[#15171c]">27%</span>{" "}
-                  increase in users actively using
-                  price-based controls to shift their consumption patterns, proving the design wasn&apos;t just
-                  clearer, but actionable.
+                  <span className="font-semibold text-[#15171c]">27%</span> increase in users actively using
+                  price-based controls to adjust their consumption patterns, proving the design was not just
+                  clearer, but also actionable.
                 </p>
               </div>
 
               <div className="w-full">
                 <div className="text-[26px] tracking-[-0.26px] font-semibold">Why it worked</div>
                 <p className="mt-[10px] text-[20px] tracking-[-0.2px] text-[rgba(21,23,28,0.7)] font-medium leading-[1.3]">
-                  Through user interviews and testing, we learned that in a data-heavy interface users
-                  don&apos;t read, they scan. A robust color system gives them a quick way to familiarize
-                  themselves with the data. Green means &quot;good,&quot; red means &quot;expensive” simple,
-                  yet effective.
+                  Through user interviews and testing, we learned that in data-heavy interfaces, users
+                  don&apos;t read, they scan. A robust color system gives them a quick way to interpret the
+                  data. Green means &quot;good,&quot; red means &quot;expensive&quot;, simple yet effective.
                 </p>
               </div>
             </div>
