@@ -7,12 +7,10 @@ import norlysLys3 from "../../../public/images/norlys/norlys-lys3.png";
 import norlysLys4 from "../../../public/images/norlys/norlys-lys4.png";
 import norlysLys5 from "../../../public/images/norlys/norlys-lys5.png";
 import norlysLys6 from "../../../public/images/norlys/norlys-lys6.png";
-import norlysLys7 from "../../../public/images/norlys/norlys-lys7.png";
 import norlysMobile1 from "../../../public/images/norlys/mobile/norlys-mobile-1.png";
 import norlysMobile2 from "../../../public/images/norlys/mobile/norlys-mobile-2.png";
 import norlysMobile3 from "../../../public/images/norlys/mobile/norlys-mobile-3.png";
 import norlysMobile4 from "../../../public/images/norlys/mobile/norlys-mobile-4.png";
-import norlysMobile5 from "../../../public/images/norlys/mobile/norlys-mobile-5.png";
 
 export default function NorlysCaseStudyPage() {
   return (
@@ -130,7 +128,6 @@ export default function NorlysCaseStudyPage() {
               <Image alt="" src={norlysMobile2} className="h-auto w-full" sizes="100vw" quality={100} />
               <Image alt="" src={norlysMobile3} className="h-auto w-full" sizes="100vw" quality={100} />
               <Image alt="" src={norlysMobile4} className="h-auto w-full" sizes="100vw" quality={100} />
-              <Image alt="" src={norlysMobile5} className="h-auto w-full" sizes="100vw" quality={100} />
             </div>
 
             {/* Desktop mockups — Figma 5318:86075 */}
@@ -188,17 +185,6 @@ export default function NorlysCaseStudyPage() {
                 <div className="relative h-[588px] w-full">
                   <Image alt="" src={norlysLys6} fill className="object-cover" sizes="(min-width: 1024px) 636px, 100vw" quality={100} />
                 </div>
-              </div>
-
-              <div className="relative mt-[16px] h-[706px] w-full">
-                <Image
-                  alt=""
-                  src={norlysLys7}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 1240px, 100vw"
-                  quality={100}
-                />
               </div>
             </div>
           </div>
