@@ -189,9 +189,9 @@ export default function Home() {
               <HighlightSlot className="h-[607px]">
                 {/* Figma 5795:18086 — 400×486 (20% smaller), phone flush to bottom */}
                 <video
-                  className="absolute bottom-0 left-1/2 block h-[486px] w-[400px] -translate-x-1/2 object-cover object-bottom"
-                  width={400}
-                  height={486}
+                  className="absolute bottom-0 left-1/2 block h-[535px] w-[440px] -translate-x-1/2 object-cover object-bottom"
+                  width={440}
+                  height={535}
                   autoPlay
                   loop
                   muted
@@ -208,7 +208,17 @@ export default function Home() {
                   />
                 </video>
               </HighlightSlot>
-              <HighlightSlot className="h-[607px]" />
+              <HighlightSlot className="h-[607px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/highlights/row-5-right.png"
+                  alt=""
+                  width={1836}
+                  height={846}
+                  className="block h-auto w-full"
+                  decoding="async"
+                />
+              </HighlightSlot>
             </div>
 
             {/* Row 6 */}
