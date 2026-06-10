@@ -1,22 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { geistSans } from "./fonts";
 import "./globals.css";
-
-const satoshi = localFont({
-  src: [
-    { path: "../public/fonts/satoshi/Satoshi-Light.otf", weight: "300", style: "normal" },
-    { path: "../public/fonts/satoshi/Satoshi-Regular.otf", weight: "400", style: "normal" },
-    { path: "../public/fonts/satoshi/Satoshi-Medium.otf", weight: "500", style: "normal" },
-    { path: "../public/fonts/satoshi/Satoshi-Bold.otf", weight: "700", style: "normal" },
-    { path: "../public/fonts/satoshi/Satoshi-Black.otf", weight: "900", style: "normal" },
-    { path: "../public/fonts/satoshi/Satoshi-LightItalic.otf", weight: "300", style: "italic" },
-    { path: "../public/fonts/satoshi/Satoshi-Italic.otf", weight: "400", style: "italic" },
-    { path: "../public/fonts/satoshi/Satoshi-MediumItalic.otf", weight: "500", style: "italic" },
-    { path: "../public/fonts/satoshi/Satoshi-BoldItalic.otf", weight: "700", style: "italic" },
-    { path: "../public/fonts/satoshi/Satoshi-BlackItalic.otf", weight: "900", style: "italic" },
-  ],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Gosia Ellis",
@@ -29,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.className} min-h-screen bg-background antialiased`}>
+    <html lang="en" className={`${geistSans.className} min-h-screen bg-background antialiased`}>
       <body className="min-h-screen flex flex-col bg-background pb-[calc(112px+env(safe-area-inset-bottom,0px))] sm:pb-0">
         {children}
       </body>

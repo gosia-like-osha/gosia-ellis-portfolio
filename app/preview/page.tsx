@@ -1,18 +1,12 @@
+import { SiteHeader } from "../components/SiteHeader";
 import { StickyPillNav } from "../components/StickyPillNav";
 
 /** First-pass workspace shell — image + chrome only; actions are non-functional. */
 export default function PreviewPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
-      <StickyPillNav activeTab="highlights" />
-
-      <header className="w-full">
-        <div className="mx-auto flex max-w-[1440px] items-start justify-between gap-6 px-6 pt-[28px] lg:px-[100px]">
-          <div className="pt-[6px] text-[28px] font-semibold leading-[1.3] tracking-[-0.28px] whitespace-nowrap sm:text-[31px] sm:tracking-[-0.31px]">
-            Gosia Ellis
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
+      <StickyPillNav />
 
       <main className="w-full flex-1 pb-24 sm:pb-16">
         <div className="mx-auto max-w-[1440px] px-6 pt-[41px] lg:px-[100px]">
