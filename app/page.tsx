@@ -35,12 +35,12 @@ export default function Home() {
           {/* Figma 5795:17839 — intro + 1240 grid */}
           <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-[24px]">
             {/* Figma 5804:18284 */}
-            <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-0 text-[18px] font-normal leading-[27px] text-black">
+            <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-0 text-[18px] font-normal leading-[26px] text-black">
               <p className="max-w-[532px] shrink-0">
                 Multidisciplinary designer based in Copenhagen, bridging the gap between brand and
                 UX.
               </p>
-              <div className="flex w-full shrink-0 flex-col items-start gap-[3px] sm:w-[323px] sm:items-end">
+              <div className="flex w-full shrink-0 flex-col items-start gap-0 sm:w-[323px] sm:items-end">
                 <p className="whitespace-nowrap">Selected work</p>
                 <p className="text-[#838383] sm:text-right">2021-2026</p>
               </div>
@@ -97,15 +97,16 @@ export default function Home() {
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px] !items-end !justify-end">
-                {/* Figma 5795:17968 — monitor mockup flush to right edge */}
-                <Image
+              <HighlightSlot className="h-[670px]">
+                {/* Figma 5795:17968 — Frame 2147231770 at x:94 y:0, 529×670 */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/highlights/row-2-right.png"
                   alt=""
-                  width={791}
-                  height={1024}
-                  className="h-full w-auto max-w-none"
-                  quality={100}
+                  width={1554}
+                  height={2010}
+                  className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none"
+                  decoding="async"
                 />
               </HighlightSlot>
             </div>
@@ -119,16 +120,16 @@ export default function Home() {
                   alt=""
                   width={966}
                   height={1024}
-                  className="h-[297px] w-[258px] shrink-0 object-contain"
+                  className="h-[342px] w-[297px] shrink-0 object-contain"
                   quality={100}
                 />
               </HighlightSlot>
               <HighlightSlot className="h-[670px]">
-                {/* Figma 5795:17989 — 262×424 + 20% */}
+                {/* Figma 5795:17989 — +15% */}
                 <video
-                  className="h-[509px] w-[314px] shrink-0 object-contain"
-                  width={314}
-                  height={509}
+                  className="h-[585px] w-[361px] shrink-0 object-contain"
+                  width={361}
+                  height={585}
                   autoPlay
                   loop
                   muted
@@ -161,17 +162,14 @@ export default function Home() {
                 />
               </HighlightSlot>
               <HighlightSlot className="h-[670px]">
-                {/* Figma 5795:18032 — left 78px, top 143px, bleeds to right + bottom */}
-                <div className="absolute left-[78px] top-[143px] right-0 bottom-0 flex items-end justify-end">
-                  <Image
-                    src="/images/highlights/row-4-middle.png"
-                    alt=""
-                    width={682}
-                    height={1024}
-                    className="h-full w-auto max-w-full object-contain object-right-bottom"
-                    quality={100}
-                  />
-                </div>
+                <Image
+                  src="/images/highlights/row-4-middle.png"
+                  alt=""
+                  width={682}
+                  height={1024}
+                  className="absolute left-[70px] top-[62px] block h-auto w-auto"
+                  quality={100}
+                />
               </HighlightSlot>
               <HighlightSlot className="h-[670px]">
                 {/* Figma 5795:18043 — cards, left 21px, vertically centered */}
@@ -230,32 +228,30 @@ export default function Home() {
                 />
               </HighlightSlot>
               <HighlightSlot className="h-[670px]">
-                {/* Figma 5795:18099 — studio display mockup */}
-                <Image
+                {/* Figma 5795:18099 — Frame 2147231774, 50px from left (562×670 visible) */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/highlights/row-6-right.png"
                   alt=""
-                  width={612}
-                  height={670}
-                  className="absolute inset-0 h-full w-full"
-                  quality={100}
+                  width={1124}
+                  height={1340}
+                  className="absolute left-[50px] top-0 block h-auto w-[562px] max-w-none"
+                  decoding="async"
                 />
               </HighlightSlot>
             </div>
 
             {/* Row 7 — 1240×670 full width */}
             <HighlightSlot className="h-[670px]">
-              {/* Figma 5815:21955 — 871×583 centered, bleeds 14px below bottom */}
-              <div className="absolute bottom-[-14px] left-1/2 h-[583px] w-[871px] -translate-x-1/2">
-                <Image
-                  src="/images/highlights/row-7-full.png"
-                  alt=""
-                  width={1024}
-                  height={670}
-                  unoptimized
-                  className="block h-[583px] w-[871px] max-w-none"
-                  quality={100}
-                />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/highlights/row-7-full.png"
+                alt=""
+                width={2613}
+                height={1710}
+                className="absolute left-1/2 top-[100px] block h-auto w-[871px] max-w-none -translate-x-1/2"
+                decoding="async"
+              />
             </HighlightSlot>
             </div>
           </div>

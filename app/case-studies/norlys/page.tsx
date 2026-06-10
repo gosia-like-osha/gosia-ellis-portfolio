@@ -6,6 +6,11 @@ const NORNOR_VIDEO = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781099895/nornor_xejizt.mp4",
 } as const;
 
+const NORNORNOR_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781105946/nornornor_rjoxs3.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781105946/nornornor_v4ftve.mp4",
+} as const;
+
 /** Figma 5804:18279 — 1240×670 hero shell */
 function HeroTile({ children }: { children?: React.ReactNode }) {
   return (
@@ -40,17 +45,19 @@ export default function NorlysCaseStudyPage() {
       <main className="w-full pb-16 max-sm:pb-[calc(4rem+110px+env(safe-area-inset-bottom,0px))]">
         {/* Intro — Figma 5804:18238 + 5804:18246 */}
         <section className="mx-auto max-w-[1440px] px-6 pt-[80px] lg:px-[100px]">
-          <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[219px] gap-y-[48px] lg:grid-cols-[444px_577px] lg:items-start">
+          <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[196px] gap-y-[48px] lg:grid-cols-[444px_600px] lg:items-start">
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">Norlys</h1>
-              <div className="flex flex-col gap-[5px] text-[18px] font-normal leading-[27px]">
+              <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
                 <p>Role: LEAD pRODUCT DESIGNER</p>
-                <p className="text-[#999]">UI Design, Interaction, UX design, mobile app</p>
+                <p className="whitespace-nowrap font-medium text-[#999] max-lg:whitespace-normal">
+                  UI Design, Interaction, UX design, mobile app
+                </p>
               </div>
             </div>
 
             <div className="flex flex-col gap-[24px]">
-              <h2 className="text-[42px] font-medium uppercase leading-[50px] tracking-[0.042px]">
+              <h2 className="whitespace-nowrap text-[42px] font-medium uppercase leading-[50px] tracking-[0.042px] max-lg:whitespace-normal">
                 From utility to usability
               </h2>
               <div className="flex flex-col gap-[20px]">
@@ -129,9 +136,9 @@ export default function NorlysCaseStudyPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/norlys/case-study/row-2-wooden.png"
-                  alt="Norlys monthly report on iPhone with wooden texture"
-                  width={935}
-                  height={1024}
+                  alt="Norlys monthly report on iPhone"
+                  width={1836}
+                  height={2010}
                   className="block h-auto w-full"
                   decoding="async"
                 />
@@ -152,9 +159,23 @@ export default function NorlysCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 3 — Figma 5745:15137 (both tiles empty) */}
+            {/* Row 3 — Figma 5745:15137 */}
             <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
-              <MockupTile empty />
+              <MockupTile>
+                <video
+                  className="absolute bottom-0 left-1/2 block h-auto w-[534px] max-w-none -translate-x-1/2"
+                  width={534}
+                  height={649}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={NORNORNOR_VIDEO.webm} type="video/webm" />
+                  <source src={NORNORNOR_VIDEO.mp4} type="video/mp4" />
+                </video>
+              </MockupTile>
               <MockupTile empty />
             </div>
 

@@ -69,9 +69,9 @@ export default function BarryEnergyCaseStudyPage() {
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[219px] gap-y-[48px] lg:grid-cols-[444px_577px] lg:items-start">
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">Barry energy</h1>
-              <div className="flex flex-col gap-[5px] text-[18px] font-normal leading-[27px]">
+              <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
                 <p>Role: LEAD UI DESIGNER</p>
-                <p className="text-[#999]">vISUAL IDENTITY, UI DESIGN, ILLUSTRATION</p>
+                <p className="font-medium text-[#999]">vISUAL IDENTITY, UI DESIGN, ILLUSTRATION</p>
               </div>
             </div>
 

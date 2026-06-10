@@ -6,6 +6,11 @@ const NUMBERS_VIDEO = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781093938/numbers_o4vfsy.mp4",
 } as const;
 
+const SEARCH_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781108143/search_tzgzti.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781108146/search_x5zbaz.mp4",
+} as const;
+
 /** Figma 5430:81606 — 1240×670 hero shell */
 function HeroTile({ children }: { children?: React.ReactNode }) {
   return (
@@ -52,9 +57,9 @@ export default function UsisaatCaseStudyPage() {
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[219px] gap-y-[48px] lg:grid-cols-[444px_577px] lg:items-start">
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">USISAAT</h1>
-              <div className="flex flex-col gap-[5px] text-[18px] font-normal leading-[27px]">
+              <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
                 <p>Role: LEAD pRODUCT DESIGNER</p>
-                <p className="text-[#999]">vISUAL IDENTITY, product DESIGN, desktop</p>
+                <p className="font-medium text-[#999]">vISUAL IDENTITY, product DESIGN, desktop</p>
               </div>
             </div>
 
@@ -134,7 +139,22 @@ export default function UsisaatCaseStudyPage() {
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile empty />
+              <MockupTile>
+                {/* Figma 5531:73613 — Scene-1 at x:-5 y:-6, 622×681 */}
+                <video
+                  className="absolute left-[-5px] top-[-6px] block h-auto w-[622px] max-w-none"
+                  width={622}
+                  height={681}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={SEARCH_VIDEO.webm} type="video/webm" />
+                  <source src={SEARCH_VIDEO.mp4} type="video/mp4" />
+                </video>
+              </MockupTile>
             </div>
 
             {/* Row 3 — Figma 5785:17388: 880px wide, bottom-aligned */}
@@ -153,14 +173,14 @@ export default function UsisaatCaseStudyPage() {
             {/* Row 4 — Figma 5708:15872 */}
             <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
               <MockupTile>
-                {/* Figma 5818:75863: x:87 y:78 438×471 */}
+                {/* Figma 5823:77115 — difudo at x:87 y:81 438×471 */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/usisaat/case-study/row-4-case-card.png"
                   alt="Usisaat case management card"
                   width={1314}
                   height={1413}
-                  className="absolute left-[87px] top-[78px] block h-auto w-[438px] max-w-none"
+                  className="absolute left-[87px] top-[81px] block h-auto w-[438px] max-w-none"
                   decoding="async"
                 />
               </MockupTile>
@@ -182,10 +202,21 @@ export default function UsisaatCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 5 — Figma 5679:14629 (empty) */}
+            {/* Row 5 — Figma 5679:14629 */}
             <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
               <MockupTile empty />
-              <MockupTile empty />
+              <MockupTile>
+                {/* Figma 5823:77385 — fiodif at x:87 y:87 438×496 */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/usisaat/case-study/row-5-upload.png"
+                  alt="Usisaat upload file dialog"
+                  width={1314}
+                  height={1488}
+                  className="absolute left-[87px] top-[87px] block h-auto w-[438px] max-w-none"
+                  decoding="async"
+                />
+              </MockupTile>
             </div>
 
             {/* Row 6 — Figma 5430:81630 (empty) */}

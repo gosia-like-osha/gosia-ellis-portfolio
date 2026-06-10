@@ -29,7 +29,7 @@ export function CaseStudyListItem({
           quality={100}
         />
       </div>
-      <div className="flex flex-col gap-[5px] text-[18px] font-normal uppercase leading-[27px]">
+      <div className="flex flex-col gap-[2px] text-[18px] font-normal uppercase leading-[27px]">
         <p className="text-[#999]">{tags}</p>
         <p className="text-black">{title}</p>
       </div>
