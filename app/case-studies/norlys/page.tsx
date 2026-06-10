@@ -1,6 +1,11 @@
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
 import { StickyPillNav } from "../../components/StickyPillNav";
 
+const NORNOR_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781099895/nornor_vqvbop.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781099895/nornor_xejizt.mp4",
+} as const;
+
 /** Figma 5804:18279 — 1240×670 hero shell */
 function HeroTile({ children }: { children?: React.ReactNode }) {
   return (
@@ -131,7 +136,20 @@ export default function NorlysCaseStudyPage() {
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile empty />
+              <MockupTile>
+                <video
+                  className="absolute left-1/2 top-0 block h-auto w-[534px] max-w-none -translate-x-1/2"
+                  width={534}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={NORNOR_VIDEO.webm} type="video/webm" />
+                  <source src={NORNOR_VIDEO.mp4} type="video/mp4" />
+                </video>
+              </MockupTile>
             </div>
 
             {/* Row 3 — Figma 5745:15137 (both tiles empty) */}
