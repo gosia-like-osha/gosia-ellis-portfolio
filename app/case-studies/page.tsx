@@ -1,13 +1,11 @@
 import { CaseStudyListItem } from "../components/CaseStudyListItem";
 import { SiteHeader } from "../components/SiteHeader";
-import { StickyPillNav } from "../components/StickyPillNav";
 
 /** Figma 5795:18163 — NEW CASES */
 export default function CaseStudiesPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-[#15171c]">
       <SiteHeader activeTab="case-studies" />
-      <StickyPillNav activeTab="case-studies" />
 
       <main className="w-full">
         <section className="mx-auto max-w-[1440px] px-6 pb-16 pt-[41px] lg:px-[100px]">

@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.className} min-h-screen bg-background antialiased`}>
-      <body className="min-h-screen flex flex-col bg-background pb-[calc(112px+env(safe-area-inset-bottom,0px))] sm:pb-0">
+      <body className="flex min-h-screen flex-col bg-background">
         {children}
       </body>
     </html>

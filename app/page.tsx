@@ -1,11 +1,14 @@
 import Image from "next/image";
 
 import { SiteHeader } from "./components/SiteHeader";
-import { StickyPillNav } from "./components/StickyPillNav";
 
 /** Figma 5795:17839 — highlight tile shell */
 const HIGHLIGHT_CARD =
   "w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4]";
+
+/** Desktop tile heights — mobile overrides via max-lg: only */
+const TILE_H = "h-[670px] max-lg:h-[395px]";
+const TILE_H_SHORT = "h-[607px] max-lg:h-[358px]";
 
 function HighlightSlot({
   className,
@@ -25,22 +28,21 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-[#15171c]">
       <SiteHeader />
-      <StickyPillNav />
 
       <main className="w-full">
         <section
           id="highlights"
-          className="max-w-[1440px] mx-auto px-6 lg:px-[100px] pt-[41px] pb-16"
+          className="mx-auto max-w-[1440px] px-6 pb-16 pt-[41px] max-lg:px-4 max-lg:pt-6 lg:px-[100px]"
         >
           {/* Figma 5795:17839 — intro + 1240 grid */}
-          <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-[24px]">
+          <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-[24px] max-lg:gap-6">
             {/* Figma 5804:18284 */}
-            <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-0 text-[18px] font-normal leading-[26px] text-black">
-              <p className="max-w-[532px] shrink-0">
+            <div className="flex w-full flex-col gap-6 text-[18px] font-normal leading-[26px] text-black sm:flex-row sm:items-center sm:justify-between sm:gap-0">
+              <p className="max-w-[532px] shrink-0 max-lg:max-w-[361px]">
                 Multidisciplinary designer based in Copenhagen, bridging the gap between brand and
                 UX.
               </p>
-              <div className="flex w-full shrink-0 flex-col items-start gap-0 sm:w-[323px] sm:items-end">
+              <div className="flex w-full shrink-0 flex-col items-start gap-0 sm:w-[323px] sm:items-end max-lg:hidden">
                 <p className="whitespace-nowrap">Selected work</p>
                 <p className="text-[#838383] sm:text-right">2021-2026</p>
               </div>
@@ -48,8 +50,8 @@ export default function Home() {
 
             <div className="flex flex-col gap-[16px]">
             {/* Row 1 — 612×670 + 612×670 */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <HighlightSlot className="h-[670px]">
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H}>
                 <Image
                   src="/images/highlights/row-1-left.jpg"
                   alt=""
@@ -60,10 +62,10 @@ export default function Home() {
                   priority
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17956 — 245×245, centered in tile */}
                 <video
-                  className="size-[245px] shrink-0 object-contain"
+                  className="size-[245px] shrink-0 object-contain max-lg:size-[145px]"
                   width={245}
                   height={245}
                   autoPlay
@@ -85,19 +87,19 @@ export default function Home() {
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <HighlightSlot className="h-[670px]">
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17959 — 245×245, centered */}
                 <Image
                   src="/images/highlights/row-2-left.png"
                   alt=""
                   width={991}
                   height={980}
-                  className="size-[245px] shrink-0 object-contain"
+                  className="size-[245px] shrink-0 object-contain max-lg:size-[145px]"
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17968 — Frame 2147231770 at x:94 y:0, 529×670 */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -105,29 +107,29 @@ export default function Home() {
                   alt=""
                   width={1554}
                   height={2010}
-                  className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none"
+                  className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none max-lg:static max-lg:h-full max-lg:w-full max-lg:object-cover max-lg:object-center"
                   decoding="async"
                 />
               </HighlightSlot>
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <HighlightSlot className="h-[670px]">
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17975 — 258×297, centered */}
                 <Image
                   src="/images/highlights/row-3-left.png"
                   alt=""
                   width={966}
                   height={1024}
-                  className="h-[342px] w-[297px] shrink-0 object-contain"
+                  className="h-[342px] w-[297px] shrink-0 object-contain max-lg:h-[210px] max-lg:w-[182px]"
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17989 — +15% */}
                 <video
-                  className="h-[585px] w-[361px] shrink-0 object-contain"
+                  className="h-[585px] w-[361px] shrink-0 object-contain max-lg:h-[300px] max-lg:w-[185px]"
                   width={361}
                   height={585}
                   autoPlay
@@ -149,47 +151,49 @@ export default function Home() {
             </div>
 
             {/* Row 4 — 402×670 × 3 */}
-            <div className="grid grid-cols-3 gap-[16px]">
-              <HighlightSlot className="h-[670px]">
+            <div className="grid grid-cols-3 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:17994 — flower icon 224×224, centered */}
                 <Image
                   src="/images/highlights/row-4-left.png"
                   alt=""
                   width={672}
                   height={672}
-                  className="size-[224px] shrink-0 object-contain"
+                  className="size-[224px] shrink-0 object-contain max-lg:size-[201px]"
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
-                <Image
+              <HighlightSlot className={`${TILE_H} max-lg:!items-end max-lg:!justify-end`}>
+                {/* Figma 5814:21725 desktop; 5804:19027 mobile — phone flush bottom-right */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/highlights/row-4-middle.png"
                   alt=""
                   width={682}
                   height={1024}
-                  className="absolute left-[70px] top-[62px] block h-auto w-auto"
-                  quality={100}
+                  className="absolute left-[70px] top-[62px] block h-auto w-auto max-lg:static max-lg:h-full max-lg:w-auto max-lg:max-w-none"
+                  decoding="async"
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:18043 — cards, left 21px, vertically centered */}
                 <Image
                   src="/images/highlights/row-4-right.png"
                   alt=""
                   width={937}
                   height={1024}
-                  className="absolute left-[21px] top-[calc(50%-12px)] h-auto w-auto max-h-full max-w-[calc(100%-21px)] -translate-y-1/2 object-contain"
+                  className="absolute left-[21px] top-[calc(50%-12px)] h-auto w-auto max-h-full max-w-[calc(100%-21px)] -translate-y-1/2 object-contain max-lg:static max-lg:max-h-[calc(100%-2rem)] max-lg:max-w-[calc(100%-2rem)] max-lg:translate-y-0"
                   quality={100}
                 />
               </HighlightSlot>
             </div>
 
             {/* Row 5 — 612×607 + 612×607 */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <HighlightSlot className="h-[607px]">
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H_SHORT}>
                 {/* Figma 5795:18086 — 400×486 (20% smaller), phone flush to bottom */}
                 <video
-                  className="absolute bottom-0 left-1/2 block h-[535px] w-[440px] -translate-x-1/2 object-cover object-bottom"
+                  className="absolute bottom-0 left-1/2 block h-[535px] w-[440px] -translate-x-1/2 object-cover object-bottom max-lg:h-[293px] max-lg:w-[295px]"
                   width={440}
                   height={535}
                   autoPlay
@@ -208,7 +212,7 @@ export default function Home() {
                   />
                 </video>
               </HighlightSlot>
-              <HighlightSlot className="h-[607px]">
+              <HighlightSlot className={`${TILE_H_SHORT} max-lg:hidden`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/highlights/row-5-right.png"
@@ -222,11 +226,11 @@ export default function Home() {
             </div>
 
             {/* Row 6 */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <HighlightSlot className="h-[670px]">
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+              <HighlightSlot className={TILE_H}>
                 {/* Figma 5795:18094 — 479×588, centered */}
                 <video
-                  className="h-[588px] w-[479px] shrink-0 object-contain"
+                  className="h-[588px] w-[479px] shrink-0 object-contain max-lg:h-[347px] max-lg:w-[282px]"
                   src="https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781091842/ai-scene_cdujgv.mp4"
                   width={479}
                   height={588}
@@ -237,7 +241,7 @@ export default function Home() {
                   preload="metadata"
                 />
               </HighlightSlot>
-              <HighlightSlot className="h-[670px]">
+              <HighlightSlot className={`${TILE_H} max-lg:hidden`}>
                 {/* Figma 5795:18099 — Frame 2147231774, 50px from left (562×670 visible) */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -252,7 +256,7 @@ export default function Home() {
             </div>
 
             {/* Row 7 — 1240×670 full width */}
-            <HighlightSlot className="h-[670px]">
+            <HighlightSlot className={`${TILE_H} max-lg:hidden`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/highlights/row-7-full.png"

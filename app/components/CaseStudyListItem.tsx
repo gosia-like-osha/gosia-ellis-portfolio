@@ -19,7 +19,7 @@ export function CaseStudyListItem({
 }) {
   return (
     <Link href={href} className="flex flex-col gap-[16px]">
-      <div className="relative h-[532px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#fcfcfc]">
+      <div className="relative h-[532px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#fcfcfc] max-lg:h-[395px]">
         <Image
           src={imageSrc}
           alt={imageAlt}

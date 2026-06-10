@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { SiteHeader } from "../components/SiteHeader";
-import { StickyPillNav } from "../components/StickyPillNav";
 
 /** Figma 5804:18627 — recognition row */
 function RecognitionRow() {
@@ -24,9 +23,8 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <SiteHeader activeTab="about" />
-      <StickyPillNav activeTab="about" />
 
-      <main className="w-full pb-16 max-sm:pb-[calc(4rem+110px+env(safe-area-inset-bottom,0px))]">
+      <main className="w-full pb-16">
         <section className="mx-auto max-w-[1440px] px-6 pt-[80px] lg:px-[100px]">
           {/* Figma 5804:18657 — flex 430 + 577, gap 233 */}
           <div className="mx-auto flex w-full max-w-[1240px] flex-col items-start gap-10 lg:flex-row lg:gap-[233px]">

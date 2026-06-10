@@ -1,5 +1,4 @@
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
-import { StickyPillNav } from "../../components/StickyPillNav";
 
 const NORNOR_VIDEO = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781099895/nornor_vqvbop.webm",
@@ -12,9 +11,17 @@ const NORNORNOR_VIDEO = {
 } as const;
 
 /** Figma 5804:18279 — 1240×670 hero shell */
-function HeroTile({ children }: { children?: React.ReactNode }) {
+function HeroTile({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.1)] bg-[#fcfcfc]">
+    <div
+      className={`relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.1)] bg-[#fcfcfc] max-lg:h-[395px] ${className}`}
+    >
       {children}
     </div>
   );
@@ -24,14 +31,38 @@ function HeroTile({ children }: { children?: React.ReactNode }) {
 function MockupTile({
   children,
   empty = false,
+  className = "",
 }: {
   children?: React.ReactNode;
   empty?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4]">
+    <div
+      className={`relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4] max-lg:h-[395px] ${className}`}
+    >
       {empty ? null : children}
     </div>
+  );
+}
+
+/** Figma 5804:20706 — hero crop inside 361×395 mobile tile */
+function NorlysHeroImage({ mobile = false }: { mobile?: boolean }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/images/norlys/case-study/hero.png"
+      alt="Norlys monthly report lifestyle scene"
+      width={1024}
+      height={553}
+      className={
+        mobile
+          ? "block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-185/361)] max-lg:top-0 max-lg:h-full max-lg:w-[calc(100%*731/361)] max-lg:max-w-none max-lg:object-cover"
+          : "block h-auto w-full"
+      }
+      decoding="async"
+      fetchPriority="high"
+    />
   );
 }
 
@@ -40,11 +71,19 @@ export default function NorlysCaseStudyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
-      <StickyPillNav activeTab="case-studies" />
 
-      <main className="w-full pb-16 max-sm:pb-[calc(4rem+110px+env(safe-area-inset-bottom,0px))]">
-        {/* Intro — Figma 5804:18238 + 5804:18246 */}
-        <section className="mx-auto max-w-[1440px] px-6 pt-[80px] lg:px-[100px]">
+      <main className="w-full pb-16">
+        {/* Figma 5804:20484 — mobile hero first; 40px below header (y=110) */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:mt-10 lg:hidden">
+          <div className="mx-auto w-full max-w-[1240px]">
+            <HeroTile>
+              <NorlysHeroImage mobile />
+            </HeroTile>
+          </div>
+        </section>
+
+        {/* Intro — Figma 5804:20526 (follows hero on mobile) */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:pt-5 lg:px-[100px] lg:pt-[80px]">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[196px] gap-y-[48px] lg:grid-cols-[444px_600px] lg:items-start">
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">Norlys</h1>
@@ -91,7 +130,7 @@ export default function NorlysCaseStudyPage() {
                     questions. Engagement with energy-saving tools and features increased by 38%.
                   </p>
                 </div>
-                {/* Figma 5804:18627 */}
+                {/* Figma 5804:20729 */}
                 <div className="flex w-full flex-col gap-[7px]">
                   <p className="text-[18px] font-medium uppercase leading-[27px] text-black">
                     Recognition
@@ -113,24 +152,15 @@ export default function NorlysCaseStudyPage() {
           </div>
         </section>
 
-        {/* Mockups — Figma 5529:72105 */}
-        <section className="mx-auto mt-[64px] max-w-[1440px] px-6 lg:px-[100px]">
+        {/* Mockups — Figma 5529:72105 desktop / 5804:20472 mobile */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:mt-4 lg:mt-[64px] lg:px-[100px]">
           <div className="mx-auto flex max-w-[1240px] flex-col gap-[16px]">
-            {/* Row 1 — Figma 5804:18280 NORLYS2577 1 */}
-            <HeroTile>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/norlys/case-study/hero.png"
-                alt="Norlys monthly report lifestyle scene"
-                width={1024}
-                height={553}
-                className="block h-auto w-full"
-                decoding="async"
-                fetchPriority="high"
-              />
+            {/* Row 1 — desktop only; mobile hero lives above intro */}
+            <HeroTile className="hidden lg:block">
+              <NorlysHeroImage />
             </HeroTile>
 
-            {/* Row 2 — Figma 5514:70778 */}
+            {/* Row 2 — Figma 5804:20748 + 5804:20756 */}
             <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
               <MockupTile>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -139,31 +169,13 @@ export default function NorlysCaseStudyPage() {
                   alt="Norlys monthly report on iPhone"
                   width={1836}
                   height={2010}
-                  className="block h-auto w-full"
+                  className="block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-73/361)] max-lg:top-0 max-lg:h-full max-lg:w-[calc(100%*531/361)] max-lg:max-w-none max-lg:object-cover"
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile>
+              <MockupTile className="lg:hidden">
                 <video
-                  className="absolute left-1/2 top-0 block h-auto w-[534px] max-w-none -translate-x-1/2"
-                  width={534}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={NORNOR_VIDEO.webm} type="video/webm" />
-                  <source src={NORNOR_VIDEO.mp4} type="video/mp4" />
-                </video>
-              </MockupTile>
-            </div>
-
-            {/* Row 3 — Figma 5745:15137 */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
-              <MockupTile>
-                <video
-                  className="absolute bottom-0 left-1/2 block h-auto w-[534px] max-w-none -translate-x-1/2"
+                  className="absolute bottom-0 left-1/2 block h-auto w-[349px] max-w-none -translate-x-1/2 object-contain object-bottom"
                   width={534}
                   height={649}
                   autoPlay
@@ -176,11 +188,65 @@ export default function NorlysCaseStudyPage() {
                   <source src={NORNORNOR_VIDEO.mp4} type="video/mp4" />
                 </video>
               </MockupTile>
-              <MockupTile empty />
+              <MockupTile>
+                <video
+                  className="absolute left-1/2 top-0 block h-auto w-[534px] max-w-none -translate-x-1/2 max-lg:hidden"
+                  width={534}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={NORNOR_VIDEO.webm} type="video/webm" />
+                  <source src={NORNOR_VIDEO.mp4} type="video/mp4" />
+                </video>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/norlys/case-study/mobile-row-3.png"
+                  alt="Norlys monthly report ready notification"
+                  width={1083}
+                  height={1186}
+                  className="hidden h-full w-full object-contain max-lg:block"
+                  decoding="async"
+                />
+              </MockupTile>
             </div>
 
-            {/* Row 4 — 1080px wide, centered, bottom-aligned */}
-            <HeroTile>
+            {/* Row 3 — desktop video / mobile Frame 2147231594 */}
+            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
+              <MockupTile>
+                <video
+                  className="absolute bottom-0 left-1/2 block h-auto w-[534px] max-w-none -translate-x-1/2 max-lg:hidden"
+                  width={534}
+                  height={649}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={NORNORNOR_VIDEO.webm} type="video/webm" />
+                  <source src={NORNORNOR_VIDEO.mp4} type="video/mp4" />
+                </video>
+                <video
+                  className="absolute left-1/2 top-0 hidden h-[386px] w-[349px] max-w-none -translate-x-1/2 object-contain object-top max-lg:block"
+                  width={534}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={NORNOR_VIDEO.webm} type="video/webm" />
+                  <source src={NORNOR_VIDEO.mp4} type="video/mp4" />
+                </video>
+              </MockupTile>
+              <MockupTile empty className="max-lg:hidden" />
+            </div>
+
+            {/* Row 4 — desktop: wide three phones / mobile Frames 2147231763 + 2147231765 */}
+            <HeroTile className="hidden lg:block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/norlys/case-study/row-4-three-phones.png"
@@ -191,11 +257,34 @@ export default function NorlysCaseStudyPage() {
                 decoding="async"
               />
             </HeroTile>
-
-            {/* Row 5 — Figma 5695:73110 */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
+            <div className="flex flex-col gap-[16px] lg:hidden">
               <MockupTile>
-                {/* Figma 5695:73115 */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/norlys/case-study/mobile-row-4.png"
+                  alt="Norlys energy usage chart"
+                  width={1083}
+                  height={1186}
+                  className="block h-full w-full object-contain"
+                  decoding="async"
+                />
+              </MockupTile>
+              <MockupTile>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/norlys/case-study/mobile-row-5.png"
+                  alt="Norlys year-over-year usage comparison"
+                  width={1083}
+                  height={1186}
+                  className="block h-full w-full object-contain"
+                  decoding="async"
+                />
+              </MockupTile>
+            </div>
+
+            {/* Row 5 — desktop only; not in Figma mobile */}
+            <div className="grid grid-cols-1 gap-[16px] max-lg:hidden lg:grid-cols-2">
+              <MockupTile>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/norlys/case-study/row-5-lifestyle.png"

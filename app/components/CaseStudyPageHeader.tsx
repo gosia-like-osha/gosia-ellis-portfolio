@@ -5,7 +5,7 @@ import Link from "next/link";
 export function CaseStudyPageHeader() {
   return (
     <header className="w-full">
-      <div className="mx-auto max-w-[1440px] px-6 pt-[48px] lg:px-[100px]">
+      <div className="mx-auto max-w-[1440px] px-4 pt-[22px] lg:px-[100px] lg:pt-[48px]">
         <div className="grid grid-cols-1 items-center sm:grid-cols-[1fr_auto_1fr]">
           <Link
             href="/case-studies"

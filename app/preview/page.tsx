@@ -1,14 +1,12 @@
 import { SiteHeader } from "../components/SiteHeader";
-import { StickyPillNav } from "../components/StickyPillNav";
 
 /** First-pass workspace shell — image + chrome only; actions are non-functional. */
 export default function PreviewPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-[#15171c]">
       <SiteHeader />
-      <StickyPillNav />
 
-      <main className="w-full flex-1 pb-24 sm:pb-16">
+      <main className="w-full flex-1 pb-16 lg:pb-16">
         <div className="mx-auto max-w-[1440px] px-6 pt-[41px] lg:px-[100px]">
           <div className="relative flex min-h-[560px] flex-col items-center justify-center rounded-[32px] bg-[#f4f4f4] px-4 py-16 sm:min-h-[calc(100vh-12rem)] sm:rounded-[40px] sm:px-10 sm:py-20">
             {/* Floating toolbar */}

@@ -1,5 +1,4 @@
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
-import { StickyPillNav } from "../../components/StickyPillNav";
 
 const NUMBERS_VIDEO = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781093938/numbers_eueivc.webm",
@@ -11,19 +10,84 @@ const SEARCH_VIDEO = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781108146/search_x5zbaz.mp4",
 } as const;
 
-/** Figma 5430:81606 — 1240×670 hero shell */
-function HeroTile({ children }: { children?: React.ReactNode }) {
+/** Clip frame at exact Figma x/y/w/h inside a tile; optional mobile clip (5804:20871) */
+function FigmaFrame({
+  left,
+  top,
+  width,
+  height,
+  mobile,
+  children,
+}: {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+  mobile?: {
+    left?: number;
+    top: number;
+    width: number;
+    height: number;
+    center?: boolean;
+  };
+  children: React.ReactNode;
+}) {
   return (
-    <div className="relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#fcfcfc]">
+    <>
+      <div
+        className="pointer-events-none absolute overflow-hidden max-lg:hidden"
+        style={{ left, top, width, height }}
+      >
+        {children}
+      </div>
+      {mobile ? (
+        <div
+          className="pointer-events-none absolute overflow-hidden lg:hidden"
+          style={{
+            top: mobile.top,
+            width: mobile.width,
+            height: mobile.height,
+            ...(mobile.center
+              ? { left: "50%", transform: "translateX(-50%)" }
+              : { left: mobile.left }),
+          }}
+        >
+          {children}
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+/** Figma 5430:81606 — 1240×670 hero shell */
+function HeroTile({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#fcfcfc] max-lg:h-[395px] ${className}`}
+    >
       {children}
     </div>
   );
 }
 
 /** Figma 5771:16657 — 1240×670 full-width mockup shell */
-function FullWidthTile({ children }: { children?: React.ReactNode }) {
+function FullWidthTile({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4]">
+    <div
+      className={`relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4] max-lg:h-[395px] ${className}`}
+    >
       {children}
     </div>
   );
@@ -33,14 +97,38 @@ function FullWidthTile({ children }: { children?: React.ReactNode }) {
 function MockupTile({
   children,
   empty = false,
+  className = "",
 }: {
   children?: React.ReactNode;
   empty?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4]">
+    <div
+      className={`relative h-[670px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#f7f6f4] max-lg:h-[395px] ${className}`}
+    >
       {empty ? null : children}
     </div>
+  );
+}
+
+/** Figma 5804:20960 — hero crop inside 361×395 mobile tile */
+function UsisaatHeroImage({ mobile = false }: { mobile?: boolean }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/images/usisaat/case-study/hero.png"
+      alt="Usisaat harbor in Greenland"
+      width={3720}
+      height={2010}
+      className={
+        mobile
+          ? "block h-auto w-full max-lg:absolute max-lg:left-1/2 max-lg:top-0 max-lg:h-[398px] max-lg:w-[calc(100%*806/361)] max-lg:max-w-none max-lg:-translate-x-1/2 max-lg:object-cover"
+          : "block h-auto w-full"
+      }
+      decoding="async"
+      fetchPriority="high"
+    />
   );
 }
 
@@ -49,11 +137,19 @@ export default function UsisaatCaseStudyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
-      <StickyPillNav activeTab="case-studies" />
 
-      <main className="w-full pb-16 max-sm:pb-[calc(4rem+110px+env(safe-area-inset-bottom,0px))]">
-        {/* Intro — Figma 5804:18259 + 5804:18264 */}
-        <section className="mx-auto max-w-[1440px] px-6 pt-[80px] lg:px-[100px]">
+      <main className="w-full pb-16">
+        {/* Figma 5804:20883 — mobile hero first; 40px below header (y=110) */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:mt-10 lg:hidden">
+          <div className="mx-auto w-full max-w-[1240px]">
+            <HeroTile className="max-lg:bg-[#f7f6f4]">
+              <UsisaatHeroImage mobile />
+            </HeroTile>
+          </div>
+        </section>
+
+        {/* Intro — Figma 5804:20887 */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:pt-5 lg:px-[100px] lg:pt-[80px]">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[219px] gap-y-[48px] lg:grid-cols-[444px_577px] lg:items-start">
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">USISAAT</h1>
@@ -109,40 +205,32 @@ export default function UsisaatCaseStudyPage() {
           </div>
         </section>
 
-        {/* Mockups — Figma 5804:18293 */}
-        <section className="mx-auto mt-[64px] max-w-[1440px] px-6 lg:px-[100px]">
+        {/* Mockups — Figma 5804:18293 desktop / 5804:20871 mobile */}
+        <section className="mx-auto max-w-[1440px] px-4 max-lg:mt-4 lg:mt-[64px] lg:px-[100px]">
           <div className="mx-auto flex max-w-[1240px] flex-col gap-[16px]">
-            {/* Row 1 — hero */}
-            <HeroTile>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/usisaat/case-study/hero.png"
-                alt="Usisaat harbor in Greenland"
-                width={3720}
-                height={2010}
-                className="block h-auto w-full"
-                decoding="async"
-                fetchPriority="high"
-              />
+            {/* Row 1 — desktop only; mobile hero lives above intro */}
+            <HeroTile className="hidden lg:block">
+              <UsisaatHeroImage />
             </HeroTile>
 
-            {/* Row 2 — Figma 5531:72438 */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
-              <MockupTile>
+            {/* Row 2 — Figma 5804:20968 + 5830:78249; mobile orders 1–2 */}
+            <div className="grid grid-cols-1 gap-[16px] max-lg:contents lg:grid-cols-2">
+              <MockupTile className="max-lg:order-1">
+                {/* Figma 5804:20970 — x:-58 y:-6, 563×422 */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/usisaat/case-study/row-2-man.png"
                   alt="Usisaat platform on desktop"
                   width={1836}
                   height={2010}
-                  className="block h-auto w-full"
+                  className="block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-58.4/361-5%)] max-lg:top-[-6px] max-lg:h-[422px] max-lg:w-[calc(100%*563/361)] max-lg:max-w-none max-lg:object-cover"
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile>
-                {/* Figma 5531:73613 — Scene-1 at x:-5 y:-6, 622×681 */}
+              <MockupTile className="max-lg:order-2">
+                {/* Figma 5531:73613 desktop / 5830:78251 mobile — x:-4 y:-4, 367×402 */}
                 <video
-                  className="absolute left-[-5px] top-[-6px] block h-auto w-[622px] max-w-none"
+                  className="absolute left-[-5px] top-[-6px] block h-auto w-[622px] max-w-none max-lg:left-[calc(100%*-3.54/361)] max-lg:top-0 max-lg:h-full max-lg:w-[calc(100%*367/361)] max-lg:object-cover"
                   width={622}
                   height={681}
                   autoPlay
@@ -157,37 +245,59 @@ export default function UsisaatCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 3 — Figma 5785:17388: 880px wide, bottom-aligned */}
-            <FullWidthTile>
+            {/* Row 3 — Figma 5785:17388 desktop / 5804:21241 mobile order 6 */}
+            <FullWidthTile className="max-lg:order-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/usisaat/case-study/row-3-monitor.png"
                 alt="Usisaat cases dashboard"
                 width={3207}
                 height={1704}
-                className="absolute bottom-0 left-1/2 block h-auto w-[1056px] max-w-none -translate-x-1/2"
+                className="absolute bottom-0 left-1/2 block h-auto w-[1056px] max-w-none -translate-x-1/2 max-lg:hidden"
+                decoding="async"
+              />
+              {/* Figma 5830:78265 Frame 2147231792 — x:-39 y:115, 440×280 in 361×395 tile */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/usisaat/case-study/mobile-row-monitor.png"
+                alt="Usisaat cases dashboard on desktop"
+                width={1320}
+                height={840}
+                className="hidden max-lg:absolute max-lg:left-[calc(100%*-39/361)] max-lg:top-[calc(100%*115/395)] max-lg:block max-lg:h-[calc(100%*280/395)] max-lg:w-[calc(100%*440/361)] max-lg:max-w-none"
                 decoding="async"
               />
             </FullWidthTile>
 
-            {/* Row 4 — Figma 5708:15872 */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
-              <MockupTile>
-                {/* Figma 5823:77115 — difudo at x:87 y:81 438×471 */}
+            {/* Row 4 — Figma 5804:21033 + 5804:21098; mobile orders 3–4 */}
+            <div className="grid grid-cols-1 gap-[16px] max-lg:contents lg:grid-cols-2">
+              <MockupTile className="max-lg:order-3">
+                {/* Figma 5823:77115 desktop */}
+                <FigmaFrame left={87} top={81} width={438} height={471}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/usisaat/case-study/row-4-case-card.png"
+                    alt="Usisaat case management card"
+                    width={1314}
+                    height={1413}
+                    className="block h-auto w-[438px] max-w-none"
+                    decoding="async"
+                  />
+                </FigmaFrame>
+                {/* Figma 5830:78393 Frame 2147231793 — x:46 y:81, 268×233 in 361×395 tile */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/usisaat/case-study/row-4-case-card.png"
+                  src="/images/usisaat/case-study/mobile-row-case-card.png"
                   alt="Usisaat case management card"
-                  width={1314}
-                  height={1413}
-                  className="absolute left-[87px] top-[81px] block h-auto w-[438px] max-w-none"
+                  width={804}
+                  height={699}
+                  className="hidden max-lg:absolute max-lg:left-[calc(100%*46/361)] max-lg:top-[calc(100%*81/395)] max-lg:block max-lg:h-[calc(100%*233/395)] max-lg:w-[calc(100%*268/361)] max-lg:max-w-none"
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile>
-                {/* Figma 5785:17183: x:74 y:103 464×464 */}
+              <MockupTile className="max-lg:order-4">
+                {/* Figma 5785:17183 desktop / 5804:21100 mobile — 274×274 centered */}
                 <video
-                  className="absolute left-[74px] top-[103px] block h-[464px] w-[464px] max-w-none"
+                  className="absolute left-[74px] top-[103px] block h-[464px] w-[464px] max-w-none max-lg:left-1/2 max-lg:top-1/2 max-lg:h-[274px] max-lg:w-[274px] max-lg:-translate-x-1/2 max-lg:-translate-y-1/2"
                   width={464}
                   height={464}
                   autoPlay
@@ -202,25 +312,33 @@ export default function UsisaatCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 5 — Figma 5679:14629 */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
-              <MockupTile empty />
-              <MockupTile>
-                {/* Figma 5823:77385 — fiodif at x:87 y:87 438×496 */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/usisaat/case-study/row-5-upload.png"
-                  alt="Usisaat upload file dialog"
-                  width={1314}
-                  height={1488}
-                  className="absolute left-[87px] top-[87px] block h-auto w-[438px] max-w-none"
-                  decoding="async"
-                />
+            {/* Row 5 — Figma 5804:21168 mobile order 5; left tile desktop only */}
+            <div className="grid grid-cols-1 gap-[16px] max-lg:contents lg:grid-cols-2">
+              <MockupTile empty className="max-lg:hidden" />
+              <MockupTile className="max-lg:order-5">
+                {/* Figma 5823:77385 desktop / 5804:21172 mobile — centered ~250px */}
+                <FigmaFrame
+                  left={87}
+                  top={87}
+                  width={438}
+                  height={496}
+                  mobile={{ top: 51, width: 250, height: 294, center: true }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/usisaat/case-study/row-5-upload.png"
+                    alt="Usisaat upload file dialog"
+                    width={1314}
+                    height={1488}
+                    className="block h-auto w-[438px] max-w-none max-lg:w-[250px]"
+                    decoding="async"
+                  />
+                </FigmaFrame>
               </MockupTile>
             </div>
 
-            {/* Row 6 — Figma 5430:81630 (empty) */}
-            <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
+            {/* Row 6 — desktop only */}
+            <div className="grid grid-cols-1 gap-[16px] max-lg:hidden lg:grid-cols-2">
               <MockupTile empty />
               <MockupTile empty />
             </div>
