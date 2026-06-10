@@ -78,10 +78,14 @@ function BarryHeroImage({ mobile = false }: { mobile?: boolean }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/barry/case-study/hero.png"
+      src={
+        mobile
+          ? "/images/barry/case-study/hero.png"
+          : "/images/barry/case-study/hero-desktop.png"
+      }
       alt="Barry Energy hero"
-      width={1024}
-      height={553}
+      width={mobile ? 1024 : 3720}
+      height={mobile ? 553 : 2010}
       className={
         mobile
           ? "block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-210/361)] max-lg:top-[-7px] max-lg:h-[410px] max-lg:w-[calc(100%*781/361)] max-lg:max-w-none max-lg:object-cover"
@@ -191,11 +195,20 @@ export default function BarryEnergyCaseStudyPage() {
               <MockupTile>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  src="/images/barry/case-study/row-2-iphone-15-desktop.png"
+                  alt="Barry Energy payments on iPhone"
+                  width={1836}
+                  height={2010}
+                  className="block h-auto w-full max-lg:hidden"
+                  decoding="async"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/barry/case-study/row-2-iphone-15.png"
                   alt="Barry Energy payments on iPhone"
                   width={935}
                   height={1024}
-                  className="block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-118/361)] max-lg:top-0 max-lg:h-full max-lg:w-[calc(100%*556/361)] max-lg:max-w-none max-lg:object-cover"
+                  className="absolute left-[calc(100%*-118/361)] top-0 hidden h-full w-[calc(100%*556/361)] max-w-none object-cover max-lg:block lg:hidden"
                   decoding="async"
                 />
               </MockupTile>

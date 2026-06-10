@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JumpToTopButton } from "./components/JumpToTopButton";
 import { geistSans } from "./fonts";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.className} min-h-screen bg-background antialiased`}>
       <body className="flex min-h-screen flex-col bg-background">
         {children}
+        <JumpToTopButton />
       </body>
     </html>
   );

@@ -242,7 +242,17 @@ export default function NorlysCaseStudyPage() {
                   <source src={NORNOR_VIDEO.mp4} type="video/mp4" />
                 </video>
               </MockupTile>
-              <MockupTile empty className="max-lg:hidden" />
+              <MockupTile className="max-lg:hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/norlys/case-study/row-5-lifestyle.png"
+                  alt="Norlys app in use at home"
+                  width={935}
+                  height={1024}
+                  className="block h-auto w-full"
+                  decoding="async"
+                />
+              </MockupTile>
             </div>
 
             {/* Row 4 — desktop: wide three phones / mobile Frames 2147231763 + 2147231765 */}
@@ -282,21 +292,6 @@ export default function NorlysCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 5 — desktop only; not in Figma mobile */}
-            <div className="grid grid-cols-1 gap-[16px] max-lg:hidden lg:grid-cols-2">
-              <MockupTile>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/norlys/case-study/row-5-lifestyle.png"
-                  alt="Norlys app in use at home"
-                  width={935}
-                  height={1024}
-                  className="block h-auto w-full"
-                  decoding="async"
-                />
-              </MockupTile>
-              <MockupTile empty />
-            </div>
           </div>
         </section>
       </main>
