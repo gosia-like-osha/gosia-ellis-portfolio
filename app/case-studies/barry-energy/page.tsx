@@ -156,10 +156,10 @@ export default function BarryEnergyCaseStudyPage() {
                 <div className="flex flex-col gap-[7px]">
                   <p className="text-[18px] font-medium uppercase leading-[27px]">Problem</p>
                   <p className="text-[15px] font-normal leading-[22px]">
-                    Barry Energy already had a clear brand — bold, green, and futuristic. As an EV charging
+                    Barry Energy already had a clear brand - bold, green, and futuristic. As an EV charging
                     app that helps drivers charge when electricity is cheapest, the product needed to feel
                     just as smart and effortless as the service itself. The challenge was bringing that
-                    feeling into the experience — not just keeping things visually consistent, but making
+                    feeling into the experience - not just keeping things visually consistent, but making
                     colours, icons, and interactions feel like part of the same story.
                   </p>
                 </div>
