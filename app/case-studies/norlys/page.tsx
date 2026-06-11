@@ -53,8 +53,8 @@ function NorlysHeroImage({ mobile = false }: { mobile?: boolean }) {
     <img
       src="/images/norlys/case-study/hero.png"
       alt="Norlys monthly report lifestyle scene"
-      width={1024}
-      height={553}
+      width={3720}
+      height={2010}
       className={
         mobile
           ? "block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-185/361)] max-lg:top-0 max-lg:h-full max-lg:w-[calc(100%*731/361)] max-lg:max-w-none max-lg:object-cover"
@@ -103,12 +103,13 @@ export default function NorlysCaseStudyPage() {
                 <div className="flex flex-col gap-[7px]">
                   <p className="text-[18px] font-medium uppercase leading-[27px]">Problem</p>
                   <p className="text-[15px] font-normal leading-[22px]">
-                    Helping Norlys customers understand their energy use wasn&apos;t about accessing more
-                    data - it was about making the data meaningful. We created Monthly Reports, turning
-                    months of abstract consumption into something tangible, personal, and even delightful.
-                    Customers received bills full of numbers but little context, how this month compared,
-                    what drove usage, or where energy went. The data existed, but the presentation
-                    didn&apos;t support real understanding.
+                    Norlys helps customers track their electricity usage, costs, and billing in one place.
+                    But helping people understand their energy use wasn&apos;t about providing more data - it
+                    was about making the data meaningful. We created Monthly Reports, turning months of
+                    abstract consumption into something tangible, personal, and even delightful. Customers
+                    received bills full of numbers but little context: how this month compared, what drove
+                    usage, or where energy went. The data existed, but the presentation didn&apos;t support
+                    real understanding.
                   </p>
                 </div>
                 <div className="flex flex-col gap-[7px]">

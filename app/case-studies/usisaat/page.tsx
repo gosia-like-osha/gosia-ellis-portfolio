@@ -216,6 +216,16 @@ export default function UsisaatCaseStudyPage() {
             {/* Row 2 — Figma 5804:20968 + 5830:78249; mobile orders 1–2 */}
             <div className="grid grid-cols-1 gap-[16px] max-lg:contents lg:grid-cols-2">
               <MockupTile className="max-lg:order-1">
+                {/* r8euer8 — desktop row 2 left */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/usisaat/case-study/row-2-man-desktop.png"
+                  alt="Usisaat platform on desktop"
+                  width={1836}
+                  height={2010}
+                  className="block h-auto w-full max-lg:hidden"
+                  decoding="async"
+                />
                 {/* Figma 5804:20970 — x:-58 y:-6, 563×422 */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -223,7 +233,7 @@ export default function UsisaatCaseStudyPage() {
                   alt="Usisaat platform on desktop"
                   width={1836}
                   height={2010}
-                  className="block h-auto w-full max-lg:absolute max-lg:left-[calc(100%*-58.4/361-5%)] max-lg:top-[-6px] max-lg:h-[422px] max-lg:w-[calc(100%*563/361)] max-lg:max-w-none max-lg:object-cover"
+                  className="absolute left-[calc(100%*-58.4/361-5%)] top-[-6px] hidden h-[422px] w-[calc(100%*563/361)] max-w-none object-cover max-lg:block lg:hidden"
                   decoding="async"
                 />
               </MockupTile>
@@ -314,7 +324,18 @@ export default function UsisaatCaseStudyPage() {
 
             {/* Row 5 — Figma 5804:21168 mobile order 5; left tile desktop only */}
             <div className="grid grid-cols-1 gap-[16px] max-lg:contents lg:grid-cols-2">
-              <MockupTile empty className="max-lg:hidden" />
+              <MockupTile className="max-lg:hidden">
+                {/* Frame 2147231806 — desktop row 5 left */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/usisaat/case-study/row-5-left.png"
+                  alt="Usisaat platform interface"
+                  width={1836}
+                  height={2010}
+                  className="block h-auto w-full"
+                  decoding="async"
+                />
+              </MockupTile>
               <MockupTile className="max-lg:order-5">
                 {/* Figma 5823:77385 desktop / 5804:21172 mobile — centered ~250px */}
                 <FigmaFrame
@@ -335,12 +356,6 @@ export default function UsisaatCaseStudyPage() {
                   />
                 </FigmaFrame>
               </MockupTile>
-            </div>
-
-            {/* Row 6 — desktop only */}
-            <div className="grid grid-cols-1 gap-[16px] max-lg:hidden lg:grid-cols-2">
-              <MockupTile empty />
-              <MockupTile empty />
             </div>
           </div>
         </section>

@@ -7,6 +7,11 @@ const ICONS_BARRY_VIDEO = {
   mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781094685/icons-barry_kfo7ag.mp4",
 } as const;
 
+const BARBARBAR_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781171487/barbarbar_zcfrhx.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781171486/barbarbar_nfyqzv.mp4",
+} as const;
+
 /** Clip frame at exact Figma x/y/w/h inside a 612×670 tile; optional mobile clip (5804:19795) */
 function FigmaFrame({
   left,
@@ -151,10 +156,11 @@ export default function BarryEnergyCaseStudyPage() {
                 <div className="flex flex-col gap-[7px]">
                   <p className="text-[18px] font-medium uppercase leading-[27px]">Problem</p>
                   <p className="text-[15px] font-normal leading-[22px]">
-                    Barry Energy already had a clear brand - bold, green, and futuristic. The challenge
-                    was bringing that feeling into the product itself. Not just keeping things visually
-                    consistent, but making colours, icons, and interaction feel like part of the same
-                    story.
+                    Barry Energy already had a clear brand — bold, green, and futuristic. As an EV charging
+                    app that helps drivers charge when electricity is cheapest, the product needed to feel
+                    just as smart and effortless as the service itself. The challenge was bringing that
+                    feeling into the experience — not just keeping things visually consistent, but making
+                    colours, icons, and interactions feel like part of the same story.
                   </p>
                 </div>
                 <div className="flex flex-col gap-[7px]">
@@ -212,7 +218,22 @@ export default function BarryEnergyCaseStudyPage() {
                   decoding="async"
                 />
               </MockupTile>
-              <MockupTile empty className="max-lg:hidden" />
+              <MockupTile className="max-lg:hidden">
+                {/* Same as homepage row 5 — phone flush to tile bottom */}
+                <video
+                  className="absolute bottom-0 left-1/2 block h-[541px] w-[412px] max-w-none -translate-x-1/2 object-cover object-bottom"
+                  width={412}
+                  height={541}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={BARBARBAR_VIDEO.webm} type="video/webm" />
+                  <source src={BARBARBAR_VIDEO.mp4} type="video/mp4" />
+                </video>
+              </MockupTile>
             </div>
 
             {/* Row 3 — Figma 5671:13958 */}
@@ -330,32 +351,30 @@ export default function BarryEnergyCaseStudyPage() {
               </MockupTile>
             </div>
 
-            {/* Row 6 — Figma 5671:14341 — desktop only */}
+            {/* Row 6 — Figma 5671:14341 / 5838:83280 + 5838:83740 — 444×536, bottom flush, centered */}
             <div className="grid grid-cols-1 gap-[16px] max-lg:hidden lg:grid-cols-2">
               <MockupTile>
-                {/* Figma 5671:14382: x:95, 422px wide — flush to bottom */}
                 <Image
-                  src="/images/barry/case-study/row-6-preferences.png"
+                  src="/images/barry/case-study/row-6-left.png"
                   alt="Barry Energy charging preferences"
-                  width={1266}
-                  height={1800}
+                  width={1332}
+                  height={1608}
                   unoptimized
                   quality={100}
-                  className="absolute bottom-0 left-[95px] block h-auto w-[422px] max-w-none"
-                  sizes="422px"
+                  className="absolute bottom-0 left-1/2 block h-auto w-[444px] max-w-none -translate-x-1/2"
+                  sizes="444px"
                 />
               </MockupTile>
               <MockupTile>
-                {/* Figma 5671:14391: x:95, 422px wide — flush to bottom */}
                 <Image
-                  src="/images/barry/case-study/row-6-charging.png"
-                  alt="Barry Energy schedule smart charging"
-                  width={1266}
-                  height={1800}
+                  src="/images/barry/case-study/row-6-right.png"
+                  alt="Barry Energy electricity prices widget"
+                  width={1332}
+                  height={1608}
                   unoptimized
                   quality={100}
-                  className="absolute bottom-0 left-[95px] block h-auto w-[422px] max-w-none"
-                  sizes="422px"
+                  className="absolute bottom-0 left-1/2 block h-auto w-[444px] max-w-none -translate-x-1/2"
+                  sizes="444px"
                 />
               </MockupTile>
             </div>
