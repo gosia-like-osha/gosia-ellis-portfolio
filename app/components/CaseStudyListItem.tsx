@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Figma 5795:18170 — case study list card */
+/** Figma 6160:15871 / 5795:18163 — case study overview card */
 export function CaseStudyListItem({
   href,
   imageSrc,
@@ -9,6 +9,8 @@ export function CaseStudyListItem({
   tags,
   title,
   imageClassName = "h-full w-full object-cover",
+  imageWidth = 1024,
+  imageHeight = 890,
 }: {
   href: string;
   imageSrc: string;
@@ -16,6 +18,8 @@ export function CaseStudyListItem({
   tags: string;
   title: string;
   imageClassName?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }) {
   return (
     <Link href={href} className="flex flex-col gap-[16px]">
@@ -23,13 +27,14 @@ export function CaseStudyListItem({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={1024}
-          height={890}
+          width={imageWidth}
+          height={imageHeight}
           className={imageClassName}
           quality={100}
+          unoptimized
         />
       </div>
-      <div className="flex flex-col gap-[2px] text-[18px] font-normal uppercase leading-[27px]">
+      <div className="flex flex-col gap-[5px] text-[18px] font-normal uppercase leading-[27px]">
         <p className="text-[#999]">{tags}</p>
         <p className="text-black">{title}</p>
       </div>
