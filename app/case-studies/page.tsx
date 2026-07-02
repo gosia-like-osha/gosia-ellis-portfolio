@@ -44,6 +44,17 @@ export default function CaseStudiesPage() {
               tags="Visual identity, UI design, illustration"
               title="Barry Energy → EV charging made smarter"
             />
+
+            {/* Row 3 — Figma 6313:73735: Plenti (preview only, not linked yet) */}
+            <CaseStudyListItem
+              imageSrc="/images/case-studies/plenti.png"
+              imageAlt="Plenti case study"
+              imageWidth={1836}
+              imageHeight={1596}
+              imageClassName="block h-full w-full object-cover"
+              tags="WEB DESIGN, branding, visual identity"
+              title="Plenti → Branding a New Way to Rent Tech"
+            />
           </div>
         </section>
       </main>

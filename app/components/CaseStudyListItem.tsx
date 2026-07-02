@@ -12,7 +12,7 @@ export function CaseStudyListItem({
   imageWidth = 1024,
   imageHeight = 890,
 }: {
-  href: string;
+  href?: string;
   imageSrc: string;
   imageAlt: string;
   tags: string;
@@ -21,8 +21,8 @@ export function CaseStudyListItem({
   imageWidth?: number;
   imageHeight?: number;
 }) {
-  return (
-    <Link href={href} className="flex flex-col gap-[16px]">
+  const content = (
+    <>
       <div className="relative h-[532px] w-full overflow-hidden border border-[rgba(21,23,28,0.04)] bg-[#fcfcfc] max-lg:h-[395px]">
         <Image
           src={imageSrc}
@@ -38,6 +38,16 @@ export function CaseStudyListItem({
         <p className="text-[#999]">{tags}</p>
         <p className="text-black">{title}</p>
       </div>
+    </>
+  );
+
+  if (!href) {
+    return <div className="flex flex-col gap-[16px]">{content}</div>;
+  }
+
+  return (
+    <Link href={href} className="flex flex-col gap-[16px]">
+      {content}
     </Link>
   );
 }
