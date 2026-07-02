@@ -86,29 +86,40 @@ export default function Home() {
               </HighlightSlot>
             </div>
 
-            {/* Row 2 */}
-            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
+            {/* Row 2 — 402×670 × 3 (was row 4) */}
+            <div className="grid grid-cols-3 gap-[16px] max-lg:grid-cols-1">
               <HighlightSlot className={TILE_H}>
-                {/* Figma 5795:17959 — 245×245, centered */}
+                {/* Figma 5795:17994 — flower icon 224×224, centered */}
                 <Image
-                  src="/images/highlights/row-2-left.png"
+                  src="/images/highlights/row-4-left.png"
                   alt=""
-                  width={991}
-                  height={980}
-                  className="size-[245px] shrink-0 object-contain max-lg:size-[145px]"
+                  width={672}
+                  height={672}
+                  className="size-[224px] shrink-0 object-contain max-lg:size-[201px]"
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className={TILE_H}>
-                {/* Figma 5795:17968 — Frame 2147231770 at x:94 y:0, 529×670 */}
+              <HighlightSlot className={`${TILE_H} max-lg:!items-end max-lg:!justify-end`}>
+                {/* Figma 5814:21725 desktop; 5804:19027 mobile — phone flush bottom-right */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/highlights/row-2-right.png"
+                  src="/images/highlights/row-4-middle.png"
                   alt=""
-                  width={1554}
-                  height={2010}
-                  className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none max-lg:static max-lg:h-full max-lg:w-full max-lg:object-cover max-lg:object-center"
+                  width={682}
+                  height={1024}
+                  className="absolute left-[70px] top-[62px] block h-auto w-auto max-lg:static max-lg:h-full max-lg:w-auto max-lg:max-w-none"
                   decoding="async"
+                />
+              </HighlightSlot>
+              <HighlightSlot className={TILE_H}>
+                {/* Figma 5795:18043 — cards, left 21px, vertically centered */}
+                <Image
+                  src="/images/highlights/row-4-right.png"
+                  alt=""
+                  width={937}
+                  height={1024}
+                  className="absolute left-[21px] top-[calc(50%-12px)] h-auto w-auto max-h-full max-w-[calc(100%-21px)] -translate-y-1/2 object-contain max-lg:static max-lg:max-h-[calc(100%-2rem)] max-lg:max-w-[calc(100%-2rem)] max-lg:translate-y-0"
+                  quality={100}
                 />
               </HighlightSlot>
             </div>
@@ -150,40 +161,29 @@ export default function Home() {
               </HighlightSlot>
             </div>
 
-            {/* Row 4 — 402×670 × 3 */}
-            <div className="grid grid-cols-3 gap-[16px] max-lg:grid-cols-1">
+            {/* Row 4 (was row 2) */}
+            <div className="grid grid-cols-2 gap-[16px] max-lg:grid-cols-1">
               <HighlightSlot className={TILE_H}>
-                {/* Figma 5795:17994 — flower icon 224×224, centered */}
+                {/* Figma 5795:17959 — 245×245, centered */}
                 <Image
-                  src="/images/highlights/row-4-left.png"
+                  src="/images/highlights/row-2-left.png"
                   alt=""
-                  width={672}
-                  height={672}
-                  className="size-[224px] shrink-0 object-contain max-lg:size-[201px]"
+                  width={991}
+                  height={980}
+                  className="size-[245px] shrink-0 object-contain max-lg:size-[145px]"
                   quality={100}
                 />
               </HighlightSlot>
-              <HighlightSlot className={`${TILE_H} max-lg:!items-end max-lg:!justify-end`}>
-                {/* Figma 5814:21725 desktop; 5804:19027 mobile — phone flush bottom-right */}
+              <HighlightSlot className={TILE_H}>
+                {/* Figma 5795:17968 — Frame 2147231770 at x:94 y:0, 529×670 */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/highlights/row-4-middle.png"
+                  src="/images/highlights/row-2-right.png"
                   alt=""
-                  width={682}
-                  height={1024}
-                  className="absolute left-[70px] top-[62px] block h-auto w-auto max-lg:static max-lg:h-full max-lg:w-auto max-lg:max-w-none"
+                  width={1554}
+                  height={2010}
+                  className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none max-lg:static max-lg:h-full max-lg:w-full max-lg:object-cover max-lg:object-center"
                   decoding="async"
-                />
-              </HighlightSlot>
-              <HighlightSlot className={TILE_H}>
-                {/* Figma 5795:18043 — cards, left 21px, vertically centered */}
-                <Image
-                  src="/images/highlights/row-4-right.png"
-                  alt=""
-                  width={937}
-                  height={1024}
-                  className="absolute left-[21px] top-[calc(50%-12px)] h-auto w-auto max-h-full max-w-[calc(100%-21px)] -translate-y-1/2 object-contain max-lg:static max-lg:max-h-[calc(100%-2rem)] max-lg:max-w-[calc(100%-2rem)] max-lg:translate-y-0"
-                  quality={100}
                 />
               </HighlightSlot>
             </div>
