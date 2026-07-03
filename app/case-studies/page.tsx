@@ -1,6 +1,9 @@
 import { CaseStudyListItem } from "../components/CaseStudyListItem";
 import { SiteHeader } from "../components/SiteHeader";
 
+/** Set true when Plenti case study is ready to show on the overview grid */
+const SHOW_PLENTI = false;
+
 /** Figma 6160:15871 — CASESs overview */
 export default function CaseStudiesPage() {
   return (
@@ -46,15 +49,17 @@ export default function CaseStudiesPage() {
             />
 
             {/* Row 3 — Figma 6313:73735: Plenti (preview only, not linked yet) */}
-            <CaseStudyListItem
-              imageSrc="/images/case-studies/plenti.png"
-              imageAlt="Plenti case study"
-              imageWidth={1836}
-              imageHeight={1596}
-              imageClassName="block h-full w-full object-cover"
-              tags="WEB DESIGN, branding, visual identity"
-              title="Plenti → Branding a New Way to Rent Tech"
-            />
+            {SHOW_PLENTI ? (
+              <CaseStudyListItem
+                imageSrc="/images/case-studies/plenti.png"
+                imageAlt="Plenti case study"
+                imageWidth={1836}
+                imageHeight={1596}
+                imageClassName="block h-full w-full object-cover"
+                tags="WEB DESIGN, branding, visual identity"
+                title="Plenti → Branding a New Way to Rent Tech"
+              />
+            ) : null}
           </div>
         </section>
       </main>
