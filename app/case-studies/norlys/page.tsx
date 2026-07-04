@@ -90,7 +90,7 @@ export default function NorlysCaseStudyPage() {
               <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
                 <p>Role: LEAD UI DESIGNER</p>
                 <p className="whitespace-nowrap font-medium text-[#999] max-lg:whitespace-normal">
-                  UI Design, Interaction, UX design, mobile app
+                  UI Design, Interaction, mobile app
                 </p>
               </div>
             </div>

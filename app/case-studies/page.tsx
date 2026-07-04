@@ -13,14 +13,7 @@ export default function CaseStudiesPage() {
       <main className="w-full">
         <section className="mx-auto max-w-[1440px] px-6 pb-16 pt-[41px] lg:px-[100px]">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-[16px] gap-y-[37px] lg:grid-cols-2">
-            {/* Row 1 — Figma 6160:15894: Norlys + KICKS */}
-            <CaseStudyListItem
-              href="/case-studies/norlys"
-              imageSrc="/images/case-studies/norlys-new.png"
-              imageAlt="Norlys case study"
-              tags="UI Design, Interaction, UX design, mobile app"
-              title="Norlys → Rethinking the electricity bill"
-            />
+            {/* Row 1 — Figma 6160:15894: KICKS + Norlys */}
             <CaseStudyListItem
               href="/case-studies/kicks"
               imageSrc="/images/case-studies/kicks-case.png"
@@ -30,6 +23,13 @@ export default function CaseStudiesPage() {
               imageClassName="block h-full w-full object-cover"
               tags="Digital DESIGN, e-commerce, web design"
               title="KICKS → Elevating Beauty E-commerce"
+            />
+            <CaseStudyListItem
+              href="/case-studies/norlys"
+              imageSrc="/images/case-studies/norlys-new.png"
+              imageAlt="Norlys case study"
+              tags="UI Design, Interaction, mobile app"
+              title="Norlys → Rethinking the electricity bill"
             />
 
             {/* Row 2 — Figma 6160:15872: Usisaat + Barry */}
