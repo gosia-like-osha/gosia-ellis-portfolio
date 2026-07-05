@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-/** Legacy route — renamed to Usisaat */
+/** Legacy route — Usisaat hidden; send to case studies overview */
 export default function NuukTransportRedirectPage() {
-  redirect("/case-studies/usisaat");
+  redirect("/case-studies");
 }

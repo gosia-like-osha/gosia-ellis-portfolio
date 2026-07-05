@@ -1,8 +1,8 @@
 import { CaseStudyListItem } from "../components/CaseStudyListItem";
 import { SiteHeader } from "../components/SiteHeader";
 
-/** Set true when Plenti case study is ready to show on the overview grid */
-const SHOW_PLENTI = false;
+/** Set true to restore Usisaat on the overview and case study route */
+const SHOW_USISAAT = false;
 
 /** Figma 6160:15871 — CASESs overview */
 export default function CaseStudiesPage() {
@@ -32,14 +32,27 @@ export default function CaseStudiesPage() {
               title="Norlys → Rethinking the electricity bill"
             />
 
-            {/* Row 2 — Figma 6160:15872: Usisaat + Barry */}
-            <CaseStudyListItem
-              href="/case-studies/usisaat"
-              imageSrc="/images/case-studies/usiseat-new.png"
-              imageAlt="Usisaat case study"
-              tags="Visual identity, product design, desktop"
-              title="Usisaat → Navigating logistics complexity"
-            />
+            {/* Row 2 — Figma 6160:15872: Plenti + Barry (Usisaat hidden) */}
+            {SHOW_USISAAT ? (
+              <CaseStudyListItem
+                href="/case-studies/usisaat"
+                imageSrc="/images/case-studies/usiseat-new.png"
+                imageAlt="Usisaat case study"
+                tags="Visual identity, product design, desktop"
+                title="Usisaat → Navigating logistics complexity"
+              />
+            ) : (
+              <CaseStudyListItem
+                href="/case-studies/plenti"
+                imageSrc="/images/case-studies/plenti.png"
+                imageAlt="Plenti case study"
+                imageWidth={1836}
+                imageHeight={1596}
+                imageClassName="block h-full w-full object-cover"
+                tags="WEB DESIGN, branding, visual identity"
+                title="Plenti → Shaping a New Way to Rent Tech"
+              />
+            )}
             <CaseStudyListItem
               href="/case-studies/barry-energy"
               imageSrc="/images/case-studies/barry-new.png"
@@ -47,19 +60,6 @@ export default function CaseStudiesPage() {
               tags="Visual identity, UI design, illustration"
               title="Barry Energy → EV charging made smarter"
             />
-
-            {/* Row 3 — Figma 6313:73735: Plenti (preview only, not linked yet) */}
-            {SHOW_PLENTI ? (
-              <CaseStudyListItem
-                imageSrc="/images/case-studies/plenti.png"
-                imageAlt="Plenti case study"
-                imageWidth={1836}
-                imageHeight={1596}
-                imageClassName="block h-full w-full object-cover"
-                tags="WEB DESIGN, branding, visual identity"
-                title="Plenti → Branding a New Way to Rent Tech"
-              />
-            ) : null}
           </div>
         </section>
       </main>

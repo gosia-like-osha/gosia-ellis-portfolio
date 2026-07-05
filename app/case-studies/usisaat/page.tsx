@@ -1,4 +1,9 @@
+import { redirect } from "next/navigation";
+
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
+
+/** Set true to restore the Usisaat case study route */
+const SHOW_USISAAT = false;
 
 const NUMBERS_VIDEO = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781093938/numbers_eueivc.webm",
@@ -134,6 +139,8 @@ function UsisaatHeroImage({ mobile = false }: { mobile?: boolean }) {
 
 /** Figma 5430:81582 — NEW USISAAT */
 export default function UsisaatCaseStudyPage() {
+  if (!SHOW_USISAAT) redirect("/case-studies");
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
