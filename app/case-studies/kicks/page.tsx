@@ -1,5 +1,15 @@
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
 
+const KICKS_ROW_1_RIGHT_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1783259963/1stkicks_avdzim.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1783259963/1stkicks_ylloqn.mp4",
+} as const;
+
+const KICKS_ROW_3_LEFT_VIDEO = {
+  webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1783260487/kicksslide_m0njkt.webm",
+  mp4: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1783260489/kicksslide_z48zkm.mp4",
+} as const;
+
 /** Figma 6122:78438 / 5412:73932 — 612×670 tile shell */
 function MockupTile({
   children,
@@ -111,12 +121,19 @@ export default function KicksCaseStudyPage() {
                 />
               </MockupTile>
               <MockupTile>
-                <TileImage
-                  src="/images/kicks/case-study/kicks-2.png"
-                  alt="KICKS Club membership design"
+                <video
+                  className="block h-auto w-full"
                   width={1838}
                   height={2010}
-                />
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={KICKS_ROW_1_RIGHT_VIDEO.webm} type="video/webm" />
+                  <source src={KICKS_ROW_1_RIGHT_VIDEO.mp4} type="video/mp4" />
+                </video>
               </MockupTile>
             </div>
 
@@ -143,12 +160,19 @@ export default function KicksCaseStudyPage() {
             {/* Row 3 — Figma 6122:78534 */}
             <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-2">
               <MockupTile>
-                <TileImage
-                  src="/images/kicks/case-study/kicks-5.png"
-                  alt="KICKS Beauty Talks campaign"
+                <video
+                  className="block h-auto w-full"
                   width={1836}
                   height={2010}
-                />
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={KICKS_ROW_3_LEFT_VIDEO.webm} type="video/webm" />
+                  <source src={KICKS_ROW_3_LEFT_VIDEO.mp4} type="video/mp4" />
+                </video>
               </MockupTile>
               <MockupTile>
                 <TileImage
