@@ -39,7 +39,7 @@ export default function Home() {
             {/* Figma 5804:18284 */}
             <div className="flex w-full flex-col gap-6 text-[18px] font-normal leading-[26px] text-black sm:flex-row sm:items-center sm:justify-between sm:gap-0">
               <p className="max-w-[532px] shrink-0 max-lg:max-w-[361px]">
-                Digital designer based in Copenhagen, bridging the gap between brand and
+                A multidisciplinary designer based in Copenhagen, bridging the gap between brand and
                 UX.
               </p>
               <div className="flex w-full shrink-0 flex-col items-start gap-0 sm:w-[323px] sm:items-end max-lg:hidden">
