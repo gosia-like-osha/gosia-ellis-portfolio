@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
+import { getCaseStudyOverride } from "../../../lib/portfolio-config";
 
 const ICONS_BARRY_VIDEO = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781094685/icons-barry_xv4eap.webm",
@@ -123,6 +124,11 @@ function MockupTile({
 
 /** Figma 5412:73866 — NEW BARRY */
 export default function BarryEnergyCaseStudyPage() {
+  const barryOverride = getCaseStudyOverride("barry-energy");
+  const role = barryOverride?.role ?? "LEAD UI DESIGNER";
+  const subtitle =
+    barryOverride?.subtitle ?? "VISUAL IDENTITY, UI DESIGN, ILLUSTRATION";
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
@@ -143,8 +149,8 @@ export default function BarryEnergyCaseStudyPage() {
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">Barry energy</h1>
               <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
-                <p>Role: LEAD UI DESIGNER</p>
-                <p className="font-medium text-[#999]">vISUAL IDENTITY, UI DESIGN, ILLUSTRATION</p>
+                <p>Role: {role}</p>
+                <p className="font-medium text-[#999]">{subtitle}</p>
               </div>
             </div>
 

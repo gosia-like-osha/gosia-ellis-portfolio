@@ -1,4 +1,5 @@
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
+import { getCaseStudyOverride } from "../../../lib/portfolio-config";
 
 const NORNOR_VIDEO = {
   webm: "https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781099895/nornor_vqvbop.webm",
@@ -68,6 +69,11 @@ function NorlysHeroImage({ mobile = false }: { mobile?: boolean }) {
 
 /** Figma 5424:77963 — NEW NORLYS */
 export default function NorlysCaseStudyPage() {
+  const norlysOverride = getCaseStudyOverride("norlys");
+  const role = norlysOverride?.role ?? "LEAD UI DESIGNER";
+  const subtitle =
+    norlysOverride?.subtitle ?? "UI Design, Interaction, mobile app";
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
@@ -88,9 +94,9 @@ export default function NorlysCaseStudyPage() {
             <div className="flex flex-col gap-[24px] uppercase">
               <h1 className="text-[42px] font-medium leading-[50px]">Norlys</h1>
               <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
-                <p>Role: LEAD UI DESIGNER</p>
+                <p>Role: {role}</p>
                 <p className="whitespace-nowrap font-medium text-[#999] max-lg:whitespace-normal">
-                  UI Design, Interaction, mobile app
+                  {subtitle}
                 </p>
               </div>
             </div>

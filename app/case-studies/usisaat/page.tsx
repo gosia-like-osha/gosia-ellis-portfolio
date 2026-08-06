@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { isCaseStudyVisible } from "../../../lib/portfolio-config";
+import { getCaseStudyOverride, isCaseStudyVisible } from "../../../lib/portfolio-config";
 import { CaseStudyPageHeader } from "../../components/CaseStudyPageHeader";
 
 const NUMBERS_VIDEO = {
@@ -139,6 +139,10 @@ function UsisaatHeroImage({ mobile = false }: { mobile?: boolean }) {
 export default function UsisaatCaseStudyPage() {
   if (!isCaseStudyVisible("usisaat")) redirect("/case-studies");
 
+  const usisaatOverride = getCaseStudyOverride("usisaat");
+  const subtitle =
+    usisaatOverride?.subtitle ?? "VISUAL IDENTITY, product DESIGN, desktop";
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-black">
       <CaseStudyPageHeader />
@@ -160,7 +164,7 @@ export default function UsisaatCaseStudyPage() {
               <h1 className="text-[42px] font-medium leading-[50px]">USISAAT</h1>
               <div className="flex flex-col gap-[2px] text-[18px] font-medium leading-[27px]">
                 <p>Role: LEAD pRODUCT DESIGNER</p>
-                <p className="font-medium text-[#999]">vISUAL IDENTITY, product DESIGN, desktop</p>
+                <p className="font-medium text-[#999]">{subtitle}</p>
               </div>
             </div>
 

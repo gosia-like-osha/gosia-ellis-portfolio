@@ -74,20 +74,46 @@ type PortfolioVariantConfig = {
   homeIntro: string;
   /** Case studies shown on /case-studies, in display order */
   caseStudyIds: CaseStudyId[];
+  /** Optional per-site tweaks to catalog entries (tags, title, etc.) */
+  caseStudyOverrides?: Partial<
+    Record<
+      CaseStudyId,
+      Partial<Pick<CaseStudyEntry, "tags" | "title">> & {
+        role?: string;
+        subtitle?: string;
+      }
+    >
+  >;
 };
 
 const VARIANTS: Record<PortfolioVariant, PortfolioVariantConfig> = {
   /** Default — gosiadesigns.com */
   main: {
     homeIntro:
-      "A multidisciplinary designer based in Copenhagen, bridging the gap between brand and UX.",
-    caseStudyIds: ["kicks", "norlys", "plenti", "barry-energy"],
+      "A digital product designer based in Copenhagen, bridging the gap between brand and UX.",
+    caseStudyIds: ["norlys", "barry-energy", "usisaat"],
+    caseStudyOverrides: {
+      norlys: {
+        tags: "UI/UX Design, Interaction Design, mobile app",
+        role: "LEAD PRODUCT DESIGNER",
+        subtitle: "UI/UX DESIGN, INTERACTION DESIGN, MOBILE APP",
+      },
+      "barry-energy": {
+        tags: "UI/UX design, Visual identity, illustration",
+        role: "LEAD UI/UX DESIGNER",
+        subtitle: "UI/UX DESIGN, VISUAL IDENTITY, ILLUSTRATION",
+      },
+      usisaat: {
+        tags: "product design, desktop",
+        subtitle: "product DESIGN, desktop",
+      },
+    },
   },
   /** Second portfolio — set NEXT_PUBLIC_PORTFOLIO_VARIANT=alt on its Vercel project */
   alt: {
     homeIntro:
       "A multidisciplinary designer based in Copenhagen, bridging the gap between brand and UX.",
-    caseStudyIds: ["usisaat", "kicks", "norlys", "barry-energy"],
+    caseStudyIds: ["kicks", "norlys", "plenti", "barry-energy"],
   },
 };
 
@@ -104,8 +130,16 @@ export function getPortfolioConfig() {
   return {
     variant,
     homeIntro: config.homeIntro,
-    caseStudies: config.caseStudyIds.map((id) => CASE_STUDY_CATALOG[id]),
+    caseStudies: config.caseStudyIds.map((id) => ({
+      ...CASE_STUDY_CATALOG[id],
+      ...config.caseStudyOverrides?.[id],
+    })),
   };
+}
+
+export function getCaseStudyOverride(id: CaseStudyId) {
+  const { caseStudyOverrides } = VARIANTS[getPortfolioVariant()];
+  return caseStudyOverrides?.[id];
 }
 
 export function isCaseStudyVisible(id: string): boolean {
