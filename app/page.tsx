@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { getPortfolioConfig } from "../lib/portfolio-config";
 import { SiteHeader } from "./components/SiteHeader";
 
 /** Figma 5795:17839 — highlight tile shell */
@@ -25,6 +26,8 @@ function HighlightSlot({
 }
 
 export default function Home() {
+  const { homeIntro } = getPortfolioConfig();
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfcfc] text-[#15171c]">
       <SiteHeader />
@@ -38,10 +41,7 @@ export default function Home() {
           <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-[24px] max-lg:gap-6">
             {/* Figma 5804:18284 */}
             <div className="flex w-full flex-col gap-6 text-[18px] font-normal leading-[26px] text-black sm:flex-row sm:items-center sm:justify-between sm:gap-0">
-              <p className="max-w-[532px] shrink-0 max-lg:max-w-[361px]">
-                A multidisciplinary designer based in Copenhagen, bridging the gap between brand and
-                UX.
-              </p>
+              <p className="max-w-[532px] shrink-0 max-lg:max-w-[361px]">{homeIntro}</p>
               <div className="flex w-full shrink-0 flex-col items-start gap-0 sm:w-[323px] sm:items-end max-lg:hidden">
                 <p className="whitespace-nowrap">Selected work</p>
                 <p className="text-[#838383] sm:text-right">2021-2026</p>
