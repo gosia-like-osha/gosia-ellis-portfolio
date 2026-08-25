@@ -58,7 +58,6 @@ export default function Home() {
                   width={1024}
                   height={374}
                   className="h-full w-full object-contain"
-                  quality={100}
                   priority
                 />
               </HighlightSlot>
@@ -96,7 +95,6 @@ export default function Home() {
                   width={672}
                   height={672}
                   className="size-[224px] shrink-0 object-contain max-lg:size-[201px]"
-                  quality={100}
                 />
               </HighlightSlot>
               <HighlightSlot className={`${TILE_H} max-lg:!items-end max-lg:!justify-end`}>
@@ -107,6 +105,7 @@ export default function Home() {
                   alt=""
                   width={682}
                   height={1024}
+                  loading="lazy"
                   className="absolute left-[70px] top-[62px] block h-auto w-auto max-lg:static max-lg:h-full max-lg:w-auto max-lg:max-w-none"
                   decoding="async"
                 />
@@ -119,7 +118,6 @@ export default function Home() {
                   width={937}
                   height={1024}
                   className="absolute left-[21px] top-[calc(50%-12px)] h-auto w-auto max-h-full max-w-[calc(100%-21px)] -translate-y-1/2 object-contain max-lg:static max-lg:max-h-[calc(100%-2rem)] max-lg:max-w-[calc(100%-2rem)] max-lg:translate-y-0"
-                  quality={100}
                 />
               </HighlightSlot>
             </div>
@@ -134,7 +132,6 @@ export default function Home() {
                   width={966}
                   height={1024}
                   className="h-[342px] w-[297px] shrink-0 object-contain max-lg:h-[210px] max-lg:w-[182px]"
-                  quality={100}
                 />
               </HighlightSlot>
               <HighlightSlot className={TILE_H}>
@@ -147,7 +144,7 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                 >
                   <source
                     src="https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781090751/watch-os_dirsxg.webm"
@@ -171,7 +168,6 @@ export default function Home() {
                   width={991}
                   height={980}
                   className="size-[245px] shrink-0 object-contain max-lg:size-[145px]"
-                  quality={100}
                 />
               </HighlightSlot>
               <HighlightSlot className={TILE_H}>
@@ -182,6 +178,7 @@ export default function Home() {
                   alt=""
                   width={1554}
                   height={2010}
+                  loading="lazy"
                   className="absolute left-[94px] top-[-2%] block h-auto w-[529px] max-w-none max-lg:static max-lg:h-full max-lg:w-full max-lg:object-cover max-lg:object-center"
                   decoding="async"
                 />
@@ -200,7 +197,7 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                 >
                   <source
                     src="https://res.cloudinary.com/dtl8ecgm2/video/upload/v1781091044/thinking_jomvcr.webm"
@@ -219,6 +216,7 @@ export default function Home() {
                   alt=""
                   width={1836}
                   height={846}
+                  loading="lazy"
                   className="block h-auto w-full"
                   decoding="async"
                 />
@@ -238,7 +236,7 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                 />
               </HighlightSlot>
               <HighlightSlot className={`${TILE_H} max-lg:hidden`}>
@@ -249,6 +247,7 @@ export default function Home() {
                   alt=""
                   width={1124}
                   height={1340}
+                  loading="lazy"
                   className="absolute left-[50px] top-0 block h-auto w-[562px] max-w-none"
                   decoding="async"
                 />
@@ -263,6 +262,7 @@ export default function Home() {
                 alt=""
                 width={2613}
                 height={1710}
+                loading="lazy"
                 className="absolute left-1/2 top-[100px] block h-auto w-[871px] max-w-none -translate-x-1/2"
                 decoding="async"
               />
