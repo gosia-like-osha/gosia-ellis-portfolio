@@ -3,15 +3,30 @@ import { JumpToTopButton } from "./components/JumpToTopButton";
 import { geistSans } from "./fonts";
 import "./globals.css";
 
+const FAVICON_VERSION = "2";
+
 export const metadata: Metadata = {
   title: "Gosia Ellis",
   description: "Portfolio",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "96x96" },
+      {
+        url: `/icon.png?v=${FAVICON_VERSION}`,
+        type: "image/png",
+        sizes: "96x96",
+      },
+      {
+        url: `/favicon.ico?v=${FAVICON_VERSION}`,
+        sizes: "any",
+      },
     ],
-    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+    apple: [
+      {
+        url: `/apple-touch-icon.png?v=${FAVICON_VERSION}`,
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
   },
 };
 
